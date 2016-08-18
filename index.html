@@ -31,9 +31,11 @@
 
 			<section class="container" id="main">
 				
-					<div class="panel operational">
-						All Systems operational.
+					
+					<div class="panel major outage">
+						Major outage on staged-recipes.
 					</div>
+					
 				
 
 				<h4>Systems</h4>
@@ -72,13 +74,62 @@
 					</li>
 					
 					<li>
-						staged-recipes <span class="status operational">operational</span>
+						staged-recipes <span class="status major outage">major outage</span>
 					</li>
 					
 				</ul>
 
 				<h4>Incidents</h4>
 				
+					
+					<div class="incident">
+						<span class="date">2016-08-18 19:26:48 UTC</span>
+
+						
+							<span class="label major outage float-right">major outage</span>
+						
+						
+							<span class="label system float-right">staged-recipes</span>
+						
+						<hr/>
+
+						<span class="title">Conversion failure</span>
+						<p>Appears there is some issue be encountered during conversion. May be related to the recent `conda-build` upgrade.
+
+Traceback shown below. See this [log]( https://travis-ci.org/conda-forge/staged-recipes/jobs/153361154 ) for more details.
+
+```
+Calculating the recipes which need to be turned into feedstocks.
+Making feedstock for versioneer
+Traceback (most recent call last):
+  File "/Users/travis/miniconda/bin/conda-smithy", line 9, in <module>
+    load_entry_point('conda-smithy==1.0.3', 'console_scripts', 'conda-smithy')()
+  File "/Users/travis/miniconda/lib/python3.5/site-packages/conda_smithy/cli.py", line 236, in main
+    args.subcommand_func(args)
+  File "/Users/travis/miniconda/lib/python3.5/site-packages/conda_smithy/cli.py", line 103, in __call__
+    generate_feedstock_content(feedstock_directory, args.recipe_directory, meta)
+  File "/Users/travis/miniconda/lib/python3.5/site-packages/conda_smithy/cli.py", line 34, in generate_feedstock_content
+    configure_feedstock.main(target_directory)
+  File "/Users/travis/miniconda/lib/python3.5/site-packages/conda_smithy/configure_feedstock.py", line 361, in main
+    render_run_docker_build(env, config, forge_dir)
+  File "/Users/travis/miniconda/lib/python3.5/site-packages/conda_smithy/configure_feedstock.py", line 24, in render_run_docker_build
+    with fudge_subdir('linux-64'):
+  File "/Users/travis/miniconda/lib/python3.5/contextlib.py", line 59, in __enter__
+    return next(self.gen)
+  File "/Users/travis/miniconda/lib/python3.5/site-packages/conda_smithy/configure_feedstock.py", line 103, in fudge_subdir
+    orig = conda_build.metadata.cc.subdir
+AttributeError: module 'conda_build.metadata' has no attribute 'cc'
+Traceback (most recent call last):
+  File ".CI/create_feedstocks.py", line 150, in <module>
+    '--feedstock-directory', feedstock_dir])
+  File "/Users/travis/miniconda/lib/python3.5/subprocess.py", line 581, in check_call
+    raise CalledProcessError(retcode, cmd)
+subprocess.CalledProcessError: Command '['conda', 'smithy', 'init', '/Users/travis/build/conda-forge/staged-recipes/recipes/versioneer', '--feedstock-directory', '/var/folders/gw/_2jq29095y7b__wtby9dg_5h0000gn/T/tmpx54jano2__feedstocks/versioneer-feedstock']' returned non-zero exit status 1
+```
+
+cc @patricksnape @msarahan @pelson</p>
+						
+					</div>
 					
 					<div class="incident">
 						<span class="date">2016-08-14 19:43:20 UTC</span>
