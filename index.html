@@ -98,7 +98,6 @@
 						<span class="title">Issues uploading on AppVeyor</span>
 						<p>It appears there are some issues uploading from AppVeyor to anaconda.org. Here is a [log]( https://ci.appveyor.com/project/conda-forge/hdbscan-feedstock/build/1.0.10/job/ljwl03dcll9xitqy#L449 ) from one such failed AppVeyor upload failure. Snippet of traceback shown below. Restarting seems to sometimes fix it.
 
-
 ```
 python ci_support\upload_or_check_non_existence.py .\recipe conda-forge --channel=main
 Using Anaconda API: https://api.anaconda.org
@@ -118,6 +117,12 @@ Command exited with code 1
 ```
 
 cc @msarahan</p>
+						
+							<p><em>Update 2016-08-18 23:50:23</em><br/>
+							Raising for awareness of affected teams/feedstocks that have tried to deploy recently and are now having deployment issues. Feel free to track an issue locally on your feedstock until all missing packages are uploaded.
+
+cc @conda-forge/bqplot @conda-forge/requests-futures @conda-forge/hdbscan @conda-forge/versioneer
+							</p>
 						
 					</div>
 					
