@@ -31,11 +31,9 @@
 
 			<section class="container" id="main">
 				
-					
-					<div class="panel major outage">
-						Major outage on staged-recipes.
+					<div class="panel operational">
+						All Systems operational.
 					</div>
-					
 				
 
 				<h4>Systems</h4>
@@ -74,7 +72,7 @@
 					</li>
 					
 					<li>
-						staged-recipes <span class="status major outage">major outage</span>
+						staged-recipes <span class="status operational">operational</span>
 					</li>
 					
 				</ul>
@@ -86,7 +84,7 @@
 						<span class="date">2016-08-18 19:26:48 UTC</span>
 
 						
-							<span class="label major outage float-right">major outage</span>
+							<span class="label operational float-right">resolved</span>
 						
 						
 							<span class="label system float-right">staged-recipes</span>
@@ -128,6 +126,18 @@ subprocess.CalledProcessError: Command '['conda', 'smithy', 'init', '/Users/trav
 ```
 
 cc @patricksnape @msarahan @pelson</p>
+						
+							<p><em>Update 2016-08-18 19:28:42</em><br/>
+							Happened in the subsequent [build]( https://travis-ci.org/conda-forge/staged-recipes/builds/153362768 ) too. May be worthwhile to pin `conda-build` to the last known working version (`1.21.11`) in the feedstock conversion script for now. Not sure if this is also related to `conda-build-all` or `conda-smithy`.
+							</p>
+						
+							<p><em>Update 2016-08-18 19:33:27</em><br/>
+							Adding PR ( https://github.com/conda-forge/staged-recipes/pull/1293 ) to workaround this issue for the meantime.
+							</p>
+						
+							<p><em>Update 2016-08-18 19:54:51</em><br/>
+							Resolved via pinning of `conda-build` to version `1.21.11` for feedstock conversion via PR ( https://github.com/conda-forge/staged-recipes/pull/1293 ).
+							</p>
 						
 					</div>
 					
