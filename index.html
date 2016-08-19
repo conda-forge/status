@@ -146,6 +146,36 @@ cc @conda-forge/bqplot @conda-forge/requests-futures @conda-forge/hdbscan @conda
 							Try restarting the build and see if it fixes it. This has also worked for me with CircleCI builds that failed to upload.
 							</p>
 						
+							<p><em>Update 2016-08-19 15:06:27</em><br/>
+							In some cases, am also seeing a new failure when rerunning an existing build that had already uploaded. This rerunning is being done in order to resolve some of the failed uploads. This new failure suggests the problem is not strictly limited to uploading. See the traceback below for the error and this [build]( https://ci.appveyor.com/project/conda-forge/astroid-feedstock/build/1.0.2/job/h126inb8iwx02cnx#L754 ) for more details.
+
+```
+python ci_support\upload_or_check_non_existence.py .\recipe conda-forge --channel=main
+Using Anaconda API: https://api.anaconda.org
+Traceback (most recent call last):
+  File "ci_support\upload_or_check_non_existence.py", line 124, in <module>
+    main()
+  File "ci_support\upload_or_check_non_existence.py", line 106, in main
+    on_channel = distribution_exists_on_channel(cli, meta, owner, channel)
+  File "ci_support\upload_or_check_non_existence.py", line 69, in distribution_exists_on_channel
+    binstar_cli.show_channel(owner=owner, channel=channel)['files']]
+  File "C:\conda\lib\site-packages\binstar_client\mixins\channels.py", line 28, in show_channel
+    res = self.session.get(url)
+  File "C:\conda\lib\site-packages\requests\sessions.py", line 488, in get
+    return self.request('GET', url, **kwargs)
+  File "C:\conda\lib\site-packages\requests\sessions.py", line 475, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\conda\lib\site-packages\requests\sessions.py", line 628, in send
+    r.content
+  File "C:\conda\lib\site-packages\requests\models.py", line 755, in content
+    self._content = bytes().join(self.iter_content(CONTENT_CHUNK_SIZE)) or bytes()
+  File "C:\conda\lib\site-packages\requests\models.py", line 679, in generate
+    raise ChunkedEncodingError(e)
+requests.exceptions.ChunkedEncodingError: ('Connection broken: IncompleteRead(0 bytes read)', IncompleteRead(0 bytes read))
+Command exited with code 1
+```
+							</p>
+						
 					</div>
 					
 					<div class="incident">
