@@ -33,7 +33,7 @@
 				
 					
 					<div class="panel degraded performance">
-						Degraded performance on Anaconda.org, AppVeyor, CircleCI, staged-recipes.
+						Degraded performance on Anaconda.org, AppVeyor, CircleCI.
 					</div>
 					
 				
@@ -74,7 +74,7 @@
 					</li>
 					
 					<li>
-						staged-recipes <span class="status degraded performance">degraded performance</span>
+						staged-recipes <span class="status operational">operational</span>
 					</li>
 					
 				</ul>
@@ -86,7 +86,7 @@
 						<span class="date">2016-08-19 22:40:35 UTC</span>
 
 						
-							<span class="label degraded performance float-right">degraded performance</span>
+							<span class="label operational float-right">resolved</span>
 						
 						
 							<span class="label system float-right">AppVeyor</span>
@@ -166,6 +166,10 @@ cc @msarahan
 						
 							<p><em>Update 2016-08-20 21:56:08</em><br/>
 							Removing `argparse` made no difference as the next recipe in the list has the same [problem]( https://travis-ci.org/conda-forge/staged-recipes/jobs/153850184 ). Went ahead and re-added `argparse` with PR ( https://github.com/conda-forge/staged-recipes/pull/1319 ).
+							</p>
+						
+							<p><em>Update 2016-08-20 22:01:21</em><br/>
+							Weird. Apparently after re-adding `argparse` we were able to get everything working again. All of the recipes are now converted.
 							</p>
 						
 					</div>
