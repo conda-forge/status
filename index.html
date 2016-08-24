@@ -33,7 +33,7 @@
 				
 					
 					<div class="panel degraded performance">
-						Degraded performance on Anaconda.org, Travis CI.
+						Degraded performance on Anaconda.org, Travis CI, staged-recipes.
 					</div>
 					
 				
@@ -74,13 +74,55 @@
 					</li>
 					
 					<li>
-						staged-recipes <span class="status operational">operational</span>
+						staged-recipes <span class="status degraded performance">degraded performance</span>
 					</li>
 					
 				</ul>
 
 				<h4>Incidents</h4>
 				
+					
+					<div class="incident">
+						<span class="date">2016-08-24 04:46:57 UTC</span>
+
+						
+							<span class="label degraded performance float-right">degraded performance</span>
+						
+						
+							<span class="label system float-right">staged-recipes</span>
+						
+						<hr/>
+
+						<span class="title">AppVeyor API blocking conversion</span>
+						<p>AppVeyor API registration error with `itsdangerous` is blocking feedstock conversion. Will also result in `itsdangerous` showing up in PRs. Users are recommended to merge with `master` and remove `itsdangerous` from their PRs. Snippet of the traceback shown below. Several restarts of the conversion step have been tried without success. 
+
+```
+CI Summary for conda-forge/itsdangerous-feedstock (can take ~30s):
+ * conda-forge/itsdangerous-feedstock already enabled on travis-ci
+ * conda-forge/itsdangerous-feedstock enabled on CircleCI
+Traceback (most recent call last):
+  File "/home/travis/miniconda/bin/conda-smithy", line 9, in <module>
+    load_entry_point('conda-smithy==1.0.3', 'console_scripts', 'conda-smithy')()
+  File "/home/travis/miniconda/lib/python3.5/site-packages/conda_smithy/cli.py", line 236, in main
+    args.subcommand_func(args)
+  File "/home/travis/miniconda/lib/python3.5/site-packages/conda_smithy/cli.py", line 164, in __call__
+    ci_register.add_project_to_appveyor(owner, repo)
+  File "/home/travis/miniconda/lib/python3.5/site-packages/conda_smithy/ci_register.py", line 114, in add_project_to_appveyor
+    response.raise_for_status()
+  File "/home/travis/miniconda/lib/python3.5/site-packages/requests/models.py", line 844, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 500 Server Error: Internal Server Error for url: https://ci.appveyor.com/api/projects
+Traceback (most recent call last):
+  File ".CI/create_feedstocks.py", line 186, in <module>
+    subprocess.check_call(['conda', 'smithy', 'register-ci', '--feedstock_directory', feedstock_dir] + owner_info)
+  File "/home/travis/miniconda/lib/python3.5/subprocess.py", line 581, in check_call
+    raise CalledProcessError(retcode, cmd)
+subprocess.CalledProcessError: Command '['conda', 'smithy', 'register-ci', '--feedstock_directory', '/tmp/tmpw0ne44uj__feedstocks/itsdangerous-feedstock', '--organization', 'conda-forge']' returned non-zero exit status 1
+```
+
+cc @pelson</p>
+						
+					</div>
 					
 					<div class="incident">
 						<span class="date">2016-08-24 01:59:49 UTC</span>
