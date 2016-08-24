@@ -33,7 +33,7 @@
 				
 					
 					<div class="panel degraded performance">
-						Degraded performance on Anaconda.org, Travis CI, staged-recipes.
+						Degraded performance on Anaconda.org, Travis CI.
 					</div>
 					
 				
@@ -74,7 +74,7 @@
 					</li>
 					
 					<li>
-						staged-recipes <span class="status degraded performance">degraded performance</span>
+						staged-recipes <span class="status operational">operational</span>
 					</li>
 					
 				</ul>
@@ -86,7 +86,7 @@
 						<span class="date">2016-08-24 04:46:57 UTC</span>
 
 						
-							<span class="label degraded performance float-right">degraded performance</span>
+							<span class="label operational float-right">resolved</span>
 						
 						
 							<span class="label system float-right">staged-recipes</span>
@@ -121,6 +121,10 @@ subprocess.CalledProcessError: Command '['conda', 'smithy', 'register-ci', '--fe
 ```
 
 cc @pelson</p>
+						
+							<p><em>Update 2016-08-24 05:01:50</em><br/>
+							After several restarts and a bit of time this resolved itself. However, this is hardly the first time I have seen this issue today or in general with AppVeyor's API. Maybe we need to use a similar strategy to one used with Travis CI's API.
+							</p>
 						
 					</div>
 					
