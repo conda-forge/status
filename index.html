@@ -36,6 +36,10 @@
 						Degraded performance on Anaconda.org.
 					</div>
 					
+					<div class="panel investigating">
+						Investigating on AppVeyor.
+					</div>
+					
 				
 
 				<h4>Systems</h4>
@@ -46,7 +50,7 @@
 					</li>
 					
 					<li>
-						AppVeyor <span class="status operational">operational</span>
+						AppVeyor <span class="status investigating">investigating</span>
 					</li>
 					
 					<li>
@@ -81,6 +85,22 @@
 
 				<h4>Incidents</h4>
 				
+					
+					<div class="incident">
+						<span class="date">2016-08-28 01:21:18 UTC</span>
+
+						
+							<span class="label investigating float-right">investigating</span>
+						
+						
+							<span class="label system float-right">AppVeyor</span>
+						
+						<hr/>
+
+						<span class="title">AppVeyor builds missing (webhooks failing) </span>
+						<p>Appears AppVeyor builds are not being triggered. Looking more closely it appears that the webhooks used to trigger builds are failing. This includes at `staged-recipes` and at the feedstocks. Raised an issue upstream ( https://github.com/appveyor/ci/issues/1002 ) to get more info and hopefully find a fix.</p>
+						
+					</div>
 					
 					<div class="incident">
 						<span class="date">2016-08-24 19:16:13 UTC</span>
