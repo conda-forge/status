@@ -36,6 +36,10 @@
 						Degraded performance on Anaconda.org, AppVeyor.
 					</div>
 					
+					<div class="panel major outage">
+						Major outage on staged-recipes.
+					</div>
+					
 				
 
 				<h4>Systems</h4>
@@ -74,13 +78,29 @@
 					</li>
 					
 					<li>
-						staged-recipes <span class="status operational">operational</span>
+						staged-recipes <span class="status major outage">major outage</span>
 					</li>
 					
 				</ul>
 
 				<h4>Incidents</h4>
 				
+					
+					<div class="incident">
+						<span class="date">2016-09-01 02:56:06 UTC</span>
+
+						
+							<span class="label major outage float-right">major outage</span>
+						
+						
+							<span class="label system float-right">staged-recipes</span>
+						
+						<hr/>
+
+						<span class="title">staged-recipes blocked</span>
+						<p>Staged-recipes is blocked because of an incompatibility between the new `conda-build` and `conda-smithy` as evidenced by [build]( https://travis-ci.org/conda-forge/staged-recipes#L153 ). A working fix is proposed in PR ( https://github.com/conda-forge/staged-recipes/pull/1453 ). Merging it should fix the problem at present.</p>
+						
+					</div>
 					
 					<div class="incident">
 						<span class="date">2016-08-30 00:56:33 UTC</span>
