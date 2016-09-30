@@ -31,9 +31,11 @@
 
 			<section class="container" id="main">
 				
-					<div class="panel operational">
-						All Systems operational.
+					
+					<div class="panel degraded performance">
+						Degraded performance on staged-recipes.
 					</div>
+					
 				
 
 				<h4>Systems</h4>
@@ -72,13 +74,32 @@
 					</li>
 					
 					<li>
-						staged-recipes <span class="status operational">operational</span>
+						staged-recipes <span class="status degraded performance">degraded performance</span>
 					</li>
 					
 				</ul>
 
 				<h4>Incidents</h4>
 				
+					
+					<div class="incident">
+						<span class="date">2016-09-30 00:55:22 UTC</span>
+
+						
+							<span class="label degraded performance float-right">degraded performance</span>
+						
+						
+							<span class="label system float-right">staged-recipes</span>
+						
+						<hr/>
+
+						<span class="title">Conversion blocked</span>
+						<p><p>Getting HTTP 500 errors from AppVeyor when attempting to create feedstocks. This is blocking conversion. Will try back in ~1hr to see if the issue has subsided.</p>
+
+<p>xref: https://github.com/appveyor/ci/issues/1045</p>
+</p>
+						
+					</div>
 					
 					<div class="incident">
 						<span class="date">2016-09-26 03:43:13 UTC</span>
