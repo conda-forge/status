@@ -1,15 +1,14 @@
 <!doctype html>
-<html lang="en">
+<html>
 	<head>
 		<meta charset="utf-8">
 		<meta name="robots" content="index, follow">
-		<title>Status</title>
+		<title>conda-forge status</title>
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
-		<link rel="stylesheet" href="milligram.min.css">
 		<link rel="stylesheet" href="style.css">
-		
-		<link rel="icon" href="https://raw.githubusercontent.com/pyupio/statuspage/master/template/favicon.png">
+		<link rel="icon" href="icon.png">
+		<link rel="prefetch" type="application/l10n" href="translations.ini" />
 	</head>
 	<body>
 
@@ -19,9 +18,8 @@
 				<section class="container">
 
 					<a class="navigation-title" href="">
-						
-						<img class="img" src="https://raw.githubusercontent.com/pyupio/statuspage/master/template/logo.png" height="30">
-						<h1 class="title">Status</h1>
+						<img class="img" src="icon.png" height="30">
+						<h1 class="title">conda-forge status</h1>
 					</a>
 
 
@@ -31,60 +29,60 @@
 
 			<section class="container" id="main">
 				
-					<div class="panel operational">
+					<div class="panel operational" data-l10n-id="systems-operational">
 						All Systems operational.
 					</div>
 				
 
-				<h4>Systems</h4>
+				<h4 data-l10n-id="systems">Systems</h4>
 				<ul class="systems">
 					
 					<li>
-						Anaconda.org <span class="status operational">operational</span>
+						Anaconda.org <span class="status operational" data-l10n-id="operational">operational</span>
 					</li>
 					
 					<li>
-						AppVeyor <span class="status operational">operational</span>
+						AppVeyor <span class="status operational" data-l10n-id="operational">operational</span>
 					</li>
 					
 					<li>
-						CircleCI <span class="status operational">operational</span>
+						CircleCI <span class="status operational" data-l10n-id="operational">operational</span>
 					</li>
 					
 					<li>
-						Travis CI <span class="status operational">operational</span>
+						Travis CI <span class="status operational" data-l10n-id="operational">operational</span>
 					</li>
 					
 					<li>
-						conda <span class="status operational">operational</span>
+						conda <span class="status operational" data-l10n-id="operational">operational</span>
 					</li>
 					
 					<li>
-						docs <span class="status operational">operational</span>
+						docs <span class="status operational" data-l10n-id="operational">operational</span>
 					</li>
 					
 					<li>
-						feedstocks <span class="status operational">operational</span>
+						feedstocks <span class="status operational" data-l10n-id="operational">operational</span>
 					</li>
 					
 					<li>
-						linter <span class="status operational">operational</span>
+						linter <span class="status operational" data-l10n-id="operational">operational</span>
 					</li>
 					
 					<li>
-						staged-recipes <span class="status operational">operational</span>
+						staged-recipes <span class="status operational" data-l10n-id="operational">operational</span>
 					</li>
 					
 				</ul>
 
-				<h4>Incidents</h4>
+				<h4 data-l10n-id="incidents">Incidents</h4>
 				
 					
 					<div class="incident">
-						<span class="date">2016-10-19 14:13:39 UTC</span>
+						<span class="date moment">2016-10-19 14:13:39 UTC</span>
 
 						
-							<span class="label operational float-right">resolved</span>
+							<span class="label operational float-right" data-l10n-id="resolved">resolved</span>
 						
 						
 							<span class="label system float-right">Travis CI</span>
@@ -92,21 +90,20 @@
 						<hr/>
 
 						<span class="title">Travis CI OS X build outage</span>
-						<p><p>Travis CI is working on an OS X build outage issue. More details can be found <a href="https://www.traviscistatus.com/incidents/4jb1rlhj7ynq">here</a>.</p>
-</p>
+						<p>Travis CI is working on an OS X build outage issue. More details can be found <a href="https://www.traviscistatus.com/incidents/4jb1rlhj7ynq">here</a>.</p>
+
 						
-							<p><em>Update 2016-10-19 14:26:02</em><br/>
+							<p><em>Update <span class="moment">2016-10-19 14:26:02 UTC</span></em></p>
 							<p>Upstream has marked this as resolved.</p>
 
-							</p>
 						
 					</div>
 					
 					<div class="incident">
-						<span class="date">2016-10-13 15:49:59 UTC</span>
+						<span class="date moment">2016-10-13 15:49:59 UTC</span>
 
 						
-							<span class="label operational float-right">resolved</span>
+							<span class="label operational float-right" data-l10n-id="resolved">resolved</span>
 						
 						
 							<span class="label system float-right">Travis CI</span>
@@ -114,28 +111,26 @@
 						<hr/>
 
 						<span class="title">Travis CI OS X builds stopped</span>
-						<p><p>Travis CI has stopped all OS X builds. Please find more info at the linked status.</p>
+						<p>Travis CI has stopped all OS X builds. Please find more info at the linked status.</p>
 
 <p>xref: https://www.traviscistatus.com/incidents/b4xk2bybjc9d</p>
-</p>
+
 						
-							<p><em>Update 2016-10-13 17:04:00</em><br/>
+							<p><em>Update <span class="moment">2016-10-13 17:04:00 UTC</span></em></p>
 							<p>Travis CI says OS X jobs are being restarted. There is still a backlog being processed.</p>
 
-							</p>
 						
-							<p><em>Update 2016-10-15 19:37:26</em><br/>
+							<p><em>Update <span class="moment">2016-10-15 19:37:26 UTC</span></em></p>
 							<p>This is now resolved.</p>
 
-							</p>
 						
 					</div>
 					
 					<div class="incident">
-						<span class="date">2016-10-13 06:01:54 UTC</span>
+						<span class="date moment">2016-10-13 06:01:54 UTC</span>
 
 						
-							<span class="label operational float-right">resolved</span>
+							<span class="label operational float-right" data-l10n-id="resolved">resolved</span>
 						
 						
 							<span class="label system float-right">Travis CI</span>
@@ -143,23 +138,22 @@
 						<hr/>
 
 						<span class="title">Travis OS X Backlog</span>
-						<p><p>Travis CI is currently processing the backlog of OS X builds after a resolved incident earlier.</p>
+						<p>Travis CI is currently processing the backlog of OS X builds after a resolved incident earlier.</p>
 
 <p>xref: https://www.traviscistatus.com/incidents/80y71tv5zkc5</p>
-</p>
+
 						
-							<p><em>Update 2016-10-13 15:49:10</em><br/>
+							<p><em>Update <span class="moment">2016-10-13 15:49:10 UTC</span></em></p>
 							<p>This incident has been closed.</p>
 
-							</p>
 						
 					</div>
 					
 					<div class="incident">
-						<span class="date">2016-10-12 23:59:08 UTC</span>
+						<span class="date moment">2016-10-12 23:59:08 UTC</span>
 
 						
-							<span class="label operational float-right">resolved</span>
+							<span class="label operational float-right" data-l10n-id="resolved">resolved</span>
 						
 						
 							<span class="label system float-right">Anaconda.org</span>
@@ -167,23 +161,22 @@
 						<hr/>
 
 						<span class="title">Download issues with Anaconda.org/conda-forge on CIs</span>
-						<p><p>Seeing intermittent download issues from <code>conda-forge</code> on CIs. Please restart builds if you encounter this issue. Have filed a bug report upstream to track this.</p>
+						<p>Seeing intermittent download issues from <code>conda-forge</code> on CIs. Please restart builds if you encounter this issue. Have filed a bug report upstream to track this.</p>
 
 <p>xref: https://github.com/Anaconda-Platform/support/issues/78</p>
-</p>
+
 						
-							<p><em>Update 2016-11-17 15:32:01</em><br/>
+							<p><em>Update <span class="moment">2016-11-17 15:32:01 UTC</span></em></p>
 							<p>The primary issue seems to have been resolved with a new release of anaconda.org. There are still some linger issues, but they do not occur with near the same frequency and are actively being worked on by upstream as mentioned in the xref'd issue. Considering this resolved. Closing...</p>
 
-							</p>
 						
 					</div>
 					
 					<div class="incident">
-						<span class="date">2016-10-12 00:01:42 UTC</span>
+						<span class="date moment">2016-10-12 00:01:42 UTC</span>
 
 						
-							<span class="label operational float-right">resolved</span>
+							<span class="label operational float-right" data-l10n-id="resolved">resolved</span>
 						
 						
 							<span class="label system float-right">Travis CI</span>
@@ -191,21 +184,20 @@
 						<hr/>
 
 						<span class="title">OS X Backlog</span>
-						<p><p>There seems to be a backlog on Travis CI. Have raised issue ( https://github.com/travis-ci/travis-ci/issues/6712 ) upstream.</p>
-</p>
+						<p>There seems to be a backlog on Travis CI. Have raised issue ( https://github.com/travis-ci/travis-ci/issues/6712 ) upstream.</p>
+
 						
-							<p><em>Update 2016-10-12 04:18:19</em><br/>
+							<p><em>Update <span class="moment">2016-10-12 04:18:19 UTC</span></em></p>
 							<p>This seems to be improving.</p>
 
-							</p>
 						
 					</div>
 					
 					<div class="incident">
-						<span class="date">2016-10-04 20:41:32 UTC</span>
+						<span class="date moment">2016-10-04 20:41:32 UTC</span>
 
 						
-							<span class="label operational float-right">resolved</span>
+							<span class="label operational float-right" data-l10n-id="resolved">resolved</span>
 						
 						
 							<span class="label system float-right">staged-recipes</span>
@@ -213,31 +205,28 @@
 						<hr/>
 
 						<span class="title">Conversion backed up</span>
-						<p><p>We are experiencing some issues with a recipe converting to a feedstock. This may impact other recipes waiting to convert.</p>
-</p>
+						<p>We are experiencing some issues with a recipe converting to a feedstock. This may impact other recipes waiting to convert.</p>
+
 						
-							<p><em>Update 2016-10-05 00:46:12</em><br/>
+							<p><em>Update <span class="moment">2016-10-05 00:46:12 UTC</span></em></p>
 							<p>Reopening as Travis CI still appears to be backed up.</p>
 
-							</p>
 						
-							<p><em>Update 2016-10-05 00:49:01</em><br/>
+							<p><em>Update <span class="moment">2016-10-05 00:49:01 UTC</span></em></p>
 							<p>Yeah, travis is crazy backed up right now</p>
 
-							</p>
 						
-							<p><em>Update 2016-10-12 00:00:23</em><br/>
+							<p><em>Update <span class="moment">2016-10-12 00:00:23 UTC</span></em></p>
 							<p>This has since been resolved.</p>
 
-							</p>
 						
 					</div>
 					
 					<div class="incident">
-						<span class="date">2016-09-30 00:55:22 UTC</span>
+						<span class="date moment">2016-09-30 00:55:22 UTC</span>
 
 						
-							<span class="label operational float-right">resolved</span>
+							<span class="label operational float-right" data-l10n-id="resolved">resolved</span>
 						
 						
 							<span class="label system float-right">staged-recipes</span>
@@ -245,23 +234,22 @@
 						<hr/>
 
 						<span class="title">Conversion blocked</span>
-						<p><p>Getting HTTP 500 errors from AppVeyor when attempting to create feedstocks. This is blocking conversion. Will try back in ~1hr to see if the issue has subsided.</p>
+						<p>Getting HTTP 500 errors from AppVeyor when attempting to create feedstocks. This is blocking conversion. Will try back in ~1hr to see if the issue has subsided.</p>
 
 <p>xref: https://github.com/appveyor/ci/issues/1045</p>
-</p>
+
 						
-							<p><em>Update 2016-09-30 02:05:09</em><br/>
+							<p><em>Update <span class="moment">2016-09-30 02:05:09 UTC</span></em></p>
 							<p>Resolved. All pending recipes have been converted to feedstocks.</p>
 
-							</p>
 						
 					</div>
 					
 					<div class="incident">
-						<span class="date">2016-09-26 03:43:13 UTC</span>
+						<span class="date moment">2016-09-26 03:43:13 UTC</span>
 
 						
-							<span class="label operational float-right">resolved</span>
+							<span class="label operational float-right" data-l10n-id="resolved">resolved</span>
 						
 						
 							<span class="label system float-right">staged-recipes</span>
@@ -269,29 +257,27 @@
 						<hr/>
 
 						<span class="title">AppVeyor API error staged-recipes</span>
-						<p><p>Getting HTTP 500 errors from AppVeyor when attempting to create feedstocks. This is blocking conversion.</p>
+						<p>Getting HTTP 500 errors from AppVeyor when attempting to create feedstocks. This is blocking conversion.</p>
 
 <p>xref: https://github.com/conda-forge/status/issues/7
 xref: https://github.com/conda-forge/status/issues/15</p>
-</p>
+
 						
-							<p><em>Update 2016-09-26 04:55:59</em><br/>
+							<p><em>Update <span class="moment">2016-09-26 04:55:59 UTC</span></em></p>
 							<p>This has now subsided.</p>
 
-							</p>
 						
-							<p><em>Update 2016-09-30 00:57:38</em><br/>
+							<p><em>Update <span class="moment">2016-09-30 00:57:38 UTC</span></em></p>
 							<p>xref: xref: https://github.com/appveyor/ci/issues/1045</p>
 
-							</p>
 						
 					</div>
 					
 					<div class="incident">
-						<span class="date">2016-09-23 00:45:05 UTC</span>
+						<span class="date moment">2016-09-23 00:45:05 UTC</span>
 
 						
-							<span class="label operational float-right">resolved</span>
+							<span class="label operational float-right" data-l10n-id="resolved">resolved</span>
 						
 						
 							<span class="label system float-right">Travis CI</span>
@@ -299,26 +285,24 @@ xref: https://github.com/conda-forge/status/issues/15</p>
 						<hr/>
 
 						<span class="title">Travis CI OSX maintenance</span>
-						<p><p>Travis CI is upgrading OSX infrastructure. All jobs stopped for the next 2hrs. More <a href="https://www.traviscistatus.com/incidents/7yzj0kztkm7q">info</a>.</p>
-</p>
+						<p>Travis CI is upgrading OSX infrastructure. All jobs stopped for the next 2hrs. More <a href="https://www.traviscistatus.com/incidents/7yzj0kztkm7q">info</a>.</p>
+
 						
-							<p><em>Update 2016-09-23 04:01:54</em><br/>
+							<p><em>Update <span class="moment">2016-09-23 04:01:54 UTC</span></em></p>
 							<p>Maintenance period is complete, but there is a backlog that needs to be processed.</p>
 
-							</p>
 						
-							<p><em>Update 2016-09-23 16:05:55</em><br/>
+							<p><em>Update <span class="moment">2016-09-23 16:05:55 UTC</span></em></p>
 							<p>Closing as this appears to have ended and Travis CI builds appear to be running smoothly.</p>
 
-							</p>
 						
 					</div>
 					
 					<div class="incident">
-						<span class="date">2016-09-22 20:46:34 UTC</span>
+						<span class="date moment">2016-09-22 20:46:34 UTC</span>
 
 						
-							<span class="label operational float-right">resolved</span>
+							<span class="label operational float-right" data-l10n-id="resolved">resolved</span>
 						
 						
 							<span class="label system float-right">Travis CI</span>
@@ -326,21 +310,20 @@ xref: https://github.com/conda-forge/status/issues/15</p>
 						<hr/>
 
 						<span class="title">Degraded Performance Travis CI OS X</span>
-						<p><p>Travis CI is <a href="https://www.traviscistatus.com/incidents/68bt45nhq4rf">reporting</a> degraded performance on OS X builds.</p>
-</p>
+						<p>Travis CI is <a href="https://www.traviscistatus.com/incidents/68bt45nhq4rf">reporting</a> degraded performance on OS X builds.</p>
+
 						
-							<p><em>Update 2016-09-23 00:42:32</em><br/>
+							<p><em>Update <span class="moment">2016-09-23 00:42:32 UTC</span></em></p>
 							<p>Queue returned to normal operating condition.</p>
 
-							</p>
 						
 					</div>
 					
 					<div class="incident">
-						<span class="date">2016-09-21 19:38:10 UTC</span>
+						<span class="date moment">2016-09-21 19:38:10 UTC</span>
 
 						
-							<span class="label operational float-right">resolved</span>
+							<span class="label operational float-right" data-l10n-id="resolved">resolved</span>
 						
 						
 							<span class="label system float-right">Travis CI</span>
@@ -348,21 +331,20 @@ xref: https://github.com/conda-forge/status/issues/15</p>
 						<hr/>
 
 						<span class="title">Delays on Travis CI's OS X infrastructure</span>
-						<p><p>Seeing delays on Travis CI's OS X infrastructure. Please check the <a href="https://www.traviscistatus.com/incidents/v0bxrn0hff5v">upstream report</a> for details.</p>
-</p>
+						<p>Seeing delays on Travis CI's OS X infrastructure. Please check the <a href="https://www.traviscistatus.com/incidents/v0bxrn0hff5v">upstream report</a> for details.</p>
+
 						
-							<p><em>Update 2016-09-22 20:44:42</em><br/>
+							<p><em>Update <span class="moment">2016-09-22 20:44:42 UTC</span></em></p>
 							<p>This particular issue is resolved.</p>
 
-							</p>
 						
 					</div>
 					
 					<div class="incident">
-						<span class="date">2016-09-17 16:53:43 UTC</span>
+						<span class="date moment">2016-09-17 16:53:43 UTC</span>
 
 						
-							<span class="label operational float-right">resolved</span>
+							<span class="label operational float-right" data-l10n-id="resolved">resolved</span>
 						
 						
 							<span class="label system float-right">Anaconda.org</span>
@@ -370,23 +352,22 @@ xref: https://github.com/conda-forge/status/issues/15</p>
 						<hr/>
 
 						<span class="title">Problems downloading from anaconda.org</span>
-						<p><p>Running into issues downloading from anaconda.org where HTTP 500 errors are being thrown.</p>
+						<p>Running into issues downloading from anaconda.org where HTTP 500 errors are being thrown.</p>
 
 <p>xref: https://github.com/Anaconda-Platform/support/issues/36</p>
-</p>
+
 						
-							<p><em>Update 2016-09-21 19:39:11</em><br/>
+							<p><em>Update <span class="moment">2016-09-21 19:39:11 UTC</span></em></p>
 							<p>Have not been seeing this in the days following. Closing under the assumption it is resolved.</p>
 
-							</p>
 						
 					</div>
 					
 					<div class="incident">
-						<span class="date">2016-09-16 00:25:37 UTC</span>
+						<span class="date moment">2016-09-16 00:25:37 UTC</span>
 
 						
-							<span class="label operational float-right">resolved</span>
+							<span class="label operational float-right" data-l10n-id="resolved">resolved</span>
 						
 						
 							<span class="label system float-right">staged-recipes</span>
@@ -394,38 +375,34 @@ xref: https://github.com/conda-forge/status/issues/15</p>
 						<hr/>
 
 						<span class="title">AppVeyor API error</span>
-						<p><p>Getting HTTP 500 errors from AppVeyor when attempting to create feedstocks. This is blocking conversion.</p>
+						<p>Getting HTTP 500 errors from AppVeyor when attempting to create feedstocks. This is blocking conversion.</p>
 
 <p>xref: https://github.com/conda-forge/status/issues/7</p>
-</p>
+
 						
-							<p><em>Update 2016-09-16 00:53:16</em><br/>
+							<p><em>Update <span class="moment">2016-09-16 00:53:16 UTC</span></em></p>
 							<p>This issue is now resolved.</p>
 
-							</p>
 						
-							<p><em>Update 2016-09-21 02:26:27</em><br/>
+							<p><em>Update <span class="moment">2016-09-21 02:26:27 UTC</span></em></p>
 							<p>This is reoccurring.</p>
 
-							</p>
 						
-							<p><em>Update 2016-09-23 16:06:13</em><br/>
+							<p><em>Update <span class="moment">2016-09-23 16:06:13 UTC</span></em></p>
 							<p>Resolved since.</p>
 
-							</p>
 						
-							<p><em>Update 2016-09-30 00:57:24</em><br/>
+							<p><em>Update <span class="moment">2016-09-30 00:57:24 UTC</span></em></p>
 							<p>xref: xref: https://github.com/appveyor/ci/issues/1045</p>
 
-							</p>
 						
 					</div>
 					
 					<div class="incident">
-						<span class="date">2016-09-13 00:43:13 UTC</span>
+						<span class="date moment">2016-09-13 00:43:13 UTC</span>
 
 						
-							<span class="label operational float-right">resolved</span>
+							<span class="label operational float-right" data-l10n-id="resolved">resolved</span>
 						
 						
 							<span class="label system float-right">Travis CI</span>
@@ -433,23 +410,22 @@ xref: https://github.com/conda-forge/status/issues/15</p>
 						<hr/>
 
 						<span class="title">Travis CI Backlog</span>
-						<p><p>Appears that Travis CI's workers are saturated and have been so most of the day. Builds proceeding slowly or taking awhile to start in the org.</p>
+						<p>Appears that Travis CI's workers are saturated and have been so most of the day. Builds proceeding slowly or taking awhile to start in the org.</p>
 
 <p>xref: https://github.com/travis-ci/travis-ci/issues/6597</p>
-</p>
+
 						
-							<p><em>Update 2016-09-21 19:35:58</em><br/>
+							<p><em>Update <span class="moment">2016-09-21 19:35:58 UTC</span></em></p>
 							<p>This particular issue appears to have been cleared since.</p>
 
-							</p>
 						
 					</div>
 					
 					<div class="incident">
-						<span class="date">2016-09-09 04:09:16 UTC</span>
+						<span class="date moment">2016-09-09 04:09:16 UTC</span>
 
 						
-							<span class="label operational float-right">resolved</span>
+							<span class="label operational float-right" data-l10n-id="resolved">resolved</span>
 						
 						
 							<span class="label system float-right">staged-recipes</span>
@@ -457,28 +433,26 @@ xref: https://github.com/conda-forge/status/issues/15</p>
 						<hr/>
 
 						<span class="title">staged-recipes blocked (AppVeyor API error)</span>
-						<p><p>Getting http 500 error from AppVeyor when attempting to create feedstocks. This is blocking conversion.</p>
+						<p>Getting http 500 error from AppVeyor when attempting to create feedstocks. This is blocking conversion.</p>
 
 <p>xref: https://github.com/conda-forge/status/issues/7</p>
-</p>
+
 						
-							<p><em>Update 2016-09-11 20:12:56</em><br/>
+							<p><em>Update <span class="moment">2016-09-11 20:12:56 UTC</span></em></p>
 							<p>Resolved since. Closing...</p>
 
-							</p>
 						
-							<p><em>Update 2016-09-30 00:55:56</em><br/>
+							<p><em>Update <span class="moment">2016-09-30 00:55:56 UTC</span></em></p>
 							<p>xref: https://github.com/appveyor/ci/issues/1045</p>
 
-							</p>
 						
 					</div>
 					
 					<div class="incident">
-						<span class="date">2016-09-07 17:52:18 UTC</span>
+						<span class="date moment">2016-09-07 17:52:18 UTC</span>
 
 						
-							<span class="label operational float-right">resolved</span>
+							<span class="label operational float-right" data-l10n-id="resolved">resolved</span>
 						
 						
 							<span class="label system float-right">Travis CI</span>
@@ -486,21 +460,20 @@ xref: https://github.com/conda-forge/status/issues/15</p>
 						<hr/>
 
 						<span class="title">Travis OS X Backlog</span>
-						<p><p>Travis CI is experiencing a backlog that they are working through. Please see this <a href="https://www.traviscistatus.com/incidents/djchlfm22nl2">incident log</a> for more details.</p>
-</p>
+						<p>Travis CI is experiencing a backlog that they are working through. Please see this <a href="https://www.traviscistatus.com/incidents/djchlfm22nl2">incident log</a> for more details.</p>
+
 						
-							<p><em>Update 2016-09-12 14:01:36</em><br/>
+							<p><em>Update <span class="moment">2016-09-12 14:01:36 UTC</span></em></p>
 							<p>Closing as this appears to be resolved.</p>
 
-							</p>
 						
 					</div>
 					
 					<div class="incident">
-						<span class="date">2016-09-01 02:56:06 UTC</span>
+						<span class="date moment">2016-09-01 02:56:06 UTC</span>
 
 						
-							<span class="label operational float-right">resolved</span>
+							<span class="label operational float-right" data-l10n-id="resolved">resolved</span>
 						
 						
 							<span class="label system float-right">staged-recipes</span>
@@ -508,16 +481,16 @@ xref: https://github.com/conda-forge/status/issues/15</p>
 						<hr/>
 
 						<span class="title">staged-recipes blocked</span>
-						<p><p>Staged-recipes is blocked because of an incompatibility between the new <code>conda-build</code> and <code>conda-smithy</code> as evidenced by <a href="https://travis-ci.org/conda-forge/staged-recipes#L153">build</a>. A working fix is proposed in PR ( https://github.com/conda-forge/staged-recipes/pull/1453 ). Merging it should fix the problem at present.</p>
-</p>
+						<p>Staged-recipes is blocked because of an incompatibility between the new <code>conda-build</code> and <code>conda-smithy</code> as evidenced by <a href="https://travis-ci.org/conda-forge/staged-recipes#L153">build</a>. A working fix is proposed in PR ( https://github.com/conda-forge/staged-recipes/pull/1453 ). Merging it should fix the problem at present.</p>
+
 						
 					</div>
 					
 					<div class="incident">
-						<span class="date">2016-08-30 00:56:33 UTC</span>
+						<span class="date moment">2016-08-30 00:56:33 UTC</span>
 
 						
-							<span class="label operational float-right">resolved</span>
+							<span class="label operational float-right" data-l10n-id="resolved">resolved</span>
 						
 						
 							<span class="label system float-right">Travis CI</span>
@@ -525,23 +498,22 @@ xref: https://github.com/conda-forge/status/issues/15</p>
 						<hr/>
 
 						<span class="title">Heighted error rate of API calls</span>
-						<p><p>Travis CI has acknowledged they have a heightened rate of API call failures on their status page. Let's track the impact at conda-forge under this issue. The Travis CI incident report is linked below.</p>
+						<p>Travis CI has acknowledged they have a heightened rate of API call failures on their status page. Let's track the impact at conda-forge under this issue. The Travis CI incident report is linked below.</p>
 
 <p>xref: https://www.traviscistatus.com/incidents/hgxqvblhj98z</p>
-</p>
+
 						
-							<p><em>Update 2016-08-30 02:07:29</em><br/>
+							<p><em>Update <span class="moment">2016-08-30 02:07:29 UTC</span></em></p>
 							<p>Appears to be resolved.</p>
 
-							</p>
 						
 					</div>
 					
 					<div class="incident">
-						<span class="date">2016-08-28 01:21:18 UTC</span>
+						<span class="date moment">2016-08-28 01:21:18 UTC</span>
 
 						
-							<span class="label operational float-right">resolved</span>
+							<span class="label operational float-right" data-l10n-id="resolved">resolved</span>
 						
 						
 							<span class="label system float-right">AppVeyor</span>
@@ -549,26 +521,24 @@ xref: https://github.com/conda-forge/status/issues/15</p>
 						<hr/>
 
 						<span class="title">AppVeyor builds missing (webhooks failing) </span>
-						<p><p>Appears AppVeyor builds are not being triggered. Looking more closely it appears that the webhooks used to trigger builds are failing. This includes at <code>staged-recipes</code> and at the feedstocks. Raised an issue upstream ( https://github.com/appveyor/ci/issues/1002 ) to get more info and hopefully find a fix.</p>
-</p>
+						<p>Appears AppVeyor builds are not being triggered. Looking more closely it appears that the webhooks used to trigger builds are failing. This includes at <code>staged-recipes</code> and at the feedstocks. Raised an issue upstream ( https://github.com/appveyor/ci/issues/1002 ) to get more info and hopefully find a fix.</p>
+
 						
-							<p><em>Update 2016-08-28 01:51:17</em><br/>
+							<p><em>Update <span class="moment">2016-08-28 01:51:17 UTC</span></em></p>
 							<p>This appears to not be happening now. Going to change to degraded performance until we know more.</p>
 
-							</p>
 						
-							<p><em>Update 2016-09-09 03:14:02</em><br/>
+							<p><em>Update <span class="moment">2016-09-09 03:14:02 UTC</span></em></p>
 							<p>Marking as resolved as we haven't seen this recently. Also upstream has done some maintenance recently to address this issue. Please let us know if you see a recurrence.</p>
 
-							</p>
 						
 					</div>
 					
 					<div class="incident">
-						<span class="date">2016-08-24 04:46:57 UTC</span>
+						<span class="date moment">2016-08-24 04:46:57 UTC</span>
 
 						
-							<span class="label operational float-right">resolved</span>
+							<span class="label operational float-right" data-l10n-id="resolved">resolved</span>
 						
 						
 							<span class="label system float-right">staged-recipes</span>
@@ -576,7 +546,7 @@ xref: https://github.com/conda-forge/status/issues/15</p>
 						<hr/>
 
 						<span class="title">AppVeyor API blocking conversion</span>
-						<p><p>AppVeyor API registration error with <code>itsdangerous</code> is blocking feedstock conversion. Will also result in <code>itsdangerous</code> showing up in PRs. Users are recommended to merge with <code>master</code> and remove <code>itsdangerous</code> from their PRs. Snippet of the traceback shown below. Several restarts of the conversion step have been tried without success. </p>
+						<p>AppVeyor API registration error with <code>itsdangerous</code> is blocking feedstock conversion. Will also result in <code>itsdangerous</code> showing up in PRs. Users are recommended to merge with <code>master</code> and remove <code>itsdangerous</code> from their PRs. Snippet of the traceback shown below. Several restarts of the conversion step have been tried without success. </p>
 
 <p><code>
 CI Summary for conda-forge/itsdangerous-feedstock (can take ~30s):
@@ -603,42 +573,37 @@ subprocess.CalledProcessError: Command '['conda', 'smithy', 'register-ci', '--fe
 </code></p>
 
 <p>cc @pelson</p>
-</p>
+
 						
-							<p><em>Update 2016-08-24 05:01:50</em><br/>
+							<p><em>Update <span class="moment">2016-08-24 05:01:50 UTC</span></em></p>
 							<p>After several restarts and a bit of time this resolved itself. However, this is hardly the first time I have seen this issue today or in general with AppVeyor's API. Maybe we need to use a similar strategy to one used with Travis CI's API.</p>
 
-							</p>
 						
-							<p><em>Update 2016-09-03 03:47:25</em><br/>
+							<p><em>Update <span class="moment">2016-09-03 03:47:25 UTC</span></em></p>
 							<p>Seeing a recurrence of this issue. See this <a href="https://travis-ci.org/conda-forge/staged-recipes/builds/157257319#L307">build</a> as an example.</p>
 
-							</p>
 						
-							<p><em>Update 2016-09-03 03:52:28</em><br/>
+							<p><em>Update <span class="moment">2016-09-03 03:52:28 UTC</span></em></p>
 							<p>In summary: AppVeyor are issuing a http 500 error intermittently when attempting to create a feedstock.</p>
 
 <p>(For the status page, this is probably all that is needed, right @jakirkham?)</p>
 
-							</p>
 						
-							<p><em>Update 2016-09-03 04:39:53</em><br/>
+							<p><em>Update <span class="moment">2016-09-03 04:39:53 UTC</span></em></p>
 							<p>Yeah I'm still trying to find a healthy balance. In any event staged-recipes is cleared, so closing this out again.</p>
 
-							</p>
 						
-							<p><em>Update 2016-09-30 00:56:59</em><br/>
+							<p><em>Update <span class="moment">2016-09-30 00:56:59 UTC</span></em></p>
 							<p>xref: https://github.com/appveyor/ci/issues/1045</p>
 
-							</p>
 						
 					</div>
 					
 					<div class="incident">
-						<span class="date">2016-08-19 22:40:35 UTC</span>
+						<span class="date moment">2016-08-19 22:40:35 UTC</span>
 
 						
-							<span class="label operational float-right">resolved</span>
+							<span class="label operational float-right" data-l10n-id="resolved">resolved</span>
 						
 						
 							<span class="label system float-right">AppVeyor</span>
@@ -648,7 +613,7 @@ subprocess.CalledProcessError: Command '['conda', 'smithy', 'register-ci', '--fe
 						<hr/>
 
 						<span class="title">staged-recipes blocked up</span>
-						<p><p>There are a couple of recipes that are still stuck in staged-recipes. Restarting the <a href="https://travis-ci.org/conda-forge/staged-recipes/jobs/153672103#L391">build</a> failed. Snippet of the traceback shown below.</p>
+						<p>There are a couple of recipes that are still stuck in staged-recipes. Restarting the <a href="https://travis-ci.org/conda-forge/staged-recipes/jobs/153672103#L391">build</a> failed. Snippet of the traceback shown below.</p>
 
 <p><code>
 Traceback (most recent call last):
@@ -672,19 +637,17 @@ subprocess.CalledProcessError: Command '['conda', 'smithy', 'register-ci', '--fe
 </code></p>
 
 <p>It is possible this was in part a consequence of trying to handle recipes that were already converted. Alternatively this could be caused by some issues with AppVeyor's API.</p>
-</p>
+
 						
-							<p><em>Update 2016-08-19 22:41:57</em><br/>
+							<p><em>Update <span class="moment">2016-08-19 22:41:57 UTC</span></em></p>
 							<p>A new <a href="https://travis-ci.org/conda-forge/staged-recipes/builds/153689664">build</a> was created with the merge of PR ( https://github.com/conda-forge/staged-recipes/pull/1312 ) that does not have any of the converted feedstocks in it to finish the conversion. Will wait and see how that build progresses.</p>
 
-							</p>
 						
-							<p><em>Update 2016-08-19 22:45:31</em><br/>
+							<p><em>Update <span class="moment">2016-08-19 22:45:31 UTC</span></em></p>
 							<p>This appears to have resolved this issue. staged-recipes is now clear.</p>
 
-							</p>
 						
-							<p><em>Update 2016-08-20 21:34:08</em><br/>
+							<p><em>Update <span class="moment">2016-08-20 21:34:08 UTC</span></em></p>
 							<p>Running into this issue again. So am reopening. See this <a href="https://travis-ci.org/conda-forge/staged-recipes/jobs/153845433">build</a>. Traceback included below. Have tried restarting once, but it failed. Will try again.</p>
 
 <p><code>
@@ -710,40 +673,34 @@ subprocess.CalledProcessError: Command '['conda', 'smithy', 'register-ci', '--fe
 
 <p>cc @msarahan</p>
 
-							</p>
 						
-							<p><em>Update 2016-08-20 21:45:27</em><br/>
+							<p><em>Update <span class="moment">2016-08-20 21:45:27 UTC</span></em></p>
 							<p>Tried to add PR ( https://github.com/conda-forge/staged-recipes/pull/1317 ) to ensure we were using the latest set of recipes at staged-recipes. It seems Travis CI likes to checkout commits now and so can sometimes be out-of-date. Doesn't appear this made any difference. See this <a href="https://travis-ci.org/conda-forge/staged-recipes/jobs/153849261">build</a>, which has the same failure.</p>
 
-							</p>
 						
-							<p><em>Update 2016-08-20 21:49:37</em><br/>
+							<p><em>Update <span class="moment">2016-08-20 21:49:37 UTC</span></em></p>
 							<p>Attempting to temporarily remove <code>argparse</code> as it is having trouble getting converted ATM. Will try to re-add afterwards. See PR ( https://github.com/conda-forge/staged-recipes/pull/1318 ) for this temporary removal.</p>
 
-							</p>
 						
-							<p><em>Update 2016-08-20 21:56:08</em><br/>
+							<p><em>Update <span class="moment">2016-08-20 21:56:08 UTC</span></em></p>
 							<p>Removing <code>argparse</code> made no difference as the next recipe in the list has the same <a href="https://travis-ci.org/conda-forge/staged-recipes/jobs/153850184">problem</a>. Went ahead and re-added <code>argparse</code> with PR ( https://github.com/conda-forge/staged-recipes/pull/1319 ).</p>
 
-							</p>
 						
-							<p><em>Update 2016-08-20 22:01:21</em><br/>
+							<p><em>Update <span class="moment">2016-08-20 22:01:21 UTC</span></em></p>
 							<p>Weird. Apparently after re-adding <code>argparse</code> we were able to get everything working again. All of the recipes are now converted.</p>
 
-							</p>
 						
-							<p><em>Update 2016-09-30 00:56:47</em><br/>
+							<p><em>Update <span class="moment">2016-09-30 00:56:47 UTC</span></em></p>
 							<p>xref: https://github.com/appveyor/ci/issues/1045 ?</p>
 
-							</p>
 						
 					</div>
 					
 					<div class="incident">
-						<span class="date">2016-08-18 23:43:30 UTC</span>
+						<span class="date moment">2016-08-18 23:43:30 UTC</span>
 
 						
-							<span class="label operational float-right">resolved</span>
+							<span class="label operational float-right" data-l10n-id="resolved">resolved</span>
 						
 						
 							<span class="label system float-right">Anaconda.org</span>
@@ -751,7 +708,7 @@ subprocess.CalledProcessError: Command '['conda', 'smithy', 'register-ci', '--fe
 						<hr/>
 
 						<span class="title">Issues uploading to Anaconda</span>
-						<p><p>It appears there are some issues uploading to Anaconda.org on all CIs. Here is a <a href="https://ci.appveyor.com/project/conda-forge/hdbscan-feedstock/build/1.0.10/job/ljwl03dcll9xitqy#L449">log</a> from one such failed AppVeyor upload failure. Though similar ones can be seen for all CIs. Snippet of traceback shown below. Restarting seems to sometimes fix it.</p>
+						<p>It appears there are some issues uploading to Anaconda.org on all CIs. Here is a <a href="https://ci.appveyor.com/project/conda-forge/hdbscan-feedstock/build/1.0.10/job/ljwl03dcll9xitqy#L449">log</a> from one such failed AppVeyor upload failure. Though similar ones can be seen for all CIs. Snippet of traceback shown below. Restarting seems to sometimes fix it.</p>
 
 <p><code>
 python ci_support\upload_or_check_non_existence.py .\recipe conda-forge --channel=main
@@ -772,41 +729,35 @@ Command exited with code 1
 </code></p>
 
 <p>cc @msarahan @mcg1969</p>
-</p>
+
 						
-							<p><em>Update 2016-08-18 23:50:23</em><br/>
+							<p><em>Update <span class="moment">2016-08-18 23:50:23 UTC</span></em></p>
 							<p>Raising for awareness of affected teams/feedstocks that have tried to deploy recently and are now having deployment issues. Feel free to track an issue locally on your feedstock until all missing packages are uploaded.</p>
 
 <p>cc @conda-forge/bqplot @conda-forge/requests-futures @conda-forge/hdbscan @conda-forge/versioneer</p>
 
-							</p>
 						
-							<p><em>Update 2016-08-18 23:58:53</em><br/>
+							<p><em>Update <span class="moment">2016-08-18 23:58:53 UTC</span></em></p>
 							<p>Restarted builds for the apparently affected feedstocks. Seems to be localized to very recent updates or new feedstocks.</p>
 
-							</p>
 						
-							<p><em>Update 2016-08-19 00:32:22</em><br/>
+							<p><em>Update <span class="moment">2016-08-19 00:32:22 UTC</span></em></p>
 							<p>All of the restarted builds appear to have passed and uploaded packages FWICT. If others can confirm, that would be great. Going to go ahead and close for now assuming this is resolved.</p>
 
-							</p>
 						
-							<p><em>Update 2016-08-19 01:05:50</em><br/>
+							<p><em>Update <span class="moment">2016-08-19 01:05:50 UTC</span></em></p>
 							<p>The Circle CI builds were having the same problem, but the AppVeyor build looks good for me now. Presumably restarting the Circle CI builds will get those working too. Thanks.</p>
 
-							</p>
 						
-							<p><em>Update 2016-08-19 05:10:29</em><br/>
+							<p><em>Update <span class="moment">2016-08-19 05:10:29 UTC</span></em></p>
 							<p>Yeah, was just noticing this with a different CircleCI <a href="https://circleci.com/gh/conda-forge/statuspage-feedstock/12">build</a> just now. That build was from a few days ago. Going to elevate this issue.</p>
 
-							</p>
 						
-							<p><em>Update 2016-08-19 05:15:07</em><br/>
+							<p><em>Update <span class="moment">2016-08-19 05:15:07 UTC</span></em></p>
 							<p>Raised issue ( https://github.com/Anaconda-Platform/support/issues/60 ) about this general problem.</p>
 
-							</p>
 						
-							<p><em>Update 2016-08-19 07:35:09</em><br/>
+							<p><em>Update <span class="moment">2016-08-19 07:35:09 UTC</span></em></p>
 							<p>I am also missing a linux-64/py35 file on my recent build.</p>
 
 <p><code>
@@ -827,14 +778,12 @@ binstar_client.errors.NotFound: ('Not Found: Nothing matches the given URI ([GET
 
 <p>Just restarted the build.</p>
 
-							</p>
 						
-							<p><em>Update 2016-08-19 12:55:05</em><br/>
+							<p><em>Update <span class="moment">2016-08-19 12:55:05 UTC</span></em></p>
 							<p>Try restarting the build and see if it fixes it. This has also worked for me with CircleCI builds that failed to upload.</p>
 
-							</p>
 						
-							<p><em>Update 2016-08-19 15:06:27</em><br/>
+							<p><em>Update <span class="moment">2016-08-19 15:06:27 UTC</span></em></p>
 							<p>In some cases, am also seeing a new failure when rerunning an existing build that had already uploaded. This rerunning is being done in order to resolve some of the failed uploads. This new failure suggests the problem is not strictly limited to uploading. See the traceback below for the error and this <a href="https://ci.appveyor.com/project/conda-forge/astroid-feedstock/build/1.0.2/job/h126inb8iwx02cnx#L754">build</a> for more details.</p>
 
 <p><code>
@@ -863,91 +812,76 @@ requests.exceptions.ChunkedEncodingError: ('Connection broken: IncompleteRead(0 
 Command exited with code 1
 </code></p>
 
-							</p>
 						
-							<p><em>Update 2016-08-19 15:30:51</em><br/>
+							<p><em>Update <span class="moment">2016-08-19 15:30:51 UTC</span></em></p>
 							<p>Appears your feedstock was affected as well, @conda-forge/cssutils. Have restarted the CircleCI build.</p>
 
-							</p>
 						
-							<p><em>Update 2016-08-21 17:14:56</em><br/>
+							<p><em>Update <span class="moment">2016-08-21 17:14:56 UTC</span></em></p>
 							<p>Was starting to look like things were stabilizing as I hadn't seen this issue for awhile. However, saw this <a href="https://ci.appveyor.com/project/conda-forge/gdal-feedstock/build/1.0.226/job/evs1m32fyd71wjwl#L4941">build</a> from <code>gdal</code> that is struggling with a related problem.</p>
 
 <p>Edit: Restarted the build.</p>
 
 <p>cc @conda-forge/gdal</p>
 
-							</p>
 						
-							<p><em>Update 2016-08-21 17:17:22</em><br/>
+							<p><em>Update <span class="moment">2016-08-21 17:17:22 UTC</span></em></p>
 							<p>Also happened with some <code>curl</code> <a href="https://ci.appveyor.com/project/conda-forge/curl-feedstock/build/1.0.20">builds</a> recently.</p>
 
 <p>Edit: Restarted those too.</p>
 
 <p>cc @conda-forge/curl</p>
 
-							</p>
 						
-							<p><em>Update 2016-08-21 17:19:35</em><br/>
+							<p><em>Update <span class="moment">2016-08-21 17:19:35 UTC</span></em></p>
 							<p>Appears <code>pysocks</code> suffered from this in yesterday's <a href="https://ci.appveyor.com/project/conda-forge/pysocks-feedstock/build/1.0.1">builds</a>. Have restarted them.</p>
 
 <p>cc @conda-forge/pysocks</p>
 
-							</p>
 						
-							<p><em>Update 2016-08-21 17:22:10</em><br/>
+							<p><em>Update <span class="moment">2016-08-21 17:22:10 UTC</span></em></p>
 							<p>Affecting <code>sphinx</code> on both <a href="https://circleci.com/gh/conda-forge/sphinx-feedstock/7">CircleCI</a> and <a href="https://ci.appveyor.com/project/conda-forge/sphinx-feedstock/build/1.0.7">AppVeyor</a>. Have restarted both.</p>
 
 <p>cc @conda-forge/sphinx</p>
 
-							</p>
 						
-							<p><em>Update 2016-08-21 20:42:14</em><br/>
+							<p><em>Update <span class="moment">2016-08-21 20:42:14 UTC</span></em></p>
 							<p>Can confirm this is happening with all CIs now thanks to being able to track down this issue with Travis CI. ( https://github.com/conda-forge/line_profiler-feedstock/issues/6 ) Have already triggered a rebuild to get the missing packages.</p>
 
 <p>cc @conda-forge/line_profiler</p>
 
-							</p>
 						
-							<p><em>Update 2016-08-24 18:59:26</em><br/>
+							<p><em>Update <span class="moment">2016-08-24 18:59:26 UTC</span></em></p>
 							<p>It looks like we may need some improvements to how we are doing uploads. This is documented briefly in issue ( https://github.com/conda-forge/conda-smithy/issues/270 ). It relies on a new Anaconda API that is going through some testing before it rolls out in the next day or two.</p>
 
-							</p>
 						
-							<p><em>Update 2016-08-28 00:00:27</em><br/>
+							<p><em>Update <span class="moment">2016-08-28 00:00:27 UTC</span></em></p>
 							<p>Turns out this issue goes back several weeks as demonstrated by this <a href="https://circleci.com/gh/conda-forge/pyflakes-feedstock/3">failure</a>.</p>
 
-							</p>
 						
-							<p><em>Update 2016-08-28 00:22:33</em><br/>
+							<p><em>Update <span class="moment">2016-08-28 00:22:33 UTC</span></em></p>
 							<p>FWIW I haven't seen this issue really at all today. So maybe things are already improving.</p>
 
-							</p>
 						
-							<p><em>Update 2016-08-28 16:44:41</em><br/>
+							<p><em>Update <span class="moment">2016-08-28 16:44:41 UTC</span></em></p>
 							<p>This is still persisting. Here is a recent <a href="https://circleci.com/gh/conda-forge/yarg-feedstock/1">failure</a>.</p>
 
-							</p>
 						
-							<p><em>Update 2016-09-21 19:39:45</em><br/>
+							<p><em>Update <span class="moment">2016-09-21 19:39:45 UTC</span></em></p>
 							<p>Seeing an uptick in this issue of late.</p>
 
-							</p>
 						
-							<p><em>Update 2016-09-29 20:14:07</em><br/>
+							<p><em>Update <span class="moment">2016-09-29 20:14:07 UTC</span></em></p>
 							<p>I think I'm seeing another instance of this issue at: https://github.com/conda-forge/yapf-feedstock/pull/3</p>
 
-							</p>
 						
-							<p><em>Update 2016-09-29 20:48:24</em><br/>
+							<p><em>Update <span class="moment">2016-09-29 20:48:24 UTC</span></em></p>
 							<p>That's a different issue. It's fixed by <a href="https://github.com/conda-forge/conda-smithy#re-rendering-an-existing-feedstock">re-rendering</a> with a newer version of <code>conda-smithy</code>. Please try that and see if it fixes it.</p>
 
-							</p>
 						
-							<p><em>Update 2016-09-29 20:49:53</em><br/>
+							<p><em>Update <span class="moment">2016-09-29 20:49:53 UTC</span></em></p>
 							<p>On another note, we have released a new copy of <code>conda-smithy</code> that should address the upload issue that was causing us difficulties before. If you encounter this issue, also please try re-rendering. Am going to close this as we have hopefully fixed it. If not please ping us, and we can open a fresh issue. Thanks. 😄</p>
 
-							</p>
 						
 					</div>
 					
@@ -958,12 +892,11 @@ Command exited with code 1
 			<footer class="footer">
 				<section class="container">
 					<hr/>
-					
-					<p>Status page hosted by GitHub, generated with <a href="https://github.com/pyupio/statuspage">pyupio/statuspage</a></p>
+					<p>Status page for <a href='https://conda-forge.github.io'>conda-forge</a>, generated with <a href='https://github.com/jayfk/statuspage'>jayfk/statuspage</a>.</p>
 				</section>
 			</footer>
 
 		</main>
-
+		<script src="statuspage.js" type="text/javascript"></script>
 	</body>
 </html>
