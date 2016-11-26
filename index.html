@@ -565,28 +565,6 @@ xref: https://github.com/conda-forge/status/issues/15</p>
 					</div>
 					
 					<div class="incident">
-						<span class="date">2016-08-24 19:16:13 UTC</span>
-
-						
-							<span class="label operational float-right">resolved</span>
-						
-						
-							<span class="label system float-right">CircleCI</span>
-						
-						<hr/>
-
-						<span class="title">CircleCI login issues </span>
-						<p><p>CircleCI has reported an increase in login issues. See this <a href="http://status.circleci.com/incidents/swr6g9rbjdbj">announcement</a>. If this is affecting you, please let us know.</p>
-</p>
-						
-							<p><em>Update 2016-08-25 03:10:36</em><br/>
-							<p>Marked as resolved upstream. Marking as resolved here. If you do run into issues, please let us know and we can get in touch with upstream about it.</p>
-
-							</p>
-						
-					</div>
-					
-					<div class="incident">
 						<span class="date">2016-08-24 04:46:57 UTC</span>
 
 						
@@ -633,7 +611,7 @@ subprocess.CalledProcessError: Command '['conda', 'smithy', 'register-ci', '--fe
 							</p>
 						
 							<p><em>Update 2016-09-03 03:47:25</em><br/>
-							<p>Seeing a recurrence of this issue. See this <a href="https://travis-ci.org/conda-forge/staged-recipes/builds/157257319#L307 ">build</a> as an example.</p>
+							<p>Seeing a recurrence of this issue. See this <a href="https://travis-ci.org/conda-forge/staged-recipes/builds/157257319#L307">build</a> as an example.</p>
 
 							</p>
 						
@@ -651,57 +629,6 @@ subprocess.CalledProcessError: Command '['conda', 'smithy', 'register-ci', '--fe
 						
 							<p><em>Update 2016-09-30 00:56:59</em><br/>
 							<p>xref: https://github.com/appveyor/ci/issues/1045</p>
-
-							</p>
-						
-					</div>
-					
-					<div class="incident">
-						<span class="date">2016-08-24 01:59:49 UTC</span>
-
-						
-							<span class="label operational float-right">resolved</span>
-						
-						
-							<span class="label system float-right">Travis CI</span>
-						
-						<hr/>
-
-						<span class="title">Travis CI OS X Backlog</span>
-						<p><p>Seems that there is some serious issue affecting Travis CI builds and causing them to wait for long periods on the queue. Have raised this issue upstream as ( https://github.com/travis-ci/travis-ci/issues/6515 ) to see if they have any ideas as to what is going on and if we can get it fixed.</p>
-
-<p>For the meantime, I'd like to ask people to nice builds. If you see multiple builds for a PR at staged-recipes, please cancel all older version of it. If you are planning any large running builds, please hold off on them until we can track down this issue. It does seem some builds are getting processed, but it appears to be very slowly and long after they were initiated.</p>
-
-<p>Please bear with us as we try to sort out this issue.</p>
-</p>
-						
-							<p><em>Update 2016-08-24 03:12:44</em><br/>
-							<p>Reducing to degraded as we seem to actually have some things running on the queue now. Also looks like the number of jobs running is starting to fall off. Will continue to monitor the situation.</p>
-
-							</p>
-						
-							<p><em>Update 2016-08-24 18:47:04</em><br/>
-							<p>Travis CI has now <a href="https://www.traviscistatus.com/incidents/4mvp857qx8bw ">announced</a> that they are stopping all OS X builds due to instability in their OS X infrastructure. Upgrading this to major outage.</p>
-
-							</p>
-						
-							<p><em>Update 2016-08-25 03:12:53</em><br/>
-							<p>Adding staged-recipes to this outage as conversions to feedstocks occur on Travis CI. So they will similarly be blocked until Travis CI comes back online.</p>
-
-							</p>
-						
-							<p><em>Update 2016-08-25 18:58:09</em><br/>
-							<p>It appears Travis CI is re-enabling OS X builds and are starting to work through the backlog. Downgrading to degraded performance. Will provide more updates as this progresses.</p>
-
-							</p>
-						
-							<p><em>Update 2016-08-26 05:59:34</em><br/>
-							<p>Have removed staged-recipes as they have cleared. Feel free to close this when you are comfortable with Travis CI's progress.</p>
-
-							</p>
-						
-							<p><em>Update 2016-08-27 15:16:39</em><br/>
-							<p>This seems to be resolved now. Going to go ahead and close this out. If people are still having issues, please let us know.</p>
 
 							</p>
 						
@@ -748,7 +675,7 @@ subprocess.CalledProcessError: Command '['conda', 'smithy', 'register-ci', '--fe
 </p>
 						
 							<p><em>Update 2016-08-19 22:41:57</em><br/>
-							<p>A new <a href="https://travis-ci.org/conda-forge/staged-recipes/builds/153689664 ">build</a> was created with the merge of PR ( https://github.com/conda-forge/staged-recipes/pull/1312 ) that does not have any of the converted feedstocks in it to finish the conversion. Will wait and see how that build progresses.</p>
+							<p>A new <a href="https://travis-ci.org/conda-forge/staged-recipes/builds/153689664">build</a> was created with the merge of PR ( https://github.com/conda-forge/staged-recipes/pull/1312 ) that does not have any of the converted feedstocks in it to finish the conversion. Will wait and see how that build progresses.</p>
 
 							</p>
 						
@@ -758,7 +685,7 @@ subprocess.CalledProcessError: Command '['conda', 'smithy', 'register-ci', '--fe
 							</p>
 						
 							<p><em>Update 2016-08-20 21:34:08</em><br/>
-							<p>Running into this issue again. So am reopening. See this <a href="https://travis-ci.org/conda-forge/staged-recipes/jobs/153845433 ">build</a>. Traceback included below. Have tried restarting once, but it failed. Will try again.</p>
+							<p>Running into this issue again. So am reopening. See this <a href="https://travis-ci.org/conda-forge/staged-recipes/jobs/153845433">build</a>. Traceback included below. Have tried restarting once, but it failed. Will try again.</p>
 
 <p><code>
 Traceback (most recent call last):
@@ -786,7 +713,7 @@ subprocess.CalledProcessError: Command '['conda', 'smithy', 'register-ci', '--fe
 							</p>
 						
 							<p><em>Update 2016-08-20 21:45:27</em><br/>
-							<p>Tried to add PR ( https://github.com/conda-forge/staged-recipes/pull/1317 ) to ensure we were using the latest set of recipes at staged-recipes. It seems Travis CI likes to checkout commits now and so can sometimes be out-of-date. Doesn't appear this made any difference. See this <a href="https://travis-ci.org/conda-forge/staged-recipes/jobs/153849261 ">build</a>, which has the same failure.</p>
+							<p>Tried to add PR ( https://github.com/conda-forge/staged-recipes/pull/1317 ) to ensure we were using the latest set of recipes at staged-recipes. It seems Travis CI likes to checkout commits now and so can sometimes be out-of-date. Doesn't appear this made any difference. See this <a href="https://travis-ci.org/conda-forge/staged-recipes/jobs/153849261">build</a>, which has the same failure.</p>
 
 							</p>
 						
@@ -796,7 +723,7 @@ subprocess.CalledProcessError: Command '['conda', 'smithy', 'register-ci', '--fe
 							</p>
 						
 							<p><em>Update 2016-08-20 21:56:08</em><br/>
-							<p>Removing <code>argparse</code> made no difference as the next recipe in the list has the same <a href="https://travis-ci.org/conda-forge/staged-recipes/jobs/153850184 ">problem</a>. Went ahead and re-added <code>argparse</code> with PR ( https://github.com/conda-forge/staged-recipes/pull/1319 ).</p>
+							<p>Removing <code>argparse</code> made no difference as the next recipe in the list has the same <a href="https://travis-ci.org/conda-forge/staged-recipes/jobs/153850184">problem</a>. Went ahead and re-added <code>argparse</code> with PR ( https://github.com/conda-forge/staged-recipes/pull/1319 ).</p>
 
 							</p>
 						
@@ -870,7 +797,7 @@ Command exited with code 1
 							</p>
 						
 							<p><em>Update 2016-08-19 05:10:29</em><br/>
-							<p>Yeah, was just noticing this with a different CircleCI <a href="https://circleci.com/gh/conda-forge/statuspage-feedstock/12 ">build</a> just now. That build was from a few days ago. Going to elevate this issue.</p>
+							<p>Yeah, was just noticing this with a different CircleCI <a href="https://circleci.com/gh/conda-forge/statuspage-feedstock/12">build</a> just now. That build was from a few days ago. Going to elevate this issue.</p>
 
 							</p>
 						
@@ -908,7 +835,7 @@ binstar_client.errors.NotFound: ('Not Found: Nothing matches the given URI ([GET
 							</p>
 						
 							<p><em>Update 2016-08-19 15:06:27</em><br/>
-							<p>In some cases, am also seeing a new failure when rerunning an existing build that had already uploaded. This rerunning is being done in order to resolve some of the failed uploads. This new failure suggests the problem is not strictly limited to uploading. See the traceback below for the error and this <a href="https://ci.appveyor.com/project/conda-forge/astroid-feedstock/build/1.0.2/job/h126inb8iwx02cnx#L754 ">build</a> for more details.</p>
+							<p>In some cases, am also seeing a new failure when rerunning an existing build that had already uploaded. This rerunning is being done in order to resolve some of the failed uploads. This new failure suggests the problem is not strictly limited to uploading. See the traceback below for the error and this <a href="https://ci.appveyor.com/project/conda-forge/astroid-feedstock/build/1.0.2/job/h126inb8iwx02cnx#L754">build</a> for more details.</p>
 
 <p><code>
 python ci_support\upload_or_check_non_existence.py .\recipe conda-forge --channel=main
@@ -944,7 +871,7 @@ Command exited with code 1
 							</p>
 						
 							<p><em>Update 2016-08-21 17:14:56</em><br/>
-							<p>Was starting to look like things were stabilizing as I hadn't seen this issue for awhile. However, saw this <a href="https://ci.appveyor.com/project/conda-forge/gdal-feedstock/build/1.0.226/job/evs1m32fyd71wjwl#L4941 ">build</a> from <code>gdal</code> that is struggling with a related problem.</p>
+							<p>Was starting to look like things were stabilizing as I hadn't seen this issue for awhile. However, saw this <a href="https://ci.appveyor.com/project/conda-forge/gdal-feedstock/build/1.0.226/job/evs1m32fyd71wjwl#L4941">build</a> from <code>gdal</code> that is struggling with a related problem.</p>
 
 <p>Edit: Restarted the build.</p>
 
@@ -953,7 +880,7 @@ Command exited with code 1
 							</p>
 						
 							<p><em>Update 2016-08-21 17:17:22</em><br/>
-							<p>Also happened with some <code>curl</code> <a href="https://ci.appveyor.com/project/conda-forge/curl-feedstock/build/1.0.20 ">builds</a> recently.</p>
+							<p>Also happened with some <code>curl</code> <a href="https://ci.appveyor.com/project/conda-forge/curl-feedstock/build/1.0.20">builds</a> recently.</p>
 
 <p>Edit: Restarted those too.</p>
 
@@ -962,14 +889,14 @@ Command exited with code 1
 							</p>
 						
 							<p><em>Update 2016-08-21 17:19:35</em><br/>
-							<p>Appears <code>pysocks</code> suffered from this in yesterday's <a href="https://ci.appveyor.com/project/conda-forge/pysocks-feedstock/build/1.0.1 ">builds</a>. Have restarted them.</p>
+							<p>Appears <code>pysocks</code> suffered from this in yesterday's <a href="https://ci.appveyor.com/project/conda-forge/pysocks-feedstock/build/1.0.1">builds</a>. Have restarted them.</p>
 
 <p>cc @conda-forge/pysocks</p>
 
 							</p>
 						
 							<p><em>Update 2016-08-21 17:22:10</em><br/>
-							<p>Affecting <code>sphinx</code> on both <a href="https://circleci.com/gh/conda-forge/sphinx-feedstock/7 ">CircleCI</a> and <a href="https://ci.appveyor.com/project/conda-forge/sphinx-feedstock/build/1.0.7 ">AppVeyor</a>. Have restarted both.</p>
+							<p>Affecting <code>sphinx</code> on both <a href="https://circleci.com/gh/conda-forge/sphinx-feedstock/7">CircleCI</a> and <a href="https://ci.appveyor.com/project/conda-forge/sphinx-feedstock/build/1.0.7">AppVeyor</a>. Have restarted both.</p>
 
 <p>cc @conda-forge/sphinx</p>
 
@@ -988,7 +915,7 @@ Command exited with code 1
 							</p>
 						
 							<p><em>Update 2016-08-28 00:00:27</em><br/>
-							<p>Turns out this issue goes back several weeks as demonstrated by this <a href="https://circleci.com/gh/conda-forge/pyflakes-feedstock/3 ">failure</a>.</p>
+							<p>Turns out this issue goes back several weeks as demonstrated by this <a href="https://circleci.com/gh/conda-forge/pyflakes-feedstock/3">failure</a>.</p>
 
 							</p>
 						
@@ -998,7 +925,7 @@ Command exited with code 1
 							</p>
 						
 							<p><em>Update 2016-08-28 16:44:41</em><br/>
-							<p>This is still persisting. Here is a recent <a href="https://circleci.com/gh/conda-forge/yarg-feedstock/1 ">failure</a>.</p>
+							<p>This is still persisting. Here is a recent <a href="https://circleci.com/gh/conda-forge/yarg-feedstock/1">failure</a>.</p>
 
 							</p>
 						
@@ -1013,7 +940,7 @@ Command exited with code 1
 							</p>
 						
 							<p><em>Update 2016-09-29 20:48:24</em><br/>
-							<p>That's a different issue. It's fixed by <a href="https://github.com/conda-forge/conda-smithy#re-rendering-an-existing-feedstock ">re-rendering</a> with a newer version of <code>conda-smithy</code>. Please try that and see if it fixes it.</p>
+							<p>That's a different issue. It's fixed by <a href="https://github.com/conda-forge/conda-smithy#re-rendering-an-existing-feedstock">re-rendering</a> with a newer version of <code>conda-smithy</code>. Please try that and see if it fixes it.</p>
 
 							</p>
 						
