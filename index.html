@@ -169,6 +169,12 @@ the UI will not be visible to the fork PRs
 							<p>Thanks for looking into this @jakirkham.  I have some day job work that needs attention but will be back tonight to keep the ball moving towards <code>conda build</code> 2!</p>
 
 						
+							<p><em>Update <span class="moment">2016-12-07 20:01:45 UTC</span></em></p>
+							<p>So apparently turning on <code>Permissive build of fork pull requests</code> also exposes the Environment Variables for the repository to pull requests which results the package being uploaded from the pull request's Circle CI builds rather than after merging, for example in this <a href="https://circleci.com/gh/conda-forge/glib-feedstock/49?utm_campaign=vcs-integration-link&amp;utm_medium=referral&amp;utm_source=github-build-link">glib build</a>. </p>
+
+<p>That is a serious security concern as packages are getting uploaded without review and the upload token could can be exposed by a malicious PR.  </p>
+
+						
 					</div>
 					
 					<div class="incident">
