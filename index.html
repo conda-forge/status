@@ -129,7 +129,9 @@
 							<p>I do not think there are any security concerns for us.  According to that document:</p>
 
 <p><code>
-The variables configured via the circle.yml will be available in the fork PR builds (as they have access to the same circle.yml file); the values configured through the UI will not be visible to the fork PRs
+The variables configured via the circle.yml will be available in the fork PR builds 
+(as they have access to the same circle.yml file); the values configured through 
+the UI will not be visible to the fork PRs
 </code></p>
 
 <p>I believe that the anaconda.org upload token is stored as a secure variable via the UI and therefore is not visible in PRs.  This would be the only variable that I can think of that needs to be protected. </p>
