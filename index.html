@@ -137,6 +137,12 @@ the UI will not be visible to the fork PRs
 <p>I believe that the anaconda.org upload token is stored as a secure variable via the UI and therefore is not visible in PRs.  This would be the only variable that I can think of that needs to be protected. </p>
 
 						
+							<p><em>Update <span class="moment">2016-12-07 16:35:17 UTC</span></em></p>
+							<p>Going to <code>Settings</code> (the gear icon), <code>Advanced Settings</code> and switching the <code>Permissive building of fork pull requests</code> setting to <code>On</code> does in fact re-enable Circle CI build on pull requests.  I turned this on in the <code>python-feedstock</code> and the PR I submitted is building on Circle (conda-forge/python-feedstock#96).  </p>
+
+<p>I think this will need to be done for all feedstocks.  It might be worthwhile to ask Circle CI if they can do this for all the <code>conda-forge</code> repositories as manually updating 1000+ settings will be a pain.  </p>
+
+						
 					</div>
 					
 					<div class="incident">
