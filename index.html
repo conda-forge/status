@@ -115,6 +115,16 @@
 <p>In short, it sounds like we were relying on a bug for PRs to work at all.</p>
 
 						
+							<p><em>Update <span class="moment">2016-12-07 16:15:06 UTC</span></em></p>
+							<p>Should note that under this setting I see the following text.</p>
+
+<blockquote>
+  <p>There are serious security concerns with this setting (see the documentation for details.) If you have SSH keys, sensitive env vars or AWS credentials stored in your project settings and untrusted forks can make pull requests against your repo, then this option isn't for you!</p>
+</blockquote>
+
+<p>Not something that inspires confidence. 😞 This may mean things deploy prematurely from PRs if these environment variables are exposed. Am asking CircleCI about this.</p>
+
+						
 					</div>
 					
 					<div class="incident">
