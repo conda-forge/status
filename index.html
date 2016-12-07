@@ -29,9 +29,11 @@
 
 			<section class="container" id="main">
 				
-					<div class="panel operational" data-l10n-id="systems-operational">
-						All Systems operational.
+					
+					<div class="panel major outage">
+						<span data-l10n-id="Major-outage">Major outage</span> <span data-l10n-id="on">on</span> CircleCI.
 					</div>
+					
 				
 
 				<h4 data-l10n-id="systems">Systems</h4>
@@ -46,7 +48,7 @@
 					</li>
 					
 					<li>
-						CircleCI <span class="status operational" data-l10n-id="operational">operational</span>
+						CircleCI <span class="status major outage" data-l10n-id="major-outage">major outage</span>
 					</li>
 					
 					<li>
@@ -77,6 +79,23 @@
 
 				<h4 data-l10n-id="incidents">Incidents</h4>
 				
+					
+					<div class="incident">
+						<span class="date moment">2016-12-07 15:24:01 UTC</span>
+
+						
+							<span class="label major outage float-right" data-l10n-id="major-outage">major outage</span>
+						
+						
+							<span class="label system float-right">CircleCI</span>
+						
+						<hr/>
+
+						<span class="title">PR Builds not starting</span>
+						<p>Appears CircleCI builds for PRs are not starting. No known workaround at this time.</p>
+
+						
+					</div>
 					
 					<div class="incident">
 						<span class="date moment">2016-10-19 14:13:39 UTC</span>
@@ -465,46 +484,6 @@ xref: https://github.com/conda-forge/status/issues/15</p>
 						
 							<p><em>Update <span class="moment">2016-09-12 14:01:36 UTC</span></em></p>
 							<p>Closing as this appears to be resolved.</p>
-
-						
-					</div>
-					
-					<div class="incident">
-						<span class="date moment">2016-09-01 02:56:06 UTC</span>
-
-						
-							<span class="label operational float-right" data-l10n-id="resolved">resolved</span>
-						
-						
-							<span class="label system float-right">staged-recipes</span>
-						
-						<hr/>
-
-						<span class="title">staged-recipes blocked</span>
-						<p>Staged-recipes is blocked because of an incompatibility between the new <code>conda-build</code> and <code>conda-smithy</code> as evidenced by <a href="https://travis-ci.org/conda-forge/staged-recipes#L153">build</a>. A working fix is proposed in PR ( https://github.com/conda-forge/staged-recipes/pull/1453 ). Merging it should fix the problem at present.</p>
-
-						
-					</div>
-					
-					<div class="incident">
-						<span class="date moment">2016-08-30 00:56:33 UTC</span>
-
-						
-							<span class="label operational float-right" data-l10n-id="resolved">resolved</span>
-						
-						
-							<span class="label system float-right">Travis CI</span>
-						
-						<hr/>
-
-						<span class="title">Heighted error rate of API calls</span>
-						<p>Travis CI has acknowledged they have a heightened rate of API call failures on their status page. Let's track the impact at conda-forge under this issue. The Travis CI incident report is linked below.</p>
-
-<p>xref: https://www.traviscistatus.com/incidents/hgxqvblhj98z</p>
-
-						
-							<p><em>Update <span class="moment">2016-08-30 02:07:29 UTC</span></em></p>
-							<p>Appears to be resolved.</p>
 
 						
 					</div>
