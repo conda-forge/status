@@ -219,6 +219,13 @@ the UI will not be visible to the fork PRs
 							<p>The current workaround is to enable CircleCI on one's own fork of the feedstock or staged-recipes and push new changes to get it to trigger with the other CIs.</p>
 
 						
+							<p><em>Update <span class="moment">2016-12-24 02:29:29 UTC</span></em></p>
+							<p>Should add that another consequence of this problem is that sometimes recipes pending conversion in staged-recipes will be included in CircleCI builds as we are no longer able to do proper builds of PRs, but are instead having users build on their own fork. Fortunately it should not take away from the org queue on CircleCI though.</p>
+
+<p>xref: https://github.com/conda-forge/staged-recipes/pull/1373
+xref: https://github.com/conda-forge/staged-recipes/pull/1486</p>
+
+						
 					</div>
 					
 					<div class="incident">
@@ -412,31 +419,6 @@ xref: https://github.com/conda-forge/status/issues/15</p>
 						
 							<p><em>Update <span class="moment">2016-09-30 00:57:38 UTC</span></em></p>
 							<p>xref: xref: https://github.com/appveyor/ci/issues/1045</p>
-
-						
-					</div>
-					
-					<div class="incident">
-						<span class="date moment">2016-09-23 00:45:05 UTC</span>
-
-						
-							<span class="label operational float-right" data-l10n-id="resolved">resolved</span>
-						
-						
-							<span class="label system float-right">Travis CI</span>
-						
-						<hr/>
-
-						<span class="title">Travis CI OSX maintenance</span>
-						<p>Travis CI is upgrading OSX infrastructure. All jobs stopped for the next 2hrs. More <a href="https://www.traviscistatus.com/incidents/7yzj0kztkm7q">info</a>.</p>
-
-						
-							<p><em>Update <span class="moment">2016-09-23 04:01:54 UTC</span></em></p>
-							<p>Maintenance period is complete, but there is a backlog that needs to be processed.</p>
-
-						
-							<p><em>Update <span class="moment">2016-09-23 16:05:55 UTC</span></em></p>
-							<p>Closing as this appears to have ended and Travis CI builds appear to be running smoothly.</p>
 
 						
 					</div>
