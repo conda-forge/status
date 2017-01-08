@@ -240,6 +240,14 @@ xref: https://github.com/conda-forge/staged-recipes/pull/1486</p>
 							<p>You can enable this setting for all feedstocks by capturing the request for one feedstock for changing the setting in your browser (A request to https://circleci.com/api/v1.1/project/github/conda-forge/mpc-feedstock/settings) and then replaying it after changing the repo name in the url and payload.</p>
 
 						
+							<p><em>Update <span class="moment">2017-01-08 21:05:30 UTC</span></em></p>
+							<p>Yeah, what I would really like to do is get this added to <code>conda-smithy</code>. Partly so that we can roll out this change on all feedstocks. Also partly to make sure new feedstocks have the right settings.</p>
+
+<p>Guessing I should try using Selenium for implementing this, but maybe that is too much for clicking one radio button. Other suggestions welcome.</p>
+
+<p>On a finer grained detail, I had looked at the source before and found even though I could identify the radio button. The source did not make it very clear which radio button belonged to which setting. My concern here is if I set everything up with say radio button 9 now and they change the settings latter, we could be getting the totally wrong behavior. So it would be nice if there was a good way of finding the setting name and then the radio button next to that setting. Any suggestions on this would be appreciated. </p>
+
+						
 					</div>
 					
 					<div class="incident">
