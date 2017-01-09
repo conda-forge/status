@@ -248,6 +248,15 @@ xref: https://github.com/conda-forge/staged-recipes/pull/1486</p>
 <p>On a finer grained detail, I had looked at the source before and found even though I could identify the radio button. The source did not make it very clear which radio button belonged to which setting. My concern here is if I set everything up with say radio button 9 now and they change the settings latter, we could be getting the totally wrong behavior. So it would be nice if there was a good way of finding the setting name and then the radio button next to that setting. Any suggestions on this would be appreciated. </p>
 
 						
+							<p><em>Update <span class="moment">2017-01-09 03:09:00 UTC</span></em></p>
+							<p>I checked and the following works.
+<code>
+curl 'https://circleci.com/api/v1.1/project/github/conda-forge/mpc-feedstock/setting?circle-token=mytoken' -X PUT -H 'Content-Type: application/json; charset=UTF-8' -H 'Accept: application/json' --data-binary '{"feature_flags":{"build-fork-prs":true}}'
+</code>
+Here mytoken needs to be replaced by a valid token.
+Implemented here, conda-forge/conda-smithy/pull/420</p>
+
+						
 					</div>
 					
 					<div class="incident">
