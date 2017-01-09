@@ -251,7 +251,7 @@ xref: https://github.com/conda-forge/staged-recipes/pull/1486</p>
 							<p><em>Update <span class="moment">2017-01-09 03:09:00 UTC</span></em></p>
 							<p>I checked and the following works.
 <code>
-curl 'https://circleci.com/api/v1.1/project/github/conda-forge/mpc-feedstock/setting?circle-token=mytoken' -X PUT -H 'Content-Type: application/json; charset=UTF-8' -H 'Accept: application/json' --data-binary '{"feature_flags":{"build-fork-prs":true}}'
+curl 'https://circleci.com/api/v1.1/project/github/conda-forge/mpc-feedstock/settings?circle-token=mytoken' -X PUT -H 'Content-Type: application/json; charset=UTF-8' -H 'Accept: application/json' --data-binary '{"feature_flags":{"build-fork-prs":true}}'
 </code>
 Here mytoken needs to be replaced by a valid token.
 Implemented here, conda-forge/conda-smithy/pull/420</p>
