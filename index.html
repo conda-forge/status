@@ -29,9 +29,11 @@
 
 			<section class="container" id="main">
 				
-					<div class="panel operational" data-l10n-id="systems-operational">
-						All Systems operational.
+					
+					<div class="panel major outage">
+						<span data-l10n-id="Major-outage">Major outage</span> <span data-l10n-id="on">on</span> CircleCI.
 					</div>
+					
 				
 
 				<h4 data-l10n-id="systems">Systems</h4>
@@ -46,7 +48,7 @@
 					</li>
 					
 					<li>
-						CircleCI <span class="status operational" data-l10n-id="operational">operational</span>
+						CircleCI <span class="status major outage" data-l10n-id="major-outage">major outage</span>
 					</li>
 					
 					<li>
@@ -82,7 +84,7 @@
 						<span class="date moment">2016-12-07 15:24:01 UTC</span>
 
 						
-							<span class="label operational float-right" data-l10n-id="resolved">resolved</span>
+							<span class="label major outage float-right" data-l10n-id="major-outage">major outage</span>
 						
 						
 							<span class="label system float-right">CircleCI</span>
@@ -259,6 +261,10 @@ Implemented here, conda-forge/conda-smithy/pull/420</p>
 							<p>After working with @isuruf on his proposal for <code>conda-smithy</code>, I think we have a working fix. Have used it to enable CircleCI builds for PRs on all current feedstocks. Please take a look at the PR if you are interested.</p>
 
 <p>IMHO we should get this CircleCI fix in, the re-rendering index fixes, and <code>conda</code> 4.2 fixes in. Then we should be in good shape for a healthy release.</p>
+
+						
+							<p><em>Update <span class="moment">2017-01-10 23:34:42 UTC</span></em></p>
+							<p>Reopening until we actually release the new <code>conda-smithy</code> that will fix this issue.</p>
 
 						
 					</div>
