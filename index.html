@@ -29,11 +29,9 @@
 
 			<section class="container" id="main">
 				
-					
-					<div class="panel degraded performance">
-						<span data-l10n-id="Degraded-performance">Degraded performance</span> <span data-l10n-id="on">on</span> CircleCI.
+					<div class="panel operational" data-l10n-id="systems-operational">
+						All Systems operational.
 					</div>
-					
 				
 
 				<h4 data-l10n-id="systems">Systems</h4>
@@ -48,7 +46,7 @@
 					</li>
 					
 					<li>
-						CircleCI <span class="status degraded performance" data-l10n-id="degraded-performance">degraded performance</span>
+						CircleCI <span class="status operational" data-l10n-id="operational">operational</span>
 					</li>
 					
 					<li>
@@ -84,7 +82,7 @@
 						<span class="date moment">2016-12-07 15:24:01 UTC</span>
 
 						
-							<span class="label degraded performance float-right" data-l10n-id="degraded-performance">degraded performance</span>
+							<span class="label operational float-right" data-l10n-id="resolved">resolved</span>
 						
 						
 							<span class="label system float-right">CircleCI</span>
@@ -269,6 +267,12 @@ Implemented here, conda-forge/conda-smithy/pull/420</p>
 						
 							<p><em>Update <span class="moment">2017-01-11 21:17:05 UTC</span></em></p>
 							<p>Changed to degraded performance as many feedstocks are functioning at this point.</p>
+
+						
+							<p><em>Update <span class="moment">2017-01-13 18:35:11 UTC</span></em></p>
+							<p><code>conda-smithy</code> 2.0.0 is released and in action at staged-recipes. This release includes an important fix by @isuruf that enables CircleCI builds of PRs from forks on new feedstocks. So all new feedstocks should not have this issue. Also have applied this fix to all existing feedstocks. Therefore this should no longer be a problem for any feedstocks. Will close this out.</p>
+
+<p>Fine print: We are using a non-public API to do this as there is no public API for it. So it may be changed in the future without warning.</p>
 
 						
 					</div>
