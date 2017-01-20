@@ -29,9 +29,11 @@
 
 			<section class="container" id="main">
 				
-					<div class="panel operational" data-l10n-id="systems-operational">
-						All Systems operational.
+					
+					<div class="panel degraded performance">
+						<span data-l10n-id="Degraded-performance">Degraded performance</span> <span data-l10n-id="on">on</span> staged-recipes.
 					</div>
+					
 				
 
 				<h4 data-l10n-id="systems">Systems</h4>
@@ -70,13 +72,32 @@
 					</li>
 					
 					<li>
-						staged-recipes <span class="status operational" data-l10n-id="operational">operational</span>
+						staged-recipes <span class="status degraded performance" data-l10n-id="degraded-performance">degraded performance</span>
 					</li>
 					
 				</ul>
 
 				<h4 data-l10n-id="incidents">Incidents</h4>
 				
+					
+					<div class="incident">
+						<span class="date moment">2017-01-20 23:28:33 UTC</span>
+
+						
+							<span class="label degraded performance float-right" data-l10n-id="degraded-performance">degraded performance</span>
+						
+						
+							<span class="label system float-right">staged-recipes</span>
+						
+						<hr/>
+
+						<span class="title">staged-recipes blocked</span>
+						<p>ATM some recipes may be blocked in staged-recipes. Details and discussion can be redirected to the linked issue.</p>
+
+<p>xref: https://github.com/conda-forge/staged-recipes/issues/2259</p>
+
+						
+					</div>
 					
 					<div class="incident">
 						<span class="date moment">2016-12-07 15:24:01 UTC</span>
@@ -277,54 +298,6 @@ Implemented here, conda-forge/conda-smithy/pull/420</p>
 						
 							<p><em>Update <span class="moment">2017-01-13 19:09:03 UTC</span></em></p>
 							<p>Should add that I have asked CircleCI to make this part of the Public API. We'll see what they say.</p>
-
-						
-					</div>
-					
-					<div class="incident">
-						<span class="date moment">2016-10-19 14:13:39 UTC</span>
-
-						
-							<span class="label operational float-right" data-l10n-id="resolved">resolved</span>
-						
-						
-							<span class="label system float-right">Travis CI</span>
-						
-						<hr/>
-
-						<span class="title">Travis CI OS X build outage</span>
-						<p>Travis CI is working on an OS X build outage issue. More details can be found <a href="https://www.traviscistatus.com/incidents/4jb1rlhj7ynq">here</a>.</p>
-
-						
-							<p><em>Update <span class="moment">2016-10-19 14:26:02 UTC</span></em></p>
-							<p>Upstream has marked this as resolved.</p>
-
-						
-					</div>
-					
-					<div class="incident">
-						<span class="date moment">2016-10-13 15:49:59 UTC</span>
-
-						
-							<span class="label operational float-right" data-l10n-id="resolved">resolved</span>
-						
-						
-							<span class="label system float-right">Travis CI</span>
-						
-						<hr/>
-
-						<span class="title">Travis CI OS X builds stopped</span>
-						<p>Travis CI has stopped all OS X builds. Please find more info at the linked status.</p>
-
-<p>xref: https://www.traviscistatus.com/incidents/b4xk2bybjc9d</p>
-
-						
-							<p><em>Update <span class="moment">2016-10-13 17:04:00 UTC</span></em></p>
-							<p>Travis CI says OS X jobs are being restarted. There is still a backlog being processed.</p>
-
-						
-							<p><em>Update <span class="moment">2016-10-15 19:37:26 UTC</span></em></p>
-							<p>This is now resolved.</p>
 
 						
 					</div>
