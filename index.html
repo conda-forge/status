@@ -337,6 +337,51 @@ Implemented here, conda-forge/conda-smithy/pull/420</p>
 						
 					</div>
 					
+					<div class="incident">
+						<span class="date moment">2016-08-24 01:59:49 UTC</span>
+
+						
+							<span class="label operational float-right" data-l10n-id="resolved">resolved</span>
+						
+						
+							<span class="label system float-right">Travis CI</span>
+						
+						<hr/>
+
+						<span class="title">Travis CI OS X Backlog</span>
+						<p>Seems that there is some serious issue affecting Travis CI builds and causing them to wait for long periods on the queue. Have raised this issue upstream as ( https://github.com/travis-ci/travis-ci/issues/6515 ) to see if they have any ideas as to what is going on and if we can get it fixed.</p>
+
+<p>For the meantime, I'd like to ask people to nice builds. If you see multiple builds for a PR at staged-recipes, please cancel all older version of it. If you are planning any large running builds, please hold off on them until we can track down this issue. It does seem some builds are getting processed, but it appears to be very slowly and long after they were initiated.</p>
+
+<p>Please bear with us as we try to sort out this issue.</p>
+
+						
+							<p><em>Update <span class="moment">2016-08-24 03:12:44 UTC</span></em></p>
+							<p>Reducing to degraded as we seem to actually have some things running on the queue now. Also looks like the number of jobs running is starting to fall off. Will continue to monitor the situation.</p>
+
+						
+							<p><em>Update <span class="moment">2016-08-24 18:47:04 UTC</span></em></p>
+							<p>Travis CI has now <a href="https://www.traviscistatus.com/incidents/4mvp857qx8bw">announced</a> that they are stopping all OS X builds due to instability in their OS X infrastructure. Upgrading this to major outage.</p>
+
+						
+							<p><em>Update <span class="moment">2016-08-25 03:12:53 UTC</span></em></p>
+							<p>Adding staged-recipes to this outage as conversions to feedstocks occur on Travis CI. So they will similarly be blocked until Travis CI comes back online.</p>
+
+						
+							<p><em>Update <span class="moment">2016-08-25 18:58:09 UTC</span></em></p>
+							<p>It appears Travis CI is re-enabling OS X builds and are starting to work through the backlog. Downgrading to degraded performance. Will provide more updates as this progresses.</p>
+
+						
+							<p><em>Update <span class="moment">2016-08-26 05:59:34 UTC</span></em></p>
+							<p>Have removed staged-recipes as they have cleared. Feel free to close this when you are comfortable with Travis CI's progress.</p>
+
+						
+							<p><em>Update <span class="moment">2016-08-27 15:16:39 UTC</span></em></p>
+							<p>This seems to be resolved now. Going to go ahead and close this out. If people are still having issues, please let us know.</p>
+
+						
+					</div>
+					
 				
 			</section>
 
