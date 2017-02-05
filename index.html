@@ -380,6 +380,20 @@ Implemented here, conda-forge/conda-smithy/pull/420</p>
 							<p>This seems to be resolved now. Going to go ahead and close this out. If people are still having issues, please let us know.</p>
 
 						
+							<p><em>Update <span class="moment">2017-02-05 18:07:55 UTC</span></em></p>
+							<blockquote>
+  <p>...there seem to be a long backlog on travis of staged-recipes again.</p>
+</blockquote>
+
+<p>This status issue is on a different problem with Travis CI a long time ago. If there are new issues, I would recommend raising one. Though we are certainly aware of backlog issues with Travis CI that have been occurring recently.</p>
+
+<blockquote>
+  <p>...how do I cancel the expired PRs? There is no such option from my travis login.</p>
+</blockquote>
+
+<p>Travis CI does not extend that privilege to anyone that does not have write access to the repo. I had put together a script ( https://github.com/conda-forge/conda-forge-build-setup-feedstock/pull/52 ) that would terminate old PR builds early and could be used at staged-recipes ( https://github.com/conda-forge/staged-recipes/pull/2264 ) or feedstocks (once the dust settles on the first two). However, it seems to be stuck in discussion ATM. Feel free to nudge it along if you think it is important.</p>
+
+						
 					</div>
 					
 				
