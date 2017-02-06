@@ -394,6 +394,12 @@ Implemented here, conda-forge/conda-smithy/pull/420</p>
 <p>Travis CI does not extend that privilege to anyone that does not have write access to the repo. I had put together a script ( https://github.com/conda-forge/conda-forge-build-setup-feedstock/pull/52 ) that would terminate old PR builds early and could be used at staged-recipes ( https://github.com/conda-forge/staged-recipes/pull/2264 ) or feedstocks (once the dust settles on the first two). However, it seems to be stuck in discussion ATM. Feel free to nudge it along if you think it is important.</p>
 
 						
+							<p><em>Update <span class="moment">2017-02-06 04:42:12 UTC</span></em></p>
+							<p>Well this problem seems to show up on a weekly basis during the work week. So IMHO this is a big problem as it mucks with people's ability to get work done. That said, you are right it goes away on the weekend.</p>
+
+<p>There are pros and cons to enabling on your fork. Pro being it is on your own queue vs conda-forge's. Con it still adds to the overall Travis CI queue and it fails to do things like test on the merge commit. Probably not worthwhile to enable Travis CI on your fork in the end.</p>
+
+						
 					</div>
 					
 				
