@@ -29,9 +29,11 @@
 
 			<section class="container" id="main">
 				
-					<div class="panel operational" data-l10n-id="systems-operational">
-						All Systems operational.
+					
+					<div class="panel major outage">
+						<span data-l10n-id="Major-outage">Major outage</span> <span data-l10n-id="on">on</span> staged-recipes.
 					</div>
+					
 				
 
 				<h4 data-l10n-id="systems">Systems</h4>
@@ -70,13 +72,30 @@
 					</li>
 					
 					<li>
-						staged-recipes <span class="status operational" data-l10n-id="operational">operational</span>
+						staged-recipes <span class="status major outage" data-l10n-id="major-outage">major outage</span>
 					</li>
 					
 				</ul>
 
 				<h4 data-l10n-id="incidents">Incidents</h4>
 				
+					
+					<div class="incident">
+						<span class="date moment">2017-04-12 14:15:48 UTC</span>
+
+						
+							<span class="label major outage float-right" data-l10n-id="major-outage">major outage</span>
+						
+						
+							<span class="label system float-right">staged-recipes</span>
+						
+						<hr/>
+
+						<span class="title">Conversion blocked</span>
+						<p>Having issues with Travis CI's API failing repeatedly on us at staged-recipes, which is blocking the conversion of recipes. Please see upstream issue ( https://github.com/travis-ci/travis-ci/issues/6284 ) for more details.</p>
+
+						
+					</div>
 					
 					<div class="incident">
 						<span class="date moment">2017-01-20 23:28:33 UTC</span>
@@ -310,29 +329,6 @@ Implemented here, conda-forge/conda-smithy/pull/420</p>
 						
 							<p><em>Update <span class="moment">2017-01-13 19:09:03 UTC</span></em></p>
 							<p>Should add that I have asked CircleCI to make this part of the Public API. We'll see what they say.</p>
-
-						
-					</div>
-					
-					<div class="incident">
-						<span class="date moment">2016-10-12 23:59:08 UTC</span>
-
-						
-							<span class="label operational float-right" data-l10n-id="resolved">resolved</span>
-						
-						
-							<span class="label system float-right">Anaconda.org</span>
-						
-						<hr/>
-
-						<span class="title">Download issues with Anaconda.org/conda-forge on CIs</span>
-						<p>Seeing intermittent download issues from <code>conda-forge</code> on CIs. Please restart builds if you encounter this issue. Have filed a bug report upstream to track this.</p>
-
-<p>xref: https://github.com/Anaconda-Platform/support/issues/78</p>
-
-						
-							<p><em>Update <span class="moment">2016-11-17 15:32:01 UTC</span></em></p>
-							<p>The primary issue seems to have been resolved with a new release of anaconda.org. There are still some linger issues, but they do not occur with near the same frequency and are actively being worked on by upstream as mentioned in the xref'd issue. Considering this resolved. Closing...</p>
 
 						
 					</div>
