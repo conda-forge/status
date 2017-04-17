@@ -135,6 +135,75 @@
 					</div>
 					
 					<div class="incident">
+						<span class="date moment">2016-08-24 04:46:57 UTC</span>
+
+						
+							<span class="label operational float-right" data-l10n-id="resolved">resolved</span>
+						
+						
+							<span class="label system float-right">staged-recipes</span>
+						
+						<hr/>
+
+						<span class="title">AppVeyor API blocking conversion</span>
+						<p>AppVeyor API registration error with <code>itsdangerous</code> is blocking feedstock conversion. Will also result in <code>itsdangerous</code> showing up in PRs. Users are recommended to merge with <code>master</code> and remove <code>itsdangerous</code> from their PRs. Snippet of the traceback shown below. Several restarts of the conversion step have been tried without success. </p>
+
+<p><code>
+CI Summary for conda-forge/itsdangerous-feedstock (can take ~30s):
+ * conda-forge/itsdangerous-feedstock already enabled on travis-ci
+ * conda-forge/itsdangerous-feedstock enabled on CircleCI
+Traceback (most recent call last):
+  File "/home/travis/miniconda/bin/conda-smithy", line 9, in &lt;module&gt;
+    load_entry_point('conda-smithy==1.0.3', 'console_scripts', 'conda-smithy')()
+  File "/home/travis/miniconda/lib/python3.5/site-packages/conda_smithy/cli.py", line 236, in main
+    args.subcommand_func(args)
+  File "/home/travis/miniconda/lib/python3.5/site-packages/conda_smithy/cli.py", line 164, in __call__
+    ci_register.add_project_to_appveyor(owner, repo)
+  File "/home/travis/miniconda/lib/python3.5/site-packages/conda_smithy/ci_register.py", line 114, in add_project_to_appveyor
+    response.raise_for_status()
+  File "/home/travis/miniconda/lib/python3.5/site-packages/requests/models.py", line 844, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 500 Server Error: Internal Server Error for url: https://ci.appveyor.com/api/projects
+Traceback (most recent call last):
+  File ".CI/create_feedstocks.py", line 186, in &lt;module&gt;
+    subprocess.check_call(['conda', 'smithy', 'register-ci', '--feedstock_directory', feedstock_dir] + owner_info)
+  File "/home/travis/miniconda/lib/python3.5/subprocess.py", line 581, in check_call
+    raise CalledProcessError(retcode, cmd)
+subprocess.CalledProcessError: Command '['conda', 'smithy', 'register-ci', '--feedstock_directory', '/tmp/tmpw0ne44uj__feedstocks/itsdangerous-feedstock', '--organization', 'conda-forge']' returned non-zero exit status 1
+</code></p>
+
+<p>cc @pelson</p>
+
+						
+							<p><em>Update <span class="moment">2016-08-24 05:01:50 UTC</span></em></p>
+							<p>After several restarts and a bit of time this resolved itself. However, this is hardly the first time I have seen this issue today or in general with AppVeyor's API. Maybe we need to use a similar strategy to one used with Travis CI's API.</p>
+
+						
+							<p><em>Update <span class="moment">2016-09-03 03:47:25 UTC</span></em></p>
+							<p>Seeing a recurrence of this issue. See this <a href="https://travis-ci.org/conda-forge/staged-recipes/builds/157257319#L307">build</a> as an example.</p>
+
+						
+							<p><em>Update <span class="moment">2016-09-03 03:52:28 UTC</span></em></p>
+							<p>In summary: AppVeyor are issuing a http 500 error intermittently when attempting to create a feedstock.</p>
+
+<p>(For the status page, this is probably all that is needed, right @jakirkham?)</p>
+
+						
+							<p><em>Update <span class="moment">2016-09-03 04:39:53 UTC</span></em></p>
+							<p>Yeah I'm still trying to find a healthy balance. In any event staged-recipes is cleared, so closing this out again.</p>
+
+						
+							<p><em>Update <span class="moment">2016-09-30 00:56:59 UTC</span></em></p>
+							<p>xref: https://github.com/appveyor/ci/issues/1045</p>
+
+						
+							<p><em>Update <span class="moment">2017-04-17 14:44:35 UTC</span></em></p>
+							<p>Seeing this again. Maybe appveyor is rate limiting the API</p>
+
+						
+					</div>
+					
+					<div class="incident">
 						<span class="date moment">2016-08-24 01:59:49 UTC</span>
 
 						
