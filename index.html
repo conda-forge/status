@@ -28,57 +28,62 @@
 			</nav>
 
 			<section class="container" id="main">
-				
+
 					<div class="panel operational" data-l10n-id="systems-operational">
 						All Systems operational.
 					</div>
-				
+
+                <div style="text-align:center;">
+                    <canvas id="migratorCanvas" style="background:white;"></canvas>
+                    <legend for="migratorCanvas"></legend>
+                    <script type="text/javascript" src="migrator.js"></script>
+                </div>
 
 				<h4 data-l10n-id="systems">Systems</h4>
 				<ul class="systems">
-					
+
 					<li>
 						Anaconda.org <span class="status operational" data-l10n-id="operational">operational</span>
 					</li>
-					
+
 					<li>
 						AppVeyor <span class="status operational" data-l10n-id="operational">operational</span>
 					</li>
-					
+
 					<li>
 						CircleCI <span class="status operational" data-l10n-id="operational">operational</span>
 					</li>
-					
+
 					<li>
 						Travis CI <span class="status operational" data-l10n-id="operational">operational</span>
 					</li>
-					
+
 					<li>
 						conda <span class="status operational" data-l10n-id="operational">operational</span>
 					</li>
-					
+
 					<li>
 						docs <span class="status operational" data-l10n-id="operational">operational</span>
 					</li>
-					
+
 					<li>
 						feedstocks <span class="status operational" data-l10n-id="operational">operational</span>
 					</li>
-					
+
 					<li>
 						linter <span class="status operational" data-l10n-id="operational">operational</span>
 					</li>
-					
+
 					<li>
 						staged-recipes <span class="status operational" data-l10n-id="operational">operational</span>
 					</li>
-					
+
 				</ul>
 
 				<h4 data-l10n-id="incidents">Incidents</h4>
-				
+
 					<em data-l10n-id="no.incidents">No incidents in the past 90 days.</em>
-				
+
 			</section>
 
 
