@@ -126,7 +126,7 @@ loadJSON("https://raw.githubusercontent.com/regro/cf-graph3/master/status/compil
                 gridScale:5,
                 gridColor:"#eeeeee",
                 data: migratorData,
-                colors:["#a55ca5","#67b6c7", "#bccd7a","#eb9743"]
+                colors:['#440154', '#31688e', '#35b779', '#fde725']
             });
             migratorBarchart.draw();
          }
