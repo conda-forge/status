@@ -35,12 +35,21 @@ function drawBar(ctx, upperLeftCornerX, upperLeftCornerY, width, height,color){
     ctx.restore();
 }
 
-var myVinyls = {
-    "Classical music": 10,
-    "Alternative rock": 14,
-    "Pop": 2,
-    "Jazz": 12
-};
+
+function loadJSON(url, callback) {
+
+    var xobj = new XMLHttpRequest();
+    xobj.overrideMimeType("application/json");
+    xobj.open('GET', url, true);
+    xobj.onreadystatechange = function () {
+        if (xobj.readyState == 4 && xobj.status == "200") {
+            // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
+            callback(xobj.responseText);
+        }
+    };
+    xobj.send(null);
+}
+
 
 var Barchart = function(options){
     this.options = options;
@@ -51,7 +60,7 @@ var Barchart = function(options){
     this.draw = function(){
         var totalValue = 0;
         for (var categ in this.options.data){
-            totalValue = totalValue + this.options.data[categ];
+            totalValue = totalValue + this.options.data[categ].length;
         }
         var canvasActualHeight = this.canvas.height - this.options.padding * 2;
         var canvasActualWidth = this.canvas.width - this.options.padding * 2;
@@ -63,7 +72,7 @@ var Barchart = function(options){
 
         var widthSoFar = 0;
         for (categ in this.options.data){
-            var val = this.options.data[categ];
+            var val = this.options.data[categ].length;
             var barWidth = Math.round( canvasActualWidth * val/totalValue);
             drawBar(
                 this.ctx,
@@ -107,15 +116,18 @@ var Barchart = function(options){
 }
 
 
-var migratorBarchart = new Barchart(
-    {
-        canvas:migratorCanvas,
-        seriesName:"Migration Status",
-        padding:20,
-        gridScale:5,
-        gridColor:"#eeeeee",
-        data:myVinyls,
-        colors:["#a55ca5","#67b6c7", "#bccd7a","#eb9743"]
-    }
-);
-migratorBarchart.draw();
+loadJSON("https://raw.githubusercontent.com/regro/cf-graph3/master/status/compilerrebuild.json",
+         function(response) {
+            var migratorData = JSON.parse(response);
+            var migratorBarchart = new Barchart({
+                canvas:migratorCanvas,
+                seriesName:"Migration Status",
+                padding:20,
+                gridScale:5,
+                gridColor:"#eeeeee",
+                data: migratorData,
+                colors:["#a55ca5","#67b6c7", "#bccd7a","#eb9743"]
+            });
+            migratorBarchart.draw();
+         }
+        );
