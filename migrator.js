@@ -116,6 +116,39 @@ var Barchart = function(options){
 }
 
 
+function createToggleMigratorVisibilityHandler(ident) {
+    return function() {
+        var x = document.getElementById(ident);
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }
+}
+
+
+function migratorListing(data) {
+    var parent = document.getElementById("migratorDiv");
+    for (status in data) {
+        var statusListId = status + "List";
+        var button = document.createElement("button");
+        parent.appendChild(button);
+        button.innerHTML = status;
+        button.onclick = createToggleMigratorVisibilityHandler(statusListId);
+        var statusList = document.createElement("ol");
+        parent.appendChild(statusList);
+        statusList.setAttribute("id", statusListId);
+        for (var i = 0; i < data[status].length; i++) {
+            var statusItem = document.createElement("li");
+            statusItem.innerHTML = data[status][i];
+            statusList.appendChild(statusItem);
+        }
+        statusList.style.display = "none";
+    }
+};
+
+
 loadJSON("https://raw.githubusercontent.com/regro/cf-graph3/master/status/compilerrebuild.json",
          function(response) {
             var migratorData = JSON.parse(response);
@@ -129,5 +162,6 @@ loadJSON("https://raw.githubusercontent.com/regro/cf-graph3/master/status/compil
                 colors:['#440154', '#31688e', '#35b779', '#fde725']
             });
             migratorBarchart.draw();
+            migratorListing(migratorData);
          }
         );
