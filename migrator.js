@@ -12,8 +12,10 @@ migratorCanvas.height = 100;
 var viewportWidth = viewport()["width"]
 if (viewportWidth <= 600){
     migratorCanvas.width = viewportWidth * 0.9;
-} else {
+} else if (viewportWidth <= 800) {
     migratorCanvas.width = viewportWidth * 0.7;
+} else {
+    migratorCanvas.width = 800;
 }
 
 var ctx = migratorCanvas.getContext("2d");
@@ -82,7 +84,6 @@ var Barchart = function(options){
                 barSize,
                 this.colors[barIndex%this.colors.length]
             );
-            this.ctx.fillText(val, widthSoFar + Math.round(barWidth/2), 7 + Math.round(barSize/2));
 
             barIndex++;
             widthSoFar = widthSoFar + barWidth;
@@ -104,11 +105,12 @@ var Barchart = function(options){
         legend.append(ul);
         for (categ in this.options.data){
             var li = document.createElement("li");
+            var val = this.options.data[categ].length;
             li.style.listStyle = "none";
             li.style.display = "inline";
             li.style.borderLeft = "20px solid "+this.colors[barIndex%this.colors.length];
             li.style.padding = "5px";
-            li.textContent = categ;
+            li.textContent = categ + " (" + val.toString() + ")";
             ul.append(li);
             barIndex++;
         }
@@ -154,7 +156,7 @@ loadJSON("https://raw.githubusercontent.com/regro/cf-graph3/master/status/compil
             var migratorData = JSON.parse(response);
             var migratorBarchart = new Barchart({
                 canvas:migratorCanvas,
-                seriesName:"Migration Status",
+                seriesName:"Compiler Migration Status",
                 padding:20,
                 gridScale:5,
                 gridColor:"#eeeeee",
