@@ -40,6 +40,12 @@
 					{% endfor %}
 				{% endif %}
 
+                <div id="migratorDiv" style="text-align:center;">
+                    <canvas id="migratorCanvas" style="background:white;"></canvas>
+                    <legend for="migratorCanvas"></legend>
+                    <script type="text/javascript" src="migrator.js"></script>
+                </div>
+
 				<h4 data-l10n-id="systems">Systems</h4>
 				<ul class="systems">
 					{% for system, data in systems.items() %}
