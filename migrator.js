@@ -130,7 +130,7 @@ function createToggleMigratorVisibilityHandler(ident) {
 }
 
 
-function migratorListing(data) {
+function migratorListing(data, feedstockStatus) {
     var parent = document.getElementById("migratorDiv");
     for (status in data) {
         var statusListId = status + "List";
@@ -143,7 +143,28 @@ function migratorListing(data) {
         statusList.setAttribute("id", statusListId);
         for (var i = 0; i < data[status].length; i++) {
             var statusItem = document.createElement("li");
-            statusItem.innerHTML = data[status][i];
+            var feedstockName = data[status][i];
+            var feedstockData = feedstockStatus[feedstockName];
+            if (typeof feedstockData === "undefined") {
+                feedstockData = {};
+            }
+            var innerHtml = "";
+            if (typeof feedstockData.pr_url !== "undefined") {
+                innerHtml += "<a href=\"" + feedstockData.pr_url + "\">";
+            }
+            innerHtml += "<b>" + feedstockName + "</b>";
+            if (typeof feedstockData.pr_url !== "undefined") {
+                innerHtml += "</a>";
+            }
+            if (typeof feedstockData.num_descendants !== "undefined") {
+                innerHtml += (" <span title=\"Total Number of Descendants\">(" +
+                              feedstockData.num_descendants.toString() + ")</span>");
+                if (feedstockData.num_descendants > 0) {
+                    innerHtml += (" <i>Immediate Children:</i> " +
+                                  feedstockData.immediate_children.toString());
+                }
+            }
+            statusItem.innerHTML = innerHtml;
             statusList.appendChild(statusItem);
         }
         statusList.style.display = "none";
@@ -154,6 +175,8 @@ function migratorListing(data) {
 loadJSON("https://raw.githubusercontent.com/regro/cf-graph3/master/status/compilerrebuild.json",
          function(response) {
             var migratorData = JSON.parse(response);
+            var feedstockStatus = migratorData._feedstock_status;
+            delete migratorData._feedstock_status;
             var migratorBarchart = new Barchart({
                 canvas:migratorCanvas,
                 seriesName:"Compiler Migration Status",
@@ -164,6 +187,6 @@ loadJSON("https://raw.githubusercontent.com/regro/cf-graph3/master/status/compil
                 colors:['#440154', '#31688e', '#35b779', '#fde725']
             });
             migratorBarchart.draw();
-            migratorListing(migratorData);
+            migratorListing(migratorData, feedstockStatus);
          }
         );
