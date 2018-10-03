@@ -161,7 +161,7 @@ function migratorListing(data, feedstockStatus) {
                               feedstockData.num_descendants.toString() + ")</span>");
                 if (feedstockData.num_descendants > 0) {
                     innerHtml += (" <i>Immediate Children:</i> " +
-                                  feedstockData.immediate_children.toString());
+                                  feedstockData.immediate_children.join(", "));
                 }
             }
             statusItem.innerHTML = innerHtml;
