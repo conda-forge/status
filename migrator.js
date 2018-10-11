@@ -132,7 +132,28 @@ function createToggleMigratorVisibilityHandler(ident) {
 
 function migratorListing(data, feedstockStatus) {
     var parent = document.getElementById("migratorDiv");
-    for (status in data) {
+
+    function byDescendants(aName, bName) {
+        // compare function that puts
+        // packages with the most descendants first
+        var a = feedstockStatus[aName] || {};
+        var b = feedstockStatus[bName] || {};
+        // sort by total descendants:
+        var aDesc = a.num_descendants ? a.num_descendants : 0;
+        var bDesc = b.num_descendants ? b.num_descendants : 0;
+        // sort by immediate children:
+        // var aDesc = a.immediate_children ? a.immediate_children.length : 0;
+        // var bDesc = b.immediate_children ? b.immediate_children.length : 0;
+        if (aDesc > bDesc) {
+            return -1;
+        } else if (bDesc > aDesc) {
+            return 1;
+        } else {
+            return 0;
+        }
+    }
+
+    for (var status in data) {
         var statusListId = status + "List";
         var button = document.createElement("button");
         parent.appendChild(button);
@@ -141,6 +162,8 @@ function migratorListing(data, feedstockStatus) {
         var statusList = document.createElement("ol");
         parent.appendChild(statusList);
         statusList.setAttribute("id", statusListId);
+        // sort each list by the number of descendants
+        data[status].sort(byDescendants);
         for (var i = 0; i < data[status].length; i++) {
             var statusItem = document.createElement("li");
             var feedstockName = data[status][i];
