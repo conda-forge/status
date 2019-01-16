@@ -40,33 +40,27 @@
 					{% endfor %}
 				{% endif %}
 
-                <h4>Compiler Migration Ending</h4>
-                <p><i>ANN:</i> It is happening! We have chosen next
-                <b>Tuesday, Jan. 15th, 2019</b> to complete the compiler migration.
-                At this point, everything on the "gcc7" label will be moved to the
-                "main" label and the "gcc7" label will be removed.</p>
+                <h4>Compiler Migration Deemed Sufficiently Complete!</h4>
+                <p><i>ANN:</i> It has happened! Conda-forge has migrated to
+                the latest compilers 🎉.</p>
 
-                <p>In case you need to roll back and keep using the old ABI packages,
-                we will be adding a new label (likely called "19-01") for you to
-                roll back to. Expect downtime and delays while we update all of
-                our services.</p>
+                <p>If you<ul>
+                    <li>maintain a compiled feedstock, it will likely need
+                        to be rerender</li>
+                    <li>need to roll back to the old compilers, you can use
+                        the "cf201901" label</li>
+                </ul></p>
 
-                <p>Additionally, you'll note that not all feedstocks have been
-                successfully migrated. This pages lists ~400 feedstocks left in PR
-                or awaiting a parent. If you are the maintainer of one of the
-                packages that is being left behind by the great switch over,
-                we are not abandoning you! We feel that enough of the ecosystem
-                has been migrated that we can no longer hold up the migration for
-                the remaining packages. We'll work with you before and after
-                Jan. 15th, 2019 to help get your package up -to-date on the
-                new compilers. Ping "@conda-forge/core" as always, if you need help.</p>
-
-                <p>Thanks for your patience!</p>
+                <p>Ping "@conda-forge/core" as always, if you need help.
+                Thanks for your patience!</p>
+                <!-- Uncomment the following if you want the migration bar --->
+                <!---
                 <div id="migratorDiv" style="text-align:center;">
                     <canvas id="migratorCanvas" style="background:white;"></canvas>
                     <legend for="migratorCanvas"></legend>
                     <script type="text/javascript" src="migrator.js"></script>
                 </div>
+                --->
 
 				<h4 data-l10n-id="systems">Systems</h4>
 				<ul class="systems">
