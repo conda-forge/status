@@ -195,14 +195,14 @@ function migratorListing(data, feedstockStatus) {
 };
 
 
-loadJSON("https://raw.githubusercontent.com/regro/cf-graph3/master/status/compilerrebuild.json",
+loadJSON("https://raw.githubusercontent.com/regro/cf-graph3/master/status/archrebuild.json",
          function(response) {
             var migratorData = JSON.parse(response);
             var feedstockStatus = migratorData._feedstock_status;
             delete migratorData._feedstock_status;
             var migratorBarchart = new Barchart({
                 canvas:migratorCanvas,
-                seriesName:"Compiler Migration Status",
+                seriesName:"ARM/PowerPC Migration Status",
                 padding:20,
                 gridScale:5,
                 gridColor:"#eeeeee",
