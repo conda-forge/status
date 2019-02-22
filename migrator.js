@@ -7,18 +7,20 @@ function viewport(){
     return { width : e[ a+'Width' ] , height : e[ a+'Height' ] }
 }
 
-var migratorCanvas = document.getElementById("migratorCanvas");
-migratorCanvas.height = 100;
-var viewportWidth = viewport()["width"]
-if (viewportWidth <= 600){
-    migratorCanvas.width = viewportWidth * 0.9;
-} else if (viewportWidth <= 800) {
-    migratorCanvas.width = viewportWidth * 0.7;
-} else {
-    migratorCanvas.width = 800;
-}
+function makeContext(elementId) {
+    var migratorCanvas = document.getElementById(elementId);
+    migratorCanvas.height = 100;
+    var viewportWidth = viewport()["width"]
+    if (viewportWidth <= 600) {
+        migratorCanvas.width = viewportWidth * 0.9;
+    } else if (viewportWidth <= 800) {
+        migratorCanvas.width = viewportWidth * 0.7;
+    } else {
+        migratorCanvas.width = 800;
+    }
 
-var ctx = migratorCanvas.getContext("2d");
+    return {migratorCanvas : migratorCanvas}
+}
 
 function drawLine(ctx, startX, startY, endX, endY,color){
     ctx.save();
@@ -38,7 +40,7 @@ function drawBar(ctx, upperLeftCornerX, upperLeftCornerY, width, height,color){
 }
 
 
-function loadJSON(url, callback) {
+function loadJSON(url, migrator, callback) {
 
     var xobj = new XMLHttpRequest();
     xobj.overrideMimeType("application/json");
@@ -46,7 +48,7 @@ function loadJSON(url, callback) {
     xobj.onreadystatechange = function () {
         if (xobj.readyState == 4 && xobj.status == "200") {
             // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
-            callback(xobj.responseText);
+            callback(xobj.responseText, migrator);
         }
     };
     xobj.send(null);
@@ -55,6 +57,7 @@ function loadJSON(url, callback) {
 
 var Barchart = function(options){
     this.options = options;
+    this.parentContainer = options.parentId;
     this.canvas = options.canvas;
     this.ctx = this.canvas.getContext("2d");
     this.colors = options.colors;
@@ -100,7 +103,7 @@ var Barchart = function(options){
 
         //draw legend
         barIndex = 0;
-        var legend = document.querySelector("legend[for='migratorCanvas']");
+        var legend = document.getElementById(this.parentContainer + "legend");
         var ul = document.createElement("ul");
         legend.append(ul);
         for (categ in this.options.data){
@@ -130,8 +133,8 @@ function createToggleMigratorVisibilityHandler(ident) {
 }
 
 
-function migratorListing(data, feedstockStatus) {
-    var parent = document.getElementById("migratorDiv");
+function migratorListing(data, feedstockStatus, elementId) {
+    var parent = document.getElementById(elementId);
 
     function byDescendants(aName, bName) {
         // compare function that puts
@@ -154,7 +157,7 @@ function migratorListing(data, feedstockStatus) {
     }
 
     for (var status in data) {
-        var statusListId = status + "List";
+        var statusListId = parent.id + status + "List";
         var button = document.createElement("button");
         parent.appendChild(button);
         button.innerHTML = status;
@@ -194,22 +197,51 @@ function migratorListing(data, feedstockStatus) {
     }
 };
 
+function createMigratorContainer(migratorName, parentId){
+    var migratorContainer = document.createElement("div");
+    migratorContainer.id = "Container" + "_" + migratorName;
 
-loadJSON("https://raw.githubusercontent.com/regro/cf-graph3/master/status/archrebuild.json",
-         function(response) {
+    parent = document.getElementById(parentId);
+    parent.appendChild(migratorContainer);
+
+    var canvas = document.createElement("canvas");
+    canvas.id = "migratorCanvas_"+ migratorName;
+
+    var legend = document.createElement("legend");
+    legend.setAttribute('for', canvas.id);
+    legend.id = migratorContainer.id + "legend";
+
+    migratorContainer.appendChild(canvas);
+    migratorContainer.appendChild(legend);
+
+    return {canvasId : canvas.id, migratorContainerId: migratorContainer.id}
+}
+
+var migrators = [{name : "archrebuild", description : "ARM/PowerPC Migration Status" },
+{name : "rebuild", description : "OpenSSL Migration Status" }];
+
+for (var migrator_key in migrators) {
+    var migrator = migrators[migrator_key];
+    var url = "https://raw.githubusercontent.com/regro/cf-graph3/master/status/" + migrator.name + ".json";
+    loadJSON(url, migrator,
+        function (response, migrator) {
             var migratorData = JSON.parse(response);
             var feedstockStatus = migratorData._feedstock_status;
             delete migratorData._feedstock_status;
+            var canvasData = createMigratorContainer(migrator.name, 'migratorDiv');
+            var ctx = makeContext(canvasData.canvasId);
             var migratorBarchart = new Barchart({
-                canvas:migratorCanvas,
-                seriesName:"ARM/PowerPC Migration Status",
-                padding:20,
-                gridScale:5,
-                gridColor:"#eeeeee",
+                canvas: ctx.migratorCanvas,
+                parentId: canvasData.migratorContainerId,
+                seriesName: migrator.description,
+                padding: 20,
+                gridScale: 5,
+                gridColor: "#eeeeee",
                 data: migratorData,
-                colors:['#440154', '#31688e', '#35b779', '#fde725']
+                colors: ['#440154', '#31688e', '#35b779', '#fde725']
             });
             migratorBarchart.draw();
-            migratorListing(migratorData, feedstockStatus);
-         }
-        );
+            migratorListing(migratorData, feedstockStatus, canvasData.migratorContainerId);
+        }
+    );
+}
