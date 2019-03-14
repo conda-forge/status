@@ -221,7 +221,6 @@ var migrators = [{name : "archrebuild", description : "ARM/PowerPC Migration Sta
 {name : "openssl", description : "OpenSSL Migration Status" },
 {name : "libprotobuf-3.7", description : "Libprotobuf 3.7 Miration Status"},
 ];
->>>>>>> Stashed changes
 
 for (var migrator_key in migrators) {
     var migrator = migrators[migrator_key];
