@@ -219,7 +219,8 @@ function createMigratorContainer(migratorName, parentId){
 
 var migrators = [{name : "archrebuild", description : "ARM/PowerPC Migration Status" },
 {name : "openssl", description : "OpenSSL Migration Status" },
-{name : "libprotobuf-3.7", description : "Libprotobuf 3.7 Miration Status"},
+{name : "libprotobuf-3.7", description : "Libprotobuf 3.7 Migration Status"},
+{name : "blasrebuild", description : "Blas Migration Status"}
 ];
 
 for (var migrator_key in migrators) {
