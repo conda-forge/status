@@ -223,8 +223,7 @@ var migrators = [{name : "archrebuild", description : "ARM/PowerPC Migration Sta
 {name : "blasrebuild", description : "Blas Migration Status"}
 ];
 
-for (var migrator_key in migrators) {
-    var migrator = migrators[migrator_key];
+for (var migrator of migrators) {
     var url = "https://raw.githubusercontent.com/regro/cf-graph3/master/status/" + migrator.name + ".json";
     loadJSON(url, migrator,
         function (response, migrator) {
