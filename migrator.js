@@ -252,4 +252,4 @@ function totalMigration (migrators_dict_text, placeholder) {
     }
 }
 var url = "https://raw.githubusercontent.com/regro/cf-graph3/master/status/total_status.json"
-loadJSON(url, "empty", TotalMigration)
+loadJSON(url, "empty", totalMigration)
