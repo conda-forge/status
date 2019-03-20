@@ -217,12 +217,6 @@ function createMigratorContainer(migratorName, parentId){
     return {canvasId : canvas.id, migratorContainerId: migratorContainer.id}
 }
 
-// var migrators = [{name : "archrebuild", description : "ARM/PowerPC Migration Status" },
-// {name : "openssl", description : "OpenSSL Migration Status" },
-// {name : "libprotobuf-3.7", description : "Libprotobuf 3.7 Migration Status"},
-// {name : "blasrebuild", description : "Blas Migration Status"}
-// ];
-
 function TotalMigration (migrators_dict_text, bla) {
     var migrators_dict = JSON.parse(migrators_dict_text)
     var migrators = [];
@@ -257,6 +251,5 @@ function TotalMigration (migrators_dict_text, bla) {
         );
     }
 }
-// var url = "https://gist.githubusercontent.com/CJ-Wright/543e66e3c71d63820f62683d6f550af0/raw/169dbc687a82f167bcf87f708484748d65189c95/total_status.json"
 var url = "https://raw.githubusercontent.com/regro/cf-graph3/master/status/total_status.json"
 loadJSON(url, "empty", TotalMigration)
