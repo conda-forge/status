@@ -217,7 +217,7 @@ function createMigratorContainer(migratorName, parentId){
     return {canvasId : canvas.id, migratorContainerId: migratorContainer.id}
 }
 
-function TotalMigration (migrators_dict_text, bla) {
+function totalMigration (migrators_dict_text, bla) {
     var migrators_dict = JSON.parse(migrators_dict_text)
     var migrators = [];
     for (var migrator_info in migrators_dict) {
