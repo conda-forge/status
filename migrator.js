@@ -217,33 +217,39 @@ function createMigratorContainer(migratorName, parentId){
     return {canvasId : canvas.id, migratorContainerId: migratorContainer.id}
 }
 
-var migrators = [{name : "archrebuild", description : "ARM/PowerPC Migration Status" },
-{name : "openssl", description : "OpenSSL Migration Status" },
-{name : "libprotobuf-3.7", description : "Libprotobuf 3.7 Migration Status"},
-{name : "blasrebuild", description : "Blas Migration Status"}
-];
-
-for (var migrator of migrators) {
-    var url = "https://raw.githubusercontent.com/regro/cf-graph3/master/status/" + migrator.name + ".json";
-    loadJSON(url, migrator,
-        function (response, migrator) {
-            var migratorData = JSON.parse(response);
-            var feedstockStatus = migratorData._feedstock_status;
-            delete migratorData._feedstock_status;
-            var canvasData = createMigratorContainer(migrator.name, 'migratorDiv');
-            var ctx = makeContext(canvasData.canvasId);
-            var migratorBarchart = new Barchart({
-                canvas: ctx.migratorCanvas,
-                parentId: canvasData.migratorContainerId,
-                seriesName: migrator.description,
-                padding: 20,
-                gridScale: 5,
-                gridColor: "#eeeeee",
-                data: migratorData,
-                colors: ['#440154', '#31688e', '#35b779', '#fde725']
-            });
-            migratorBarchart.draw();
-            migratorListing(migratorData, feedstockStatus, canvasData.migratorContainerId);
-        }
-    );
+function totalMigration (migrators_dict_text, placeholder) {
+    var migrators_dict = JSON.parse(migrators_dict_text)
+    var migrators = [];
+    for (var migrator_info in migrators_dict) {
+        migrators.push({
+            name: migrator_info,
+            description: migrators_dict[migrator_info]
+        })
+    }
+    for (var migrator of migrators) {
+        var url = "https://raw.githubusercontent.com/regro/cf-graph3/master/status/" + migrator.name + ".json";
+        loadJSON(url, migrator,
+            function (response, migrator) {
+                var migratorData = JSON.parse(response);
+                var feedstockStatus = migratorData._feedstock_status;
+                delete migratorData._feedstock_status;
+                var canvasData = createMigratorContainer(migrator.name, 'migratorDiv');
+                var ctx = makeContext(canvasData.canvasId);
+                var migratorBarchart = new Barchart({
+                    canvas: ctx.migratorCanvas,
+                    parentId: canvasData.migratorContainerId,
+                    seriesName: migrator.description,
+                    padding: 20,
+                    gridScale: 5,
+                    gridColor: "#eeeeee",
+                    data: migratorData,
+                    colors: ['#440154', '#31688e', '#35b779', '#fde725']
+                });
+                migratorBarchart.draw();
+                migratorListing(migratorData, feedstockStatus, canvasData.migratorContainerId);
+            }
+        );
+    }
 }
+var url = "https://raw.githubusercontent.com/regro/cf-graph3/master/status/total_status.json"
+loadJSON(url, "empty", totalMigration)
