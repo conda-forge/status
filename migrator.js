@@ -227,7 +227,7 @@ function totalMigration (migrators_dict_text, placeholder) {
         })
     }
     for (var migrator of migrators) {
-        var url = "https://raw.githubusercontent.com/regro/cf-graph3/master/status/" + migrator.name + ".json";
+        var url = "https://raw.githubusercontent.com/regro/cf-graph-countyfair/master/status/" + migrator.name + ".json";
         loadJSON(url, migrator,
             function (response, migrator) {
                 var migratorData = JSON.parse(response);
@@ -251,5 +251,5 @@ function totalMigration (migrators_dict_text, placeholder) {
         );
     }
 }
-var url = "https://raw.githubusercontent.com/regro/cf-graph3/master/status/total_status.json"
+var url = "https://raw.githubusercontent.com/regro/cf-graph-countyfair/master/status/total_status.json"
 loadJSON(url, "empty", totalMigration)
