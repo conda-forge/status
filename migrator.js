@@ -82,7 +82,7 @@ var Barchart = function(options){
             drawBar(
                 this.ctx,
                 widthSoFar,
-                0,
+                16.0,
                 barWidth,
                 barSize,
                 this.colors[barIndex%this.colors.length]
@@ -98,7 +98,7 @@ var Barchart = function(options){
         this.ctx.textAlign="center";
         this.ctx.fillStyle = "#000000";
         this.ctx.font = "bold 14px Roboto";
-        this.ctx.fillText(this.options.seriesName, this.canvas.width/2,this.canvas.height);
+        this.ctx.fillText(this.options.seriesName, this.canvas.width/2,14.0);
         this.ctx.restore();
 
         //draw legend
@@ -195,6 +195,10 @@ function migratorListing(data, feedstockStatus, elementId) {
         }
         statusList.style.display = "none";
     }
+
+    var hr = document.createElement("hr");
+    hr.style = "border-top: .3rem solid #20918c;";
+    parent.appendChild(hr);
 };
 
 function createMigratorContainer(migratorName, parentId){
