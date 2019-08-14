@@ -53,6 +53,12 @@
 					{% endfor %}
 				</ul>
 
+				<div class="cloning">
+					<h4>CDN cloning status: <span class="status operational">operational</span></h4>
+					<div>For packages scanned in the last 2 weeks see <a href=https://conda-static.anaconda.org/conda-forge/rss.xml>cdn clone rss feed</a></div>
+					<script type="text/javascript" src="cdn-clone.js"></script>
+				</div>
+
 				<h4 data-l10n-id="incidents">Incidents</h4>
 				{% if incidents %}
 					{% for incident in incidents %}
