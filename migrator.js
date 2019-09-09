@@ -247,7 +247,7 @@ function totalMigration (migrators_dict_text, placeholder) {
                     gridScale: 5,
                     gridColor: "#eeeeee",
                     data: migratorData,
-                    colors: ['#440154', '#31688e', '#35b779', '#fde725']
+                    colors: ['#440154', '#31688e', '#35b779', '#fde725', '#000000']
                 });
                 migratorBarchart.draw();
                 migratorListing(migratorData, feedstockStatus, canvasData.migratorContainerId);
