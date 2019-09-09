@@ -44,6 +44,16 @@
                 <div id="migratorDiv" style="text-align:center;"></div>
 		<script type="text/javascript" src="migrator.js"></script>
 
+                <div class="cloning">
+                    <h4>CDN cloning status: <span class="cdn-status status operational">operational</span></h4>
+                    <div>For packages scanned in the last 2 weeks see <a href=https://conda-static.anaconda.org/conda-forge/rss.xml>cdn clone rss feed</a></div>
+                    <script type="text/javascript" src="cdn-clone.js"></script>
+                </div>
+                <div class="autotick bot">
+                                        <h4><a href=https://github.com/regro/cf-scripts> autotick bot </a>status: <img src="https://circleci.com/gh/regro/circle_worker.svg?style=svg" alt="Bot status" align="bottom"></h4>
+                    <div>For more information see <a href=https://circleci.com/gh/regro/circle_worker> circle_ci</a></div>
+                </div>
+
 				<h4 data-l10n-id="systems">Systems</h4>
 				<ul class="systems">
 					{% for system, data in systems.items() %}
@@ -52,16 +62,6 @@
 					</li>
 					{% endfor %}
 				</ul>
-
-				<div class="cloning">
-					<h4>CDN cloning status: <span class="cdn-status status operational">operational</span></h4>
-					<div>For packages scanned in the last 2 weeks see <a href=https://conda-static.anaconda.org/conda-forge/rss.xml>cdn clone rss feed</a></div>
-					<script type="text/javascript" src="cdn-clone.js"></script>
-				</div>
-				<div class="autotick bot">
-                                        <h4><a href=https://github.com/regro/cf-scripts> autotick bot </a>status: <img src="https://circleci.com/gh/regro/circle_worker.svg?style=svg" alt="Bot status" align="bottom"></h4>
-					<div>For more information see <a href=https://circleci.com/gh/regro/circle_worker> circle_ci</a></div>
-				</div>
 
 				<h4 data-l10n-id="incidents">Incidents</h4>
 				{% if incidents %}
