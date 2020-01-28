@@ -203,17 +203,10 @@ function migratorListing(name, data, feedstockStatus, elementId) {
     parent.appendChild(button);
     button.innerHTML = "Graph";
     button.onclick = createToggleMigratorVisibilityHandler(graphId);
-    //var graph = document.createElement("img");
-    var graph = document.createElement("svg-object");
+    var graph = document.createElement("img");
     parent.appendChild(graph);
     graph.setAttribute("id", graphId);
-
-    //graph.setAttribute("src", "https://raw.githubusercontent.com/regro/cf-graph-countyfair/master/status/" + name + ".svg");
-    //graph.setAttribute("onerror", "this.onerror=null; this.src='https://raw.githubusercontent.com/regro/cf-graph-countyfair/master/status/" + name + ".png'");
-
-    graph.setAttribute("data", "https://raw.githubusercontent.com/regro/cf-graph-countyfair/master/status/" + name + ".svg");
-    graph.setAttribute("type", "image/svg+xml");
-
+    graph.setAttribute("src", "https://raw.githubusercontent.com/regro/cf-graph-countyfair/master/status/" + name + ".svg?sanitize=true");
     graph.style.display = "none";
 
     var hr = document.createElement("hr");
