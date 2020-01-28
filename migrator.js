@@ -133,7 +133,7 @@ function createToggleMigratorVisibilityHandler(ident) {
 }
 
 
-function migratorListing(data, feedstockStatus, elementId) {
+function migratorListing(name, data, feedstockStatus, elementId) {
     var parent = document.getElementById(elementId);
 
     function byDescendants(aName, bName) {
@@ -156,6 +156,7 @@ function migratorListing(data, feedstockStatus, elementId) {
         }
     }
 
+    // show status buttons
     for (var status in data) {
         var statusListId = parent.id + status + "List";
         var button = document.createElement("button");
@@ -195,6 +196,18 @@ function migratorListing(data, feedstockStatus, elementId) {
         }
         statusList.style.display = "none";
     }
+
+    // graph button
+    var graphId = parent.id + "Graph";
+    var button = document.createElement("button");
+    parent.appendChild(button);
+    button.innerHTML = "Graph";
+    button.onclick = createToggleMigratorVisibilityHandler(graphId);
+    var graph = document.createElement("img");
+    parent.appendChild(graph);
+    graph.setAttribute("id", graphId);
+    graph.setAttribute("src", "https://raw.githubusercontent.com/regro/cf-graph-countyfair/master/status/" + name + ".svg?sanitize=true");
+    graph.style.display = "none";
 
     var hr = document.createElement("hr");
     hr.style = "border-top: .3rem solid #20918c;";
@@ -250,7 +263,7 @@ function totalMigration (migrators_dict_text, placeholder) {
                     colors: ['#440154', '#31688e', '#35b779', '#fde725', '#000000']
                 });
                 migratorBarchart.draw();
-                migratorListing(migratorData, feedstockStatus, canvasData.migratorContainerId);
+                migratorListing(migrator.name, migratorData, feedstockStatus, canvasData.migratorContainerId);
             }
         );
     }
