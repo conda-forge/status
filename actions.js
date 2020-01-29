@@ -1,5 +1,5 @@
 
-function loadActionsJSON (url, callback) {
+function loadJobsJSON (url, callback) {
   var xobj = new XMLHttpRequest()
   xobj.overrideMimeType('application/json')
   xobj.open('GET', url, true)
@@ -24,7 +24,7 @@ function createToggleActionsVisibilityHandler (ident) {
   }
 }
 
-function actionsRepoListing (parent, report) {
+function repoListing (parent, report) {
   function byNumber (aName, bName) {
     var a = report.repos[aName] || 0
     var b = report.repos[bName] || 0
@@ -40,10 +40,10 @@ function actionsRepoListing (parent, report) {
   var button = document.createElement('button')
   parent.appendChild(button)
   button.innerHTML = '<b>actions usage by feedstock</b>'
-  button.onclick = createToggleActionsVisibilityHandler('github-actiions-list-repos')
+  button.onclick = createToggleActionsVisibilityHandler('github-actions-list-repos')
   var repoList = document.createElement('ol')
   parent.appendChild(repoList)
-  repoList.setAttribute('id', 'github-actiions-list-repos')
+  repoList.setAttribute('id', 'github-actions-list-repos')
   var repos = []
   for (var key in report.repos) {
     repos.push(key)
@@ -80,7 +80,7 @@ function makeCanvas () {
   return canvas
 }
 
-function actionsTimeGraph (parent, report) {
+function timeGraph (parent, report) {
   var canvas = makeCanvas()
   parent.appendChild(canvas)
 
@@ -108,7 +108,8 @@ function actionsTimeGraph (parent, report) {
         yAxes: [{
           ticks: {
             beginAtZero: true,
-            stepSize: 1,
+            precision: 0,
+            maxTicksLimit: 5,
             callback: function (value, index, values) {
               return '' + parseInt(value)
             }
@@ -133,24 +134,43 @@ function actionsTimeGraph (parent, report) {
   parent.appendChild(document.createElement('p'))
 }
 
-function actionsListing (report) {
-  var parent = document.getElementById('github-actions-list')
-
-  // time
-  actionsTimeGraph(parent, report)
-
-  // repos
-  actionsRepoListing(parent, report)
-}
-
-function actionTotals (reportText) {
+function actionsTotals (reportText) {
   var report = JSON.parse(reportText)
   var div = document.getElementById('github-actions-total')
   div.innerHTML = 'GitHub Actions ran ' + report.total + ' jobs in the past eight hours.'
 
-  console.log(report)
-  actionsListing(report)
+  var parent = document.getElementById('github-actions-list')
+
+  timeGraph(parent, report)
+
+  // repoListing(parent, report)
 }
 
-var url = 'https://cf-action-counter.herokuapp.com/report/github-actions'
-loadActionsJSON(url, actionTotals)
+function azureTotals (reportText) {
+  var report = JSON.parse(reportText)
+  var div = document.getElementById('azure-pipelines-total')
+  div.innerHTML = 'Azure Piplines ran ' + report.total + ' jobs in the past eight hours.'
+
+  var parent = document.getElementById('azure-pipelines-list')
+
+  timeGraph(parent, report)
+}
+
+function travisTotals (reportText) {
+  var report = JSON.parse(reportText)
+  var div = document.getElementById('travis-ci-total')
+  div.innerHTML = 'Travis CI ran ' + report.total + ' jobs in the past eight hours.'
+
+  var parent = document.getElementById('travis-ci-list')
+
+  timeGraph(parent, report)
+}
+
+var azureUrl = 'https://cf-action-counter.herokuapp.com/report/azure-pipelines'
+loadJobsJSON(azureUrl, azureTotals)
+
+var githubUrl = 'https://cf-action-counter.herokuapp.com/report/github-actions'
+loadJobsJSON(githubUrl, actionsTotals)
+
+var travisUrl = 'https://cf-action-counter.herokuapp.com/report/travis-ci'
+loadJobsJSON(travisUrl, travisTotals)
