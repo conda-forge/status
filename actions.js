@@ -152,5 +152,5 @@ function actionTotals (reportText) {
   actionsListing(report)
 }
 
-var url = 'https://cf-action-counter.herokuapp.com/report'
+var url = 'https://cf-action-counter.herokuapp.com/report/github-actions'
 loadActionsJSON(url, actionTotals)
