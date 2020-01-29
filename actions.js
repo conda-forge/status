@@ -55,7 +55,7 @@ function actionsRepoListing (parent, report) {
     var repoItem = document.createElement('li')
     var innerHtml = ''
 
-    innerHtml += '<a href="https://github.com/" + repo + "/actions">'
+    innerHtml += '<a href="https://github.com/' + repo + '/actions">'
     innerHtml += '<b>' + repo + '</b>: ' + report.repos[repo]
     innerHtml += '</a>'
     repoItem.innerHTML = innerHtml
