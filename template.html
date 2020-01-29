@@ -55,7 +55,14 @@
                 </div>
                 <div class="github actions">
 					<h4><a href="https://cf-action-counter.herokuapp.com/">GitHub Actions Usage</a></h4>
-					<div>Usage statistics are recorded for the past eight hours.</div>
+					<div id="github-actions-total">GitHub Actions status is not available.</div>
+					<p></p>
+					<div id="github-actions-list"></div>
+					<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment-with-locales.min.js"
+					        integrity="sha256-AdQN98MVZs44Eq2yTwtoKufhnU+uZ7v2kXnD5vqzZVo=" crossorigin="anonymous"></script>
+					<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"
+					        integrity="sha256-TQq84xX6vkwR0Qs1qH5ADkP+MvH0W+9E7TdHJsoIQiM=" crossorigin="anonymous"></script>
+					<script type="text/javascript" src="actions.js"></script>
 				</div>
 
 				<h4 data-l10n-id="systems">Systems</h4>
