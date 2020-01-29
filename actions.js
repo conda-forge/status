@@ -81,14 +81,8 @@ function makeCanvas () {
 }
 
 function actionsTimeGraph (parent, report) {
-  // time
-  // var button = document.createElement('button')
-  // parent.appendChild(button)
-  // button.innerHTML = '<b>usage by time</b>'
-  // button.onclick = createToggleActionsVisibilityHandler('github-actions-graph-time')
   var canvas = makeCanvas()
   parent.appendChild(canvas)
-  // canvas.setAttribute('id', 'github-actions-graph-time')
 
   var labels = []
   var rates = []
@@ -136,8 +130,6 @@ function actionsTimeGraph (parent, report) {
       }
     }
   })
-
-  // canvas.style.display = 'none'
 
   parent.appendChild(document.createElement('p'))
 }
