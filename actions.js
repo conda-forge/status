@@ -143,7 +143,7 @@ function actionsTotals (reportText) {
 
   timeGraph(parent, report)
 
-  // repoListing(parent, report)
+  repoListing(parent, report)
 }
 
 function azureTotals (reportText) {
