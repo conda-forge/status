@@ -124,7 +124,6 @@ function actionsTimeGraph (parent, report) {
           },
           time: {
             minUnit: 'hour'
-
           }
         }]
       }
