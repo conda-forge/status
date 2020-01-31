@@ -37,22 +37,42 @@
           Major Outage
         </div> -->
 
-        <h4>Cloud Services</h4>
-        <div id="ciStatusDiv-github"><h5><a href="https://www.githubstatus.com/">GitHub status</a>: No Status Available</h5></div>
-        <div id="ciStatusDiv-travis"><h5><a href="https://www.traviscistatus.com">Travis CI status</a>: No Status Available</h5></div>
-        <div id="ciStatusDiv-circle"><h5><a href="https://status.circleci.com">CircleCI status</a>: No Status Available</h5></div>
-        <div id="ciStatusDiv-appveyor"><h5><a href="https://status.appveyor.com">AppVeyor status</a>: No Status Available</h5></div>
-        <script type="text/javascript" src="cistatus.js"></script>
-
         <h4>Current Migrations</h4>
         <div id="migratorDiv" style="text-align:center;"></div>
         <script type="text/javascript" src="migrator.js"></script>
 
+        <div class="azure pipelines">
+          <h4>Azure Pipelines Usage</h4>
+          <div id="azure-pipelines-total">Azure Piplines status is not available.</div>
+          <p></p>
+          <div id="azure-pipelines-list"></div>
+        </div>
+
+        <div class="github actions">
+          <h4>GitHub Actions Usage</h4>
+          <div id="github-actions-total">GitHub Actions status is not available.</div>
+          <p></p>
+          <div id="github-actions-list"></div>
+        </div>
+
+        <div class="travis ci">
+          <h4>Travis CI Usage</h4>
+          <div id="travis-ci-total">Travis CI status is not available.</div>
+          <p></p>
+          <div id="travis-ci-list"></div>
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment-with-locales.min.js"
+                integrity="sha256-AdQN98MVZs44Eq2yTwtoKufhnU+uZ7v2kXnD5vqzZVo=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"
+                integrity="sha256-TQq84xX6vkwR0Qs1qH5ADkP+MvH0W+9E7TdHJsoIQiM=" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="actions.js"></script>
+
         <div class="cloning">
             <h4>CDN cloning status: <span class="cdn-status status operational">operational</span></h4>
             <div>
-              For packages scanned in the last 2 weeks see
-              <a href=https://conda-static.anaconda.org/conda-forge/rss.xml>cdn clone rss feed</a>
+              For packages scanned in the last 2 weeks see the
+              <a href=https://conda-static.anaconda.org/conda-forge/rss.xml>cdn clone rss feed</a>.
             </div>
             <script type="text/javascript" src="cdn-clone.js"></script>
         </div>
@@ -86,32 +106,12 @@
           </h5>
         </div>
 
-        <div class="azure pipelines">
-          <h4>Azure Pipelines Usage</h4>
-          <div id="azure-pipelines-total">Azure Piplines status is not available.</div>
-          <p></p>
-          <div id="azure-pipelines-list"></div>
-        </div>
-
-        <div class="github actions">
-          <h4>GitHub Actions Usage</h4>
-          <div id="github-actions-total">GitHub Actions status is not available.</div>
-          <p></p>
-          <div id="github-actions-list"></div>
-        </div>
-
-        <div class="travis ci">
-          <h4>Travis CI Usage</h4>
-          <div id="travis-ci-total">Travis CI status is not available.</div>
-          <p></p>
-          <div id="travis-ci-list"></div>
-        </div>
-
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment-with-locales.min.js"
-                integrity="sha256-AdQN98MVZs44Eq2yTwtoKufhnU+uZ7v2kXnD5vqzZVo=" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"
-                integrity="sha256-TQq84xX6vkwR0Qs1qH5ADkP+MvH0W+9E7TdHJsoIQiM=" crossorigin="anonymous"></script>
-        <script type="text/javascript" src="actions.js"></script>
+        <h4>Cloud Services</h4>
+        <div id="ciStatusDiv-github"><h5><a href="https://www.githubstatus.com/">GitHub status</a>: No Status Available</h5></div>
+        <div id="ciStatusDiv-travis"><h5><a href="https://www.traviscistatus.com">Travis CI status</a>: No Status Available</h5></div>
+        <div id="ciStatusDiv-circle"><h5><a href="https://status.circleci.com">CircleCI status</a>: No Status Available</h5></div>
+        <div id="ciStatusDiv-appveyor"><h5><a href="https://status.appveyor.com">AppVeyor status</a>: No Status Available</h5></div>
+        <script type="text/javascript" src="cistatus.js"></script>
 
         <!-- <h4 data-l10n-id="systems">Systems</h4>
         <ul class="systems">
