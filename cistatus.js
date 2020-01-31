@@ -8,19 +8,19 @@ function loadCIHTML (url, service, slug, callback) {
     if (xobj.readyState === 4 && xobj.status === 200) {
       // Required use of an anonymous callback as .open will NOT return a value
       // but simply returns undefined in asynchronous mode
-      callback(service, slug, xobj.response)
+      callback(service, slug, xobj.response, url)
     }
   }
   xobj.send(null)
 }
 
-function displayStatus (service, slug, htmlDocument) {
+function displayStatus (service, slug, htmlDocument, url) {
   var div = document.getElementById('ciStatusDiv-' + slug)
   div.innerHTML = ''
   var p = document.createElement('h5')
   var s = document.createElement('span')
   div.appendChild(p)
-  p.innerHTML = service + ': '
+  p.innerHTML = '<a href="' + url + '">' + service + ' status</a>' + ': '
   p.appendChild(s)
 
   var stat = htmlDocument.getElementsByClassName('status')[0].getElementsByClassName('font-large')[0].innerHTML
