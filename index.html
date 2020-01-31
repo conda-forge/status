@@ -26,8 +26,22 @@
       <section class="container" id="main">
 
         <div class="panel operational" data-l10n-id="systems-operational">
-          All Systems operational.
+          All Systems Mostly Operational
         </div>
+
+        <!-- <div class="panel degraded performance" data-l10n-id="systems-operational">
+          Degraded Performance
+        </div> -->
+
+        <!-- <div class="panel major outage" data-l10n-id="systems-operational">
+          Major Outage
+        </div> -->
+
+        <h4>CI Services</h4>
+        <div id="ciStatusDiv-travis"><h5>Travis CI: No Status Available</h5></div>
+        <div id="ciStatusDiv-circle"><h5>CircleCI: No Status Available</h5></div>
+        <div id="ciStatusDiv-appveyor"><h5>AppVeyor: No Status Available</h5></div>
+        <script type="text/javascript" src="cistatus.js"></script>
 
         <h4>Current Migrations</h4>
         <div id="migratorDiv" style="text-align:center;"></div>
@@ -45,6 +59,11 @@
         <div class="autotick bot">
           <h4><a href=https://github.com/regro/cf-scripts> autotick bot </a>status: <img src="https://circleci.com/gh/regro/circle_worker.svg?style=svg" alt="Bot status" align="bottom"></h4>
           <div>For more information see <a href=https://circleci.com/gh/regro/circle_worker> circle_ci</a></div>
+        </div>
+
+        <div class="staged-recipes">
+          <h4><a href="https://github.com/conda-forge/staged-recipes">staged-recipes</a> status:
+              <img src="https://travis-ci.com/conda-forge/staged-recipes.svg?branch=master" alt="staged-recipes status" align="bottom"></h4>
         </div>
 
         <div class="azure pipelines">
@@ -74,7 +93,7 @@
                 integrity="sha256-TQq84xX6vkwR0Qs1qH5ADkP+MvH0W+9E7TdHJsoIQiM=" crossorigin="anonymous"></script>
         <script type="text/javascript" src="actions.js"></script>
 
-        <h4 data-l10n-id="systems">Systems</h4>
+        <!-- <h4 data-l10n-id="systems">Systems</h4>
         <ul class="systems">
 
           <li>
@@ -116,7 +135,7 @@
         </ul>
 
         <h4 data-l10n-id="incidents">Incidents</h4>
-        <em data-l10n-id="no.incidents">No incidents in the past 90 days.</em>
+        <em data-l10n-id="no.incidents">No incidents in the past 90 days.</em> -->
 
         </section>
 
@@ -128,6 +147,6 @@
         </footer>
 
     </main>
-    <script src="statuspage.js" type="text/javascript"></script>
+    <!-- <script src="statuspage.js" type="text/javascript"></script> -->
   </body>
 </html>
