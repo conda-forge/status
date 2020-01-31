@@ -33,6 +33,7 @@ function displayStatus (service, slug, htmlDocument) {
   }
 }
 
+loadCIHTML('https://www.githubstatus.com/', 'GitHub', 'github', displayStatus)
 loadCIHTML('https://www.traviscistatus.com', 'Travis CI', 'travis', displayStatus)
 loadCIHTML('https://status.circleci.com', 'CircleCI', 'circle', displayStatus)
 loadCIHTML('https://status.appveyor.com', 'AppVeyor', 'appveyor', displayStatus)
