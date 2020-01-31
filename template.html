@@ -48,6 +48,51 @@
           {% endfor %}
         {% endif %} -->
 
+        <h4> Repos and Bots</h4>
+
+        <div class="docs">
+          <h5><a href="https://github.com/conda-forge/conda-forge.github.io"> documentation</a> status:
+            <a href="https://travis-ci.com/conda-forge/conda-forge.github.io">
+            <img src="https://travis-ci.com/conda-forge/conda-forge.github.io.svg?branch=master"
+                 alt="documentation status" align="bottom">
+            </a>
+          </h5>
+        </div>
+
+        <div class="autotick bot">
+          <h5><a href=https://github.com/regro/cf-scripts> autotick bot </a>status:
+            <a href=https://circleci.com/gh/regro/circle_worker>
+            <img src="https://circleci.com/gh/regro/circle_worker.svg?style=svg"
+                 alt="autotick status" align="bottom">
+            </a>
+          </h5>
+        </div>
+
+        <div class="staged-recipes">
+          <h5><a href="https://github.com/conda-forge/staged-recipes">staged-recipes</a> status:
+            <a href="https://travis-ci.com/conda-forge/staged-recipes">
+            <img src="https://travis-ci.com/conda-forge/staged-recipes.svg?branch=master"
+                 alt="staged-recipes status" align="bottom">
+            </a>
+          </h5>
+        </div>
+
+        <div class="cloning">
+          <h4>CDN cloning status: <span class="cdn-status status operational">operational</span></h4>
+          <div>
+            For packages scanned in the last 2 weeks see the
+            <a href=https://conda-static.anaconda.org/conda-forge/rss.xml>cdn clone rss feed</a>.
+          </div>
+          <script type="text/javascript" src="cdn-clone.js"></script>
+        </div>
+
+        <h4>Cloud Services</h4>
+        <div id="ciStatusDiv-github"><h5><a href="https://www.githubstatus.com/">GitHub status</a>: No Status Available</h5></div>
+        <div id="ciStatusDiv-travis"><h5><a href="https://www.traviscistatus.com">Travis CI status</a>: No Status Available</h5></div>
+        <div id="ciStatusDiv-circle"><h5><a href="https://status.circleci.com">CircleCI status</a>: No Status Available</h5></div>
+        <div id="ciStatusDiv-appveyor"><h5><a href="https://status.appveyor.com">AppVeyor status</a>: No Status Available</h5></div>
+        <script type="text/javascript" src="cistatus.js"></script>
+
         <h4>Current Migrations</h4>
         <div id="migratorDiv" style="text-align:center;"></div>
         <script type="text/javascript" src="migrator.js"></script>
@@ -78,51 +123,6 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"
                 integrity="sha256-TQq84xX6vkwR0Qs1qH5ADkP+MvH0W+9E7TdHJsoIQiM=" crossorigin="anonymous"></script>
         <script type="text/javascript" src="actions.js"></script>
-
-        <div class="cloning">
-          <h4>CDN cloning status: <span class="cdn-status status operational">operational</span></h4>
-          <div>
-            For packages scanned in the last 2 weeks see the
-            <a href=https://conda-static.anaconda.org/conda-forge/rss.xml>cdn clone rss feed</a>.
-          </div>
-          <script type="text/javascript" src="cdn-clone.js"></script>
-        </div>
-
-        <h4> Repos and Bots</h4>
-
-        <div class="docs">
-          <h5><a href="https://github.com/conda-forge/conda-forge.github.io"> documentation</a> status:
-            <a href="https://travis-ci.com/conda-forge/conda-forge.github.io">
-            <img src="https://travis-ci.com/conda-forge/conda-forge.github.io.svg?branch=master"
-                 alt="documentation status" align="bottom">
-            </a>
-          </h5>
-        </div>
-
-        <div class="autotick bot">
-          <h5><a href=https://github.com/regro/cf-scripts> autotick bot </a>status:
-            <a href=https://circleci.com/gh/regro/circle_worker>
-            <img src="https://circleci.com/gh/regro/circle_worker.svg?style=svg"
-                 alt="autotick status" align="bottom">
-            </a>
-          </h5>
-        </div>
-
-        <div class="staged-recipes">
-          <h5><a href="https://github.com/conda-forge/staged-recipes">staged-recipes</a> status:
-            <a href="https://travis-ci.com/conda-forge/staged-recipes">
-            <img src="https://travis-ci.com/conda-forge/staged-recipes.svg?branch=master"
-                 alt="staged-recipes status" align="bottom">
-            </a>
-          </h5>
-        </div>
-
-        <h4>Cloud Services</h4>
-        <div id="ciStatusDiv-github"><h5><a href="https://www.githubstatus.com/">GitHub status</a>: No Status Available</h5></div>
-        <div id="ciStatusDiv-travis"><h5><a href="https://www.traviscistatus.com">Travis CI status</a>: No Status Available</h5></div>
-        <div id="ciStatusDiv-circle"><h5><a href="https://status.circleci.com">CircleCI status</a>: No Status Available</h5></div>
-        <div id="ciStatusDiv-appveyor"><h5><a href="https://status.appveyor.com">AppVeyor status</a>: No Status Available</h5></div>
-        <script type="text/javascript" src="cistatus.js"></script>
 
         <!-- <h4 data-l10n-id="systems">Systems</h4>
         <ul class="systems">
