@@ -25,11 +25,17 @@ function displayStatus (service, slug, htmlDocument, url) {
 
   var stat = htmlDocument.getElementsByClassName('status')[0].getElementsByClassName('font-large')[0].innerHTML
   stat = stat.trim()
-  s.innerHTML = stat
   if (stat.toLowerCase() === 'all systems operational') {
+    s.innerHTML = stat
     s.className = 'status operational'
   } else {
-    s.className = 'status degraded performance'
+    try {
+      var _s = htmlDocument.getElementsByClassName('status')[0].getElementsByClassName('font-large')[0]
+      s.innerHTML = _s.childNodes[1].innerHTML
+      s.className = 'status degraded performance'
+    } catch (e) {
+      s.innerHTML = 'No Status Available'
+    }
   }
 }
 
