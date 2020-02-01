@@ -50,29 +50,38 @@
 
         <h4> Repos and Bots</h4>
 
+        <script type="text/javascript" src="repostatus.js"></script>
+
         <div class="docs">
-          <h5><a href="https://github.com/conda-forge/conda-forge.github.io"> documentation</a> status:
+          <h5>
+            <a href="https://github.com/conda-forge/conda-forge.github.io"> documentation</a> status:
             <a href="https://travis-ci.com/conda-forge/conda-forge.github.io">
             <img src="https://travis-ci.com/conda-forge/conda-forge.github.io.svg?branch=master"
-                 alt="documentation status" align="bottom">
+                 alt=" " align="bottom"
+                 onerror='statusImageNotFound(this)'>
             </a>
           </h5>
         </div>
 
         <div class="autotick bot">
-          <h5><a href=https://github.com/regro/cf-scripts> autotick bot </a>status:
-            <a href=https://circleci.com/gh/regro/circle_worker>
+          <h5>
+            <a href="https://github.com/regro/cf-scripts"> autotick bot </a>status:
+            <a href="https://circleci.com/gh/regro/circle_worker">
             <img src="https://circleci.com/gh/regro/circle_worker.svg?style=svg"
-                 alt="autotick status" align="bottom">
+                 alt=" " align="bottom"
+                 onerror='statusImageNotFound(this)'
+                 >
             </a>
           </h5>
         </div>
 
         <div class="staged-recipes">
-          <h5><a href="https://github.com/conda-forge/staged-recipes">staged-recipes</a> status:
+          <h5>
+            <a href="https://github.com/conda-forge/staged-recipes">staged-recipes</a> status:
             <a href="https://travis-ci.com/conda-forge/staged-recipes">
             <img src="https://travis-ci.com/conda-forge/staged-recipes.svg?branch=master"
-                 alt="staged-recipes status" align="bottom">
+                 alt=" " align="bottom"
+                 onerror='statusImageNotFound(this)'>
             </a>
           </h5>
         </div>

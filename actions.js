@@ -166,11 +166,11 @@ function travisTotals (reportText) {
   timeGraph(parent, report)
 }
 
-var azureUrl = 'https://cf-action-counter.herokuapp.com/report/azure-pipelines'
+var azureUrl = 'https://conda-forge-status-monitor.herokuapp.com/report/azure-pipelines'
 loadJobsJSON(azureUrl, azureTotals)
 
-var githubUrl = 'https://cf-action-counter.herokuapp.com/report/github-actions'
+var githubUrl = 'https://conda-forge-status-monitor.herokuapp.com/report/github-actions'
 loadJobsJSON(githubUrl, actionsTotals)
 
-var travisUrl = 'https://cf-action-counter.herokuapp.com/report/travis-ci'
+var travisUrl = 'https://conda-forge-status-monitor.herokuapp.com/report/travis-ci'
 loadJobsJSON(travisUrl, travisTotals)
