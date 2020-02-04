@@ -78,7 +78,6 @@
         <div class="webservices">
           <h5><a href="https://github.com/conda-forge/conda-forge-webservices">admin web services</a> status:
               <span id="webservices-status">No Status Available</span></h5>
-          <script type="text/javascript" src="linter.js"></script>
         </div>
 
         <div class="cloning">
@@ -93,23 +92,44 @@
 
         <div class="azure pipelines">
           <h4>Azure Pipelines Usage</h4>
-          <div id="azure-pipelines-total">Azure Piplines status is not available.</div>
+          <div id="azure-pipelines-total">Azure Piplines usage is not available.</div>
           <p></p>
           <div id="azure-pipelines-list"></div>
         </div>
 
         <div class="github actions">
           <h4>GitHub Actions Usage</h4>
-          <div id="github-actions-total">GitHub Actions status is not available.</div>
+          <div id="github-actions-total">GitHub Actions usage is not available.</div>
           <p></p>
           <div id="github-actions-list"></div>
         </div>
 
         <div class="travis ci">
           <h4>Travis CI Usage</h4>
-          <div id="travis-ci-total">Travis CI status is not available.</div>
+          <div id="travis-ci-total">Travis CI usage is not available.</div>
           <p></p>
           <div id="travis-ci-list"></div>
+        </div>
+
+        <div class="circleci">
+          <h4>CircleCI Usage</h4>
+          <div id="circleci-total">CircleCI usage is not available.</div>
+          <p></p>
+          <div id="circleci-list"></div>
+        </div>
+
+        <div class="appveyor">
+          <h4>AppVeyor Usage</h4>
+          <div id="appveyor-total">AppVeyor usage is not available.</div>
+          <p></p>
+          <div id="appveyor-list"></div>
+        </div>
+
+        <div class="drone">
+          <h4>Drone Usage</h4>
+          <div id="drone-total">Drone usage is not available.</div>
+          <p></p>
+          <div id="drone-list"></div>
         </div>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment-with-locales.min.js"
@@ -183,6 +203,7 @@
         </footer>
 
     </main>
+    <script type="text/javascript" src="linter.js"></script>
     <!-- <script src="statuspage.js" type="text/javascript"></script> -->
   </body>
 </html>

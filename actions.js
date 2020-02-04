@@ -166,6 +166,36 @@ function travisTotals (reportText) {
   timeGraph(parent, report)
 }
 
+function circleciTotals (reportText) {
+  var report = JSON.parse(reportText)
+  var div = document.getElementById('circleci-total')
+  div.innerHTML = 'CircleCI ran ' + report.total + ' jobs in the past eight hours.'
+
+  var parent = document.getElementById('circleci-list')
+
+  timeGraph(parent, report)
+}
+
+function appveyorTotals (reportText) {
+  var report = JSON.parse(reportText)
+  var div = document.getElementById('appveyor-total')
+  div.innerHTML = 'AppVeyor ran ' + report.total + ' jobs in the past eight hours.'
+
+  var parent = document.getElementById('appveyor-list')
+
+  timeGraph(parent, report)
+}
+
+function droneTotals (reportText) {
+  var report = JSON.parse(reportText)
+  var div = document.getElementById('drone-total')
+  div.innerHTML = 'Drone ran ' + report.total + ' jobs in the past eight hours.'
+
+  var parent = document.getElementById('drone-list')
+
+  timeGraph(parent, report)
+}
+
 var azureUrl = 'https://conda-forge-status-monitor.herokuapp.com/report/azure-pipelines'
 loadJobsJSON(azureUrl, azureTotals)
 
@@ -174,3 +204,12 @@ loadJobsJSON(githubUrl, actionsTotals)
 
 var travisUrl = 'https://conda-forge-status-monitor.herokuapp.com/report/travis-ci'
 loadJobsJSON(travisUrl, travisTotals)
+
+var circleciUrl = 'https://conda-forge-status-monitor.herokuapp.com/report/circleci'
+loadJobsJSON(circleciUrl, circleciTotals)
+
+var appveyorUrl = 'https://conda-forge-status-monitor.herokuapp.com/report/appveyor'
+loadJobsJSON(appveyorUrl, appveyorTotals)
+
+var droneUrl = 'https://conda-forge-status-monitor.herokuapp.com/report/drone'
+loadJobsJSON(droneUrl, droneTotals)
