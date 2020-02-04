@@ -15,14 +15,14 @@ function loadAzureStatusJSON (url, callback) {
 function displayAzureStatus (reportText) {
   var report = JSON.parse(reportText)
   var div = document.getElementById('azure-status')
-  div.innerHTML = report.azure
+  div.innerHTML = report.status
 
-  if (report.azure === 'Everything is looking good') {
+  if (report.status === 'Everything is looking good') {
     div.className = 'status operational'
   } else {
     div.className = 'status degraded performance'
   }
 }
 
-var url = 'https://conda-forge-status-monitor.herokuapp.com/status'
+var url = 'https://conda-forge-status-monitor.herokuapp.com/status/azure'
 loadAzureStatusJSON(url, displayAzureStatus)

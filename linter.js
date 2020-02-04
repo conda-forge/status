@@ -15,14 +15,14 @@ function loadStatusBotJSON (url, callback) {
 function displayStatusBot (reportText) {
   var report = JSON.parse(reportText)
   var div = document.getElementById('webservices-status')
-  div.innerHTML = report.webservices
+  div.innerHTML = report.status
 
-  if (report.webservices === 'operational') {
+  if (report.status === 'operational') {
     div.className = 'status operational'
   } else {
     div.className = 'status degraded performance'
   }
 }
 
-var url = 'https://conda-forge-status-monitor.herokuapp.com/status'
+var url = 'https://conda-forge-status-monitor.herokuapp.com/status/webservices'
 loadStatusBotJSON(url, displayStatusBot)
