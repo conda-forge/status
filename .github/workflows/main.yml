@@ -1,9 +1,8 @@
-name: update status page
 on:
   issues: {}
   issue_comment: {}
   label: {}
-    
+
 jobs:
   check:
     runs-on: ubuntu-latest
