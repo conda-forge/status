@@ -18,12 +18,10 @@ return to normal.
 
 ## editing the page
 
-When editing the page, edit the `template.html` file. Then run
+When editing the page, edit the `site/template.html` file. Then run
 
 ```bash
 $ python render_page.py
 ```
 
 to inspect the page.
-
-You must render the page before merging a PR!
