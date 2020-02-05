@@ -35,7 +35,7 @@ for issue in issues:
                 'id': int(issue.number),
                 'url': issue.url,
                 'severity': list((lnames & BAD_LABELS))[0],
-                'state': open,
+                'state': 'open',
                 'time': issue.updated_at.strftime(TIME_FMT),
                 'epoch': issue.updated_at.timestamp(),
                 'body': issue.body})
@@ -73,7 +73,7 @@ print("open issues:\n" + pprint.pformat(open_issues))
 print("closed issues:\n" + pprint.pformat(closed_issues))
 
 # render it
-with open('template.html', 'r') as fp:
+with open('site/template.html', 'r') as fp:
     template = jinja2.Template(fp.read())
 
 with open('config.json', 'r') as fp:
@@ -85,5 +85,5 @@ page = template.render(
     open_issues=open_issues,
     closed_issues=closed_issues)
 
-with open('index.html', 'w') as fp:
+with open('site/index.html', 'w') as fp:
     fp.write(page)

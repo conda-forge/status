@@ -2,6 +2,9 @@ on:
   issues: {}
   issue_comment: {}
   label: {}
+  push:
+    branches:
+      - master
 
 jobs:
   render:
@@ -9,8 +12,6 @@ jobs:
     steps:
     - name: checkout
       uses: actions/checkout@v2
-      with:
-        ref: gh-pages
     - name: setup miniconda
       uses: goanpeca/setup-miniconda@v1
       with:
@@ -21,15 +22,15 @@ jobs:
       shell: bash -l {0}
       run: |
           conda activate cf
-          git config --global user.name "conda-forge-admin"
-          git config --global user.email "pelson.pub+conda-forge@gmail.com"
+          git config --global user.name "cf-blacksmithy"
+          git config --global user.email "cf-blacksmithy@email.com"
           python render_page.py
-          git add index.html
-          git commit -m 'updated index.html'
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    - name: push changes
-      uses: ad-m/github-push-action@master
+        GITHUB_TOKEN: ${{ secrets.AUTH_TOKEN }}
+    - name: deploy
+      uses: peaceiris/actions-gh-pages@v3
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        branch: gh-pages
+        personal_token: ${{ secrets.AUTH_TOKEN }}
+        publish_dir: ./site
+        user_name: cf-blacksmithy
+        user_email: cf-blacksmithy@email.com
