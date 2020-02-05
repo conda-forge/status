@@ -26,6 +26,8 @@ jobs:
           python render_page.py
           git add index.html
           git commit -m 'updated index.html'
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: push changes
       uses: ad-m/github-push-action@master
       with:
