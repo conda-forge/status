@@ -1,0 +1,32 @@
+name: update status page
+on:
+  issues: {}
+  issue_comment: {}
+  label: {}
+    
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+    - uses:
+      with:
+        ref: gh-pages
+    - uses: goanpeca/setup-miniconda@v1
+      with:
+        activate-environment: cf
+        environment-file: environment.yml
+        auto-activate-base: true
+    - name: update status page
+      shell: bash -l {0}
+      run: |
+          conda activate cf
+          git config --global user.name "conda-forge-admin"
+          git config --global user.email "pelson.pub+conda-forge@gmail.com"
+          python render_page.py
+          git add index.html
+          git commit -m 'updated index.html'
+    - name: push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: gh-pages
