@@ -1,0 +1,36 @@
+on:
+  issues: {}
+  issue_comment: {}
+  label: {}
+  push:
+    branches:
+      - master
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout
+      uses: actions/checkout@v2
+    - name: setup miniconda
+      uses: goanpeca/setup-miniconda@v1
+      with:
+        activate-environment: cf
+        environment-file: environment.yml
+        auto-activate-base: true
+    - name: update status page
+      shell: bash -l {0}
+      run: |
+          conda activate cf
+          git config --global user.name "cf-blacksmithy"
+          git config --global user.email "cf-blacksmithy@email.com"
+          python render_page.py
+      env:
+        GITHUB_TOKEN: ${{ secrets.AUTH_TOKEN }}
+    - name: deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        personal_token: ${{ secrets.AUTH_TOKEN }}
+        publish_dir: ./site
+        user_name: cf-blacksmithy
+        user_email: cf-blacksmithy@email.com

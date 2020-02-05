@@ -1,0 +1,6 @@
+{
+    "title": "conda-forge status",
+    "logo": "icon.png",
+    "favicon": "icon.png",
+    "footer": "Status page for <a href='https://conda-forge.github.io'>conda-forge</a>, generated with <a href='https://github.com/jayfk/statuspage'>jayfk/statuspage</a>."
+}
