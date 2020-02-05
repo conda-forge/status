@@ -33,7 +33,7 @@ for issue in issues:
             open_issues.append({
                 'title': issue.title,
                 'id': int(issue.number),
-                'url': issue.url,
+                'url': issue.html_url,
                 'severity': list((lnames & BAD_LABELS))[0],
                 'state': 'open',
                 'time': issue.updated_at.strftime(TIME_FMT),
@@ -44,7 +44,7 @@ for issue in issues:
                 closed_issues.append({
                     'title': issue.title,
                     'id': int(issue.number),
-                    'url': issue.url,
+                    'url': issue.html_url,
                     'severity': list((lnames & BAD_LABELS))[0],
                     'state': 'closed',
                     'time': issue.closed_at.strftime(TIME_FMT),
