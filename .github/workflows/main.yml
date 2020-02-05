@@ -28,7 +28,7 @@ jobs:
           git commit -m 'updated index.html'
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    - name: push changes
+    - name: push changes to gh-pages
       uses: ad-m/github-push-action@master
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
