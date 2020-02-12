@@ -31,7 +31,11 @@ function displayStatus (service, slug, htmlDocument, url) {
   } else {
     try {
       var _s = htmlDocument.getElementsByClassName('status')[0].getElementsByClassName('font-large')[0]
-      s.innerHTML = _s.childNodes[1].innerHTML
+      if (_s.childNodes.length >= 2) {
+        s.innerHTML = _s.childNodes[1].innerHTML
+      } else {
+        s.innerHTML = _s.innerHTML
+      }
       s.className = 'status degraded performance'
     } catch (e) {
       s.innerHTML = 'No Status Available'
