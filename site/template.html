@@ -43,7 +43,7 @@
         {% endif %}
 
         {% if open_issues %}
-        <h4>Ongoing Incidents</h4>
+        <h4 id="incidents"><a href="#incidents" style="color: inherit;">Ongoing Incidents</a></h4>
         <em>See the linked GitHub issue for incident updates.</em>
         {% for issue in open_issues %}
         <div class="incident">
@@ -57,7 +57,7 @@
         {% endfor %}
         {% endif %}
 
-        <h4> Repos and Bots</h4>
+        <h4 id="repos_and_bots"><a href="#repos_and_bots" style="color: inherit;">Repos and Bots</a></h4>
 
         <script type="text/javascript" src="repostatus.js"></script>
 
@@ -118,54 +118,54 @@
             <script type="text/javascript" src="cdn-clone.js"></script>
         </div>
 
-        <h4>Current Migrations</h4>
+        <h4 id="current_migrations"><a href="#current_migrations" style="color: inherit;">Current Migrations</a></h4>
         <div id="migratorDiv" style="text-align:center;"></div>
         <script type="text/javascript" src="migrator.js"></script>
 
-        <h4>Version Updates</h4>
+        <h4 id="version_updates"><a href="#version_updates" style="color: inherit;">Version Updates</a></h4>
         <div id="versionDiv" style="text-align:left;"></div>
         <script type="text/javascript" src="version.js"></script>
 
         <div class="azure pipelines">
-          <h4>Azure Pipelines Usage</h4>
+          <h4 id="azure"><a href="#azure" style="color: inherit;">Azure Pipelines Usage</a></h4>
           <div id="azure-pipelines-total">Azure Piplines usage is not available.</div>
           <p></p>
           <div id="azure-pipelines-list"></div>
         </div>
 
         <div class="github actions">
-          <h4>GitHub Actions Usage</h4>
+          <h4 id="github_actions"><a href="#github_actions" style="color: inherit;">GitHub Actions Usage</a></h4>
           <div id="github-actions-total">GitHub Actions usage is not available.</div>
           <p></p>
           <div id="github-actions-list"></div>
         </div>
 
         <div class="travis ci">
-          <h4>Travis CI Usage</h4>
+          <h4 id="travis"><a href="#travis" style="color: inherit;">Travis CI Usage</a></h4>
           <div id="travis-ci-total">Travis CI usage is not available.</div>
           <p></p>
           <div id="travis-ci-list"></div>
         </div>
 
+        <div class="drone">
+          <h4 id="drone"><a href="#drone" style="color: inherit;">Drone Usage</a></h4>
+          <div id="drone-total">Drone usage is not available.</div>
+          <p></p>
+          <div id="drone-list"></div>
+        </div>
+
         <div class="circleci">
-          <h4>CircleCI Usage</h4>
+          <h4 id="circle"><a href="#circle" style="color: inherit;">CircleCI Usage</a></h4>
           <div id="circleci-total">CircleCI usage is not available.</div>
           <p></p>
           <div id="circleci-list"></div>
         </div>
 
         <div class="appveyor">
-          <h4>AppVeyor Usage</h4>
+          <h4 id="appveyor"><a href="#appveyor" style="color: inherit;">AppVeyor Usage</a></h4>
           <div id="appveyor-total">AppVeyor usage is not available.</div>
           <p></p>
           <div id="appveyor-list"></div>
-        </div>
-
-        <div class="drone">
-          <h4>Drone Usage</h4>
-          <div id="drone-total">Drone usage is not available.</div>
-          <p></p>
-          <div id="drone-list"></div>
         </div>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment-with-locales.min.js"
@@ -174,18 +174,18 @@
                 integrity="sha256-TQq84xX6vkwR0Qs1qH5ADkP+MvH0W+9E7TdHJsoIQiM=" crossorigin="anonymous"></script>
         <script type="text/javascript" src="actions.js"></script>
 
-        <h4>Cloud Services</h4>
+        <h4 id="cloud_services"><a href="#cloud_services" style="color: inherit;">Cloud Services</a></h4>
         <div id="ciStatusDiv-github"><h5><a href="https://www.githubstatus.com/">GitHub status</a>: No Status Available</h5></div>
         <div id="ciStatusDiv-travis"><h5><a href="https://www.traviscistatus.com">Travis CI status</a>: No Status Available</h5></div>
         <div id="ciStatusDiv-circle"><h5><a href="https://status.circleci.com">CircleCI status</a>: No Status Available</h5></div>
         <div id="ciStatusDiv-appveyor"><h5><a href="https://status.appveyor.com">AppVeyor status</a>: No Status Available</h5></div>
         <script type="text/javascript" src="cistatus.js"></script>
-        <div id="azure">
+        <div id="azure-dummy-div">
           <h5><a href="https://status.dev.azure.com/">Azure DevOps</a>: <span id="azure-status">No Status Available</span></h5>
         </div>
         <script type="text/javascript" src="azure.js"></script>
 
-        <h4>Incidents</h4>
+        <h4 id="incident_history"><a href="#incident_history" style="color: inherit;">Incidents</a></h4>
         {% if closed_issues %}
         {% for issue in closed_issues %}
         <div class="incident">
