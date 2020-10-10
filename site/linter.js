@@ -31,7 +31,7 @@ function sleep (time) {
   return new Promise((resolve) => setTimeout(resolve, time))
 }
 
-sleep(300).then(() => {
+sleep(500).then(() => {
   var hashVal = window.location.hash.substr(1)
   var element = document.getElementById(hashVal)
   var yOffset = -30
