@@ -37,7 +37,6 @@ sleep(300).then(() => {
   var yOffset = -30
   if (typeof element === 'undefined' || element == null) {
     element = document.getElementById('Container_' + hashVal)
-    yOffset = -10
   }
   console.log(element)
   if (typeof element !== 'undefined') {
