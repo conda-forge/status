@@ -27,11 +27,7 @@ function displayStatusBot (reportText) {
 var url = 'https://conda-forge-status-monitor.herokuapp.com/status/webservices'
 loadStatusBotJSON(url, displayStatusBot)
 
-function sleep (time) {
-  return new Promise((resolve) => setTimeout(resolve, time))
-}
-
-sleep(500).then(() => {
+window.addEventListener('migratorsDone', function () {
   var hashVal = window.location.hash.substr(1)
   var element = document.getElementById(hashVal)
   var yOffset = -30
@@ -42,6 +38,23 @@ sleep(500).then(() => {
   if (typeof element !== 'undefined') {
     var y = element.getBoundingClientRect().top + window.pageYOffset + yOffset
     window.scrollTo({ top: y, behavior: 'smooth' })
-    // element.scrollIntoView()
   }
 })
+
+// function sleep (time) {
+//   return new Promise((resolve) => setTimeout(resolve, time))
+// }
+//
+// sleep(200).then(() => {
+//   var hashVal = window.location.hash.substr(1)
+//   var element = document.getElementById(hashVal)
+//   var yOffset = -30
+//   if (typeof element === 'undefined' || element == null) {
+//     element = document.getElementById('Container_' + hashVal)
+//   }
+//   if (typeof element !== 'undefined') {
+//     var y = element.getBoundingClientRect().top + window.pageYOffset + yOffset
+//     window.scrollTo({ top: y, behavior: 'smooth' })
+//     // element.scrollIntoView()
+//   }
+// })

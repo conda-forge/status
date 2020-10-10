@@ -122,6 +122,7 @@ var Barchart = function (options) {
       li.style.display = 'inline'
       li.style.borderLeft = '20px solid ' + this.colors[i % this.colors.length]
       li.style.padding = '5px'
+      li.style.font = 'bold 16px Roboto'
       li.textContent = categ + ' (' + _val.toString() + ')'
       ul.append(li)
     }
@@ -278,8 +279,11 @@ function totalMigration (migratorsDictText, placeholder) {
 
   for (var migrator of migrators) {
     var url = 'https://raw.githubusercontent.com/regro/cf-graph-countyfair/master/status/' + migrator.name + '.json'
-    loadJSON(url, migrator,
-      function (response, migrator) {
+    var last = migrators.indexOf(migrator) === (migrators.length - 1)
+    loadJSON(url, { m: migrator, l: last },
+      function (response, ml) {
+        migrator = ml.m
+        last = ml.l
         var migratorData = JSON.parse(response)
         var feedstockStatus = migratorData._feedstock_status
         delete migratorData._feedstock_status
@@ -298,6 +302,11 @@ function totalMigration (migratorsDictText, placeholder) {
         })
         migratorBarchart.draw()
         migratorListing(migrator.name, migratorData, feedstockStatus, categories, canvasData.migratorContainerId)
+
+        if (last) {
+          const myEvent = new CustomEvent('migratorsDone')
+          window.dispatchEvent(myEvent)
+        }
       }
     )
   }
