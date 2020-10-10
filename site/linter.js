@@ -24,37 +24,25 @@ function displayStatusBot (reportText) {
   }
 }
 
+function sleep (time) {
+  return new Promise((resolve) => setTimeout(resolve, time))
+}
+
 var url = 'https://conda-forge-status-monitor.herokuapp.com/status/webservices'
 loadStatusBotJSON(url, displayStatusBot)
 
 window.addEventListener('migratorsDone', function () {
-  var hashVal = window.location.hash.substr(1)
-  var element = document.getElementById(hashVal)
-  var yOffset = -30
-  if (typeof element === 'undefined' || element == null) {
-    element = document.getElementById('Container_' + hashVal)
-  }
-  console.log(element)
-  if (typeof element !== 'undefined') {
-    var y = element.getBoundingClientRect().top + window.pageYOffset + yOffset
-    window.scrollTo({ top: y, behavior: 'smooth' })
-  }
+  sleep(300).then(() => {
+    var hashVal = window.location.hash.substr(1)
+    var element = document.getElementById(hashVal)
+    var yOffset = -30
+    if (typeof element === 'undefined' || element == null) {
+      element = document.getElementById('Container_' + hashVal)
+    }
+    console.log(element)
+    if (typeof element !== 'undefined') {
+      var y = element.getBoundingClientRect().top + window.pageYOffset + yOffset
+      window.scrollTo({ top: y, behavior: 'smooth' })
+    }
+  })
 })
-
-// function sleep (time) {
-//   return new Promise((resolve) => setTimeout(resolve, time))
-// }
-//
-// sleep(200).then(() => {
-//   var hashVal = window.location.hash.substr(1)
-//   var element = document.getElementById(hashVal)
-//   var yOffset = -30
-//   if (typeof element === 'undefined' || element == null) {
-//     element = document.getElementById('Container_' + hashVal)
-//   }
-//   if (typeof element !== 'undefined') {
-//     var y = element.getBoundingClientRect().top + window.pageYOffset + yOffset
-//     window.scrollTo({ top: y, behavior: 'smooth' })
-//     // element.scrollIntoView()
-//   }
-// })
