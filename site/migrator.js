@@ -58,7 +58,12 @@ var Barchart = function (options) {
 
   this.draw = function () {
     var totalValue = 0
-    for (var categ in this.options.data) {
+    var ncategs = this.options.categories.length
+    var i = 0
+    var categ = ''
+
+    for (i = 0; i < ncategs; i++) {
+      categ = this.options.categories[i]
       totalValue = totalValue + this.options.data[categ].length
     }
     var canvasActualHeight = this.canvas.height - this.options.padding * 2
@@ -69,7 +74,8 @@ var Barchart = function (options) {
     var barSize = canvasActualHeight
 
     var widthSoFar = 0
-    for (categ in this.options.data) {
+    for (i = 0; i < ncategs; i++) {
+      categ = this.options.categories[i]
       var val = this.options.data[categ].length
       var barWidth = Math.round(canvasActualWidth * val / totalValue)
       drawBar(
@@ -99,7 +105,8 @@ var Barchart = function (options) {
     var legend = document.getElementById(this.parentContainer + 'legend')
     var ul = document.createElement('ul')
     legend.append(ul)
-    for (categ in this.options.data) {
+    for (i = 0; i < ncategs; i++) {
+      categ = this.options.categories[i]
       var li = document.createElement('li')
       var _val = this.options.data[categ].length
       li.style.listStyle = 'none'
@@ -124,7 +131,7 @@ function createToggleMigratorVisibilityHandler (ident) {
   }
 }
 
-function migratorListing (name, data, feedstockStatus, elementId) {
+function migratorListing (name, data, feedstockStatus, categories, elementId) {
   var parent = document.getElementById(elementId)
 
   function byDescendants (aName, bName) {
@@ -148,7 +155,7 @@ function migratorListing (name, data, feedstockStatus, elementId) {
   }
 
   // show status buttons
-  for (var status in data) {
+  for (var status of categories) {
     var statusListId = parent.id + status + 'List'
     var button = document.createElement('button')
     parent.appendChild(button)
@@ -178,8 +185,14 @@ function migratorListing (name, data, feedstockStatus, elementId) {
         innerHtml += (' <span title="Total Number of Descendants">(' +
                       feedstockData.num_descendants.toString() +
                       ')</span>')
+        if (typeof feedstockData.pre_pr_migrator_status !== 'undefined') {
+          if (feedstockData.pre_pr_migrator_status.length > 0) {
+            innerHtml += (' <i>Solver Error:</i> ' +
+                          feedstockData.pre_pr_migrator_status)
+          }
+        }
         if (feedstockData.num_descendants > 0) {
-          innerHtml += (' <i>Immediate Children:</i> ' +
+          innerHtml += (' <br/><i>Immediate Children:</i> ' +
                         feedstockData.immediate_children.join(', '))
         }
       }
@@ -210,11 +223,12 @@ function migratorListing (name, data, feedstockStatus, elementId) {
 };
 
 function createMigratorContainer (migratorName, parentId) {
+  var a = document.createElement('a')
+  a.title = migratorName
+  a.href = '#' + migratorName
+
   var migratorContainer = document.createElement('div')
   migratorContainer.id = 'Container' + '_' + migratorName
-
-  var parent = document.getElementById(parentId)
-  parent.appendChild(migratorContainer)
 
   var canvas = document.createElement('canvas')
   canvas.id = 'migratorCanvas_' + migratorName
@@ -223,6 +237,10 @@ function createMigratorContainer (migratorName, parentId) {
   legend.setAttribute('for', canvas.id)
   legend.id = migratorContainer.id + 'legend'
 
+  var parent = document.getElementById(parentId)
+  parent.appendChild(a)
+
+  a.appendChild(migratorContainer)
   migratorContainer.appendChild(canvas)
   migratorContainer.appendChild(legend)
 
@@ -233,6 +251,9 @@ function createMigratorContainer (migratorName, parentId) {
 }
 
 function totalMigration (migratorsDictText, placeholder) {
+  var categories = ['done', 'in-pr', 'awaiting-pr', 'awaiting-parents', 'bot-error']
+  var colors = ['#440154', '#31688e', '#35b779', '#fde725', '#000000']
+
   var migratorsDict = JSON.parse(migratorsDictText)
   var migrators = []
   for (var migratorInfo in migratorsDict) {
@@ -260,10 +281,11 @@ function totalMigration (migratorsDictText, placeholder) {
           gridScale: 5,
           gridColor: '#eeeeee',
           data: migratorData,
-          colors: ['#440154', '#31688e', '#35b779', '#fde725', '#000000']
+          categories: categories,
+          colors: colors
         })
         migratorBarchart.draw()
-        migratorListing(migrator.name, migratorData, feedstockStatus, canvasData.migratorContainerId)
+        migratorListing(migrator.name, migratorData, feedstockStatus, categories, canvasData.migratorContainerId)
       }
     )
   }
