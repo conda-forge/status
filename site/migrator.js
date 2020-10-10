@@ -64,18 +64,24 @@ var Barchart = function (options) {
 
     for (i = 0; i < ncategs; i++) {
       categ = this.options.categories[i]
+      if (!(categ in this.options.data)) {
+        continue
+      }
       totalValue = totalValue + this.options.data[categ].length
     }
     var canvasActualHeight = this.canvas.height - this.options.padding * 2
     var canvasActualWidth = this.canvas.width - this.options.padding * 2
 
     // drawing the bars
-    var barIndex = 0
     var barSize = canvasActualHeight
 
     var widthSoFar = 0
     for (i = 0; i < ncategs; i++) {
       categ = this.options.categories[i]
+      if (!(categ in this.options.data)) {
+        continue
+      }
+
       var val = this.options.data[categ].length
       var barWidth = Math.round(canvasActualWidth * val / totalValue)
       drawBar(
@@ -84,10 +90,9 @@ var Barchart = function (options) {
         16.0,
         barWidth,
         barSize,
-        this.colors[barIndex % this.colors.length]
+        this.colors[i % this.colors.length]
       )
 
-      barIndex++
       widthSoFar = widthSoFar + barWidth
     }
 
@@ -101,21 +106,24 @@ var Barchart = function (options) {
     this.ctx.restore()
 
     // draw legend
-    barIndex = 0
     var legend = document.getElementById(this.parentContainer + 'legend')
     var ul = document.createElement('ul')
     legend.append(ul)
     for (i = 0; i < ncategs; i++) {
       categ = this.options.categories[i]
+
+      if (!(categ in this.options.data)) {
+        continue
+      }
+
       var li = document.createElement('li')
       var _val = this.options.data[categ].length
       li.style.listStyle = 'none'
       li.style.display = 'inline'
-      li.style.borderLeft = '20px solid ' + this.colors[barIndex % this.colors.length]
+      li.style.borderLeft = '20px solid ' + this.colors[i % this.colors.length]
       li.style.padding = '5px'
       li.textContent = categ + ' (' + _val.toString() + ')'
       ul.append(li)
-      barIndex++
     }
   }
 }
@@ -156,6 +164,10 @@ function migratorListing (name, data, feedstockStatus, categories, elementId) {
 
   // show status buttons
   for (var status of categories) {
+    if (!(status in data)) {
+      continue
+    }
+
     var statusListId = parent.id + status + 'List'
     var button = document.createElement('button')
     parent.appendChild(button)
@@ -251,8 +263,8 @@ function createMigratorContainer (migratorName, parentId) {
 }
 
 function totalMigration (migratorsDictText, placeholder) {
-  var categories = ['done', 'in-pr', 'awaiting-pr', 'awaiting-parents', 'bot-error']
-  var colors = ['#440154', '#31688e', '#35b779', '#fde725', '#000000']
+  var categories = ['done', 'in-pr', 'awaiting-pr', 'not-solvable', 'awaiting-parents', 'bot-error']
+  var colors = ['#440154', '#31688e', '#35b779', '#ff8c00', '#fde725', '#000000']
 
   var migratorsDict = JSON.parse(migratorsDictText)
   var migrators = []
