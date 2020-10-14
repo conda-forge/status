@@ -13,9 +13,9 @@ function loadTXT(url, callback) {
 function updateStatus(last_updated) {
   var now_date = new Date();
   var last_updated_date = new Date(last_updated.trim())
-  var THIRTY_MIN = 30 * 60 * 1000; /* ms */
+  var TIMEOUT_MIN = 45 * 60 * 1000; /* ms */
   var cloning_status = document.getElementsByClassName("cloning")[0].getElementsByClassName("cdn-status")[0]
-  if ((now_date.getTime() - last_updated_date.getTime()) < THIRTY_MIN){
+  if ((now_date.getTime() - last_updated_date.getTime()) < TIMEOUT_MIN){
     cloning_status.className = "status operational"
     cloning_status.innerHTML = "operational"
   } else {
