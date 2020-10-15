@@ -251,10 +251,9 @@ function createMigratorContainer (migratorName, parentId) {
   legend.id = migratorContainer.id + 'legend'
 
   var parent = document.getElementById(parentId)
-  parent.appendChild(a)
-
-  a.appendChild(migratorContainer)
-  migratorContainer.appendChild(canvas)
+  parent.appendChild(migratorContainer)
+  migratorContainer.appendChild(a)
+  a.appendChild(canvas)
   migratorContainer.appendChild(legend)
 
   return {
