@@ -200,7 +200,7 @@ function migratorListing (name, data, feedstockStatus, categories, elementId) {
                       ')</span>')
         if (typeof feedstockData.pre_pr_migrator_status !== 'undefined') {
           if (feedstockData.pre_pr_migrator_status.length > 0) {
-            innerHtml += (' <i>Solver Error:</i> ' +
+            innerHtml += (' <i>Error:</i> ' +
                           feedstockData.pre_pr_migrator_status)
           }
         }
