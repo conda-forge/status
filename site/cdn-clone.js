@@ -17,7 +17,7 @@ function updateStatus (lastUpdated) {
   var cdnTimeMin = Math.round((nowDate.getTime() - lastUpdatedDate.getTime()) / 60.0 / 1000.0)
   if ((nowDate.getTime() - lastUpdatedDate.getTime()) < THIRTY_MIN) {
     cloningStatus.className = 'status operational'
-    cloningStatus.innerHTML = 'operational' + ' (cloned ' + cdnTimeMin + ' minutes ago)'
+    cloningStatus.innerHTML = 'operational'
   } else {
     cloningStatus.className = 'status degraded performance'
     cloningStatus.innerHTML = 'degraded' + ' (cloned ' + cdnTimeMin + ' minutes ago)'
