@@ -20,7 +20,7 @@ function updateStatus (lastUpdated) {
     cloningStatus.innerHTML = 'operational'
   } else {
     cloningStatus.className = 'status degraded performance'
-    cloningStatus.innerHTML = 'degraded' + ' (cloned ' + cdnTimeMin + ' minutes ago)'
+    cloningStatus.innerHTML = 'degraded' + ' (last cloned ' + cdnTimeMin + ' minutes ago)'
   }
 }
 
