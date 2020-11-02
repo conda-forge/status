@@ -1,3 +1,5 @@
+name: deploy
+
 on:
   issues: {}
   issue_comment: {}
@@ -7,7 +9,7 @@ on:
       - master
 
 jobs:
-  render:
+  deploy:
     runs-on: ubuntu-latest
     steps:
     - name: checkout
