@@ -97,13 +97,13 @@ var Barchart = function (options) {
     }
 
     // drawing series name
-    this.ctx.save()
-    this.ctx.textBaseline = 'bottom'
-    this.ctx.textAlign = 'center'
-    this.ctx.fillStyle = '#000000'
-    this.ctx.font = 'bold 14px Roboto'
-    this.ctx.fillText(this.options.seriesName, this.canvas.width / 2, 14.0)
-    this.ctx.restore()
+    // this.ctx.save()
+    // this.ctx.textBaseline = 'bottom'
+    // this.ctx.textAlign = 'center'
+    // this.ctx.fillStyle = '#000000'
+    // this.ctx.font = 'bold 14px Roboto'
+    // this.ctx.fillText(this.options.seriesName, this.canvas.width / 2, 14.0)
+    // this.ctx.restore()
 
     // draw legend
     var legend = document.getElementById(this.parentContainer + 'legend')
@@ -235,16 +235,23 @@ function migratorListing (name, data, feedstockStatus, categories, elementId) {
   parent.appendChild(hr)
 };
 
-function createMigratorContainer (migratorName, parentId) {
+function createMigratorContainer (migratorName, parentId, description) {
   var a = document.createElement('a')
   a.title = migratorName
   a.href = '#' + migratorName
+  a.style.textDecoration = 'none'
+  a.style.color = 'inherit'
 
   var migratorContainer = document.createElement('div')
   migratorContainer.id = 'Container' + '_' + migratorName
 
+  var descDiv = document.createElement('div')
+  descDiv.innerHTML = description
+  descDiv.style.fontWeight = 'bold'
+
   var canvas = document.createElement('canvas')
   canvas.id = 'migratorCanvas_' + migratorName
+  canvas.style.paddingTop = '0'
 
   var legend = document.createElement('legend')
   legend.setAttribute('for', canvas.id)
@@ -253,7 +260,8 @@ function createMigratorContainer (migratorName, parentId) {
   var parent = document.getElementById(parentId)
   parent.appendChild(migratorContainer)
   migratorContainer.appendChild(a)
-  a.appendChild(canvas)
+  a.appendChild(descDiv)
+  migratorContainer.appendChild(canvas)
   migratorContainer.appendChild(legend)
 
   return {
@@ -262,7 +270,13 @@ function createMigratorContainer (migratorName, parentId) {
   }
 }
 
-function totalMigration (migratorsDictText, placeholder) {
+function totalMigration (migratorsDictText, parentInfo) {
+  console.log(parentInfo)
+  var parentDiv = document.getElementById(parentInfo.clickID)
+  console.log(parentDiv)
+  parentDiv.onclick = createToggleMigratorVisibilityHandler(parentInfo.id)
+  document.getElementById(parentInfo.id).style.display = parentInfo.displayMe
+
   var categories = ['done', 'in-pr', 'awaiting-pr', 'not-solvable', 'awaiting-parents', 'bot-error']
   var colors = ['#440154', '#31688e', '#35b779', '#ff8c00', '#fde725', '#000000']
 
@@ -272,7 +286,7 @@ function totalMigration (migratorsDictText, placeholder) {
     migrators.push({
       name: migratorInfo,
       description: migratorsDict[migratorInfo],
-      canvas: createMigratorContainer(migratorInfo, 'migratorDiv')
+      canvas: createMigratorContainer(migratorInfo, parentInfo.id, migratorsDict[migratorInfo])
     })
   }
 
@@ -311,5 +325,11 @@ function totalMigration (migratorsDictText, placeholder) {
   }
 }
 
-var url = 'https://raw.githubusercontent.com/regro/cf-graph-countyfair/master/status/total_status.json'
-loadJSON(url, 'empty', totalMigration)
+var url = 'https://raw.githubusercontent.com/regro/cf-graph-countyfair/master/status/longterm_status.json'
+loadJSON(url, { id: 'migratorDivBig', clickID: 'big_migrations', displayMe: 'block' }, totalMigration)
+
+url = 'https://raw.githubusercontent.com/regro/cf-graph-countyfair/master/status/regular_status.json'
+loadJSON(url, { id: 'migratorDivLittle', clickID: 'little_migrations', displayMe: 'block' }, totalMigration)
+
+// url = 'https://raw.githubusercontent.com/regro/cf-graph-countyfair/master/status/closed_status.json'
+// loadJSON(url, { id: 'migratorDivClosed', clickID: 'closed_migrations', displayMe: 'none' }, totalMigration)
