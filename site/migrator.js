@@ -258,7 +258,6 @@ function createMigratorContainer (migratorName, parentId, description) {
   legend.id = migratorContainer.id + 'legend'
 
   var parent = document.getElementById(parentId)
-  parent.innerHTML = ""
   parent.appendChild(migratorContainer)
   migratorContainer.appendChild(a)
   a.appendChild(descDiv)
@@ -272,10 +271,9 @@ function createMigratorContainer (migratorName, parentId, description) {
 }
 
 function totalMigration (migratorsDictText, parentInfo) {
-  console.log(parentInfo)
   var parentDiv = document.getElementById(parentInfo.clickID)
-  console.log(parentDiv)
   parentDiv.onclick = createToggleMigratorVisibilityHandler(parentInfo.id)
+  document.getElementById(parentInfo.id).innerHTML = ''
   document.getElementById(parentInfo.id).style.display = parentInfo.displayMe
 
   var categories = ['done', 'in-pr', 'awaiting-pr', 'not-solvable', 'awaiting-parents', 'bot-error']
