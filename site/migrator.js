@@ -258,6 +258,7 @@ function createMigratorContainer (migratorName, parentId, description) {
   legend.id = migratorContainer.id + 'legend'
 
   var parent = document.getElementById(parentId)
+  parent.innerHTML = ""
   parent.appendChild(migratorContainer)
   migratorContainer.appendChild(a)
   a.appendChild(descDiv)
