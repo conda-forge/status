@@ -52,7 +52,7 @@ function versionListing (jsonData) {
       var feedstockName = versionData[section][i]
       var innerHtml = ''
       innerHtml +=
-        '<a href="https://github.com/conda-forge/' + feedstockName + '-feedstock">' +
+        '<a href="https://github.com/conda-forge/' + feedstockName + '-feedstock/blob/master/recipe/meta.yaml">' +
         '<b>' + feedstockName + '</b>' +
         '</a>'
 
