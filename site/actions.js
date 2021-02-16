@@ -149,7 +149,7 @@ function actionsTotals (reportText) {
 function azureTotals (reportText) {
   var report = JSON.parse(reportText)
   var div = document.getElementById('azure-pipelines-total')
-  div.innerHTML = 'Azure Piplines ran ' + report.total + ' jobs in the past eight hours.'
+  div.innerHTML = 'Azure Pipelines ran ' + report.total + ' jobs in the past eight hours.'
 
   var parent = document.getElementById('azure-pipelines-list')
 
