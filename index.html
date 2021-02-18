@@ -25,11 +25,24 @@
 
       <section class="container" id="main">
         
-        <div class="panel operational">
-          All Systems Mostly Operational
+        <div class="panel major outage">
+          Major Outage
         </div>
         
 
+        
+        <h4 id="incidents"><a href="#incidents" style="color: inherit;">Ongoing Incidents</a></h4>
+        <em>See the linked GitHub issue for incident updates.</em>
+        
+        <div class="incident">
+          <span class="date moment">2021/02/18 09:07:27 UTC</span>
+          <span class="label major outage float-right">major outage</span>
+          <hr/>
+          <span class="title">Travis CI builds failing with "Job has been terminated due to insufficient credits balance" <a href="https://github.com/conda-forge/status/issues/109">#109</a></span>
+          <br/>
+          Travis CI jobs are currently being killed with "Job has been terminated due to insufficient credits balance". We still have almost a million credits available so it's not clear why this is happening but it's under investigation.
+        </div>
+        
         
 
         <h4 id="repos_and_bots"><a href="#repos_and_bots" style="color: inherit;">Repos and Bots</a></h4>
