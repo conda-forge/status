@@ -25,11 +25,26 @@
 
       <section class="container" id="main">
         
-        <div class="panel operational">
-          All Systems Mostly Operational
+        <div class="panel major outage">
+          Major Outage
         </div>
         
 
+        
+        <h4 id="incidents"><a href="#incidents" style="color: inherit;">Ongoing Incidents</a></h4>
+        <em>See the linked GitHub issue for incident updates.</em>
+        
+        <div class="incident">
+          <span class="date moment">2021/03/13 18:17:45 UTC</span>
+          <span class="label major outage float-right">major outage</span>
+          <hr/>
+          <span class="title">Travis CI builds failing with "Job has been terminated due to insufficient credits balance <a href="https://github.com/conda-forge/status/issues/110">#110</a></span>
+          <br/>
+          Travis CI jobs are currently being killed with "Job has been terminated due to insufficient credits balance". We still have almost 350,000 credits available so it's not clear why this is happening.
+
+We're in contact with Travis and will update this issue when we know more.
+        </div>
+        
         
 
         <h4 id="repos_and_bots"><a href="#repos_and_bots" style="color: inherit;">Repos and Bots</a></h4>
@@ -208,24 +223,6 @@ cc @conda-forge/core
           <span class="title">rerendering is down <a href="https://github.com/conda-forge/status/issues/105">#105</a></span>
           <br/>
           Rerendering via our web services admin commands is currently not working. We are working to resolve this in a timely manner. 
-        </div>
-        
-        <div class="incident">
-          <span class="date moment">2020/11/25 18:43:16 UTC</span>
-          <span class="label operational float-right">resolved</span>
-          <hr/>
-          <span class="title">Errors pulling docker images <a href="https://github.com/conda-forge/status/issues/102">#102</a></span>
-          <br/>
-          Errors of the form "Error response from daemon: received unexpected HTTP status: 500 Internal Server Error" are currently been seen as a result of issues with quay.io. See https://status.quay.io/ for details.
-        </div>
-        
-        <div class="incident">
-          <span class="date moment">2020/11/24 11:38:22 UTC</span>
-          <span class="label operational float-right">resolved</span>
-          <hr/>
-          <span class="title">Travis POWER builds unavailable <a href="https://github.com/conda-forge/status/issues/100">#100</a></span>
-          <br/>
-          As part of the [recent pricing changes on travis ci](https://blog.travis-ci.com/2020-11-02-travis-ci-new-billing) the conda-forge account has now ran out of builds credits causing native POWER builds to be unavailable. We're investigating possible solutions at the moment. Cross-compilation and emulated builds are unaffected.
         </div>
         
         
