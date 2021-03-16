@@ -28,7 +28,7 @@ function sleep (time) {
   return new Promise((resolve) => setTimeout(resolve, time))
 }
 
-var url = 'https://conda-forge-status-monitor.herokuapp.com/status/webservices'
+var url = 'https://conda-forge.herokuapp.com/alive'
 loadStatusBotJSON(url, displayStatusBot)
 
 window.addEventListener('migratorsDone', function () {
