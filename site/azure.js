@@ -24,5 +24,5 @@ function displayAzureStatus (reportText) {
   }
 }
 
-var url = 'https://conda-forge-status-monitor.herokuapp.com/status/azure'
+var url = 'https://conda-forge.herokuapp.com/status-monitor/azure'
 loadAzureStatusJSON(url, displayAzureStatus)
