@@ -12,6 +12,15 @@ function loadVersionJSON (url, callback) {
   xobj.send(null)
 }
 
+function toggleVersionVisibilityHandler (ident) {
+  var x = document.getElementById(ident)
+  if (x.style.display === 'none') {
+    x.style.display = 'block'
+  } else {
+    x.style.display = 'none'
+  }
+}
+
 function createToggleVersionVisibilityHandler (ident) {
   return function () {
     var x = document.getElementById(ident)
@@ -47,9 +56,15 @@ function versionListing (jsonData) {
     parent.appendChild(statusList)
     statusList.setAttribute('id', statusListId)
 
-    for (var i = 0; i < versionData[section].length; i++) {
+    var feedstockNames = []
+    for (var j = 0; j < versionData[section].length; j++) {
+      feedstockNames.push(versionData[section][j])
+    }
+    feedstockNames.sort()
+
+    for (var i = 0; i < feedstockNames.length; i++) {
       var statusItem = document.createElement('li')
-      var feedstockName = versionData[section][i]
+      var feedstockName = feedstockNames[i]
       var innerHtml = ''
       innerHtml +=
         '<a href="https://github.com/conda-forge/' + feedstockName + '-feedstock/blob/master/recipe/meta.yaml">' +
@@ -57,9 +72,12 @@ function versionListing (jsonData) {
         '</a>'
 
       if (section === 'errored') {
-        innerHtml += '</br>'
+        var errorID = feedstockName + '-ver-error'
+
+        innerHtml += ': <a onclick="toggleVersionVisibilityHandler(\'' + errorID + '\')">click for details</a>'
+
         innerHtml +=
-          '<pre style="white-space: pre-wrap; border-left:.0rem;">' +
+          '<pre style="white-space: pre-wrap; border-left:.0rem; display: none;" id="' + errorID + '">' +
           versionData.errors[feedstockName] +
           '</pre>'
       }
