@@ -328,7 +328,7 @@ var url = 'https://raw.githubusercontent.com/regro/cf-graph-countyfair/master/st
 loadJSON(url, { id: 'migratorDivBig', clickID: 'big_migrations', displayMe: 'block' }, totalMigration)
 
 url = 'https://raw.githubusercontent.com/regro/cf-graph-countyfair/master/status/regular_status.json'
-loadJSON(url, { id: 'migratorDivLittle', clickID: 'little_migrations', displayMe: 'block' }, totalMigration)
+loadJSON(url, { id: 'migratorDivLittle', clickID: 'little_migrations', displayMe: 'none' }, totalMigration)
 
 url = 'https://raw.githubusercontent.com/regro/cf-graph-countyfair/master/status/closed_status.json'
 loadJSON(url, { id: 'migratorDivClosed', clickID: 'closed_migrations', displayMe: 'none' }, totalMigration)
