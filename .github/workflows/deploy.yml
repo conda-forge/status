@@ -27,8 +27,8 @@ jobs:
       shell: bash -l {0}
       run: |
           conda activate cf
-          git config --global user.name "conda-forge-coordinator"
-          git config --global user.email "conda.forge.coordinator@gmail.com"
+          git config --global user.email "pelson.pub+conda-forge@gmail.com"
+          git config --global user.name "conda-forge-admin"
           python render_page.py
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
