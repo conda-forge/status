@@ -38,5 +38,5 @@ jobs:
       with:
         personal_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./site
-        user_name: conda-forge-coordinator
-        user_email: conda.forge.coordinator@gmail.com
+        user_name: conda-forge-admin
+        user_email: pelson.pub+conda-forge@gmail.com
