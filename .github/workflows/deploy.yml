@@ -15,14 +15,16 @@ jobs:
     steps:
     - name: checkout
       uses: actions/checkout@v2
-    
+
     - name: setup miniconda
       uses: conda-incubator/setup-miniconda@v2
       with:
         activate-environment: cf
         environment-file: environment.yml
         auto-activate-base: true
-    
+        miniforge-version: latest
+        miniforge-variant: Mambaforge
+
     - name: update status page
       shell: bash -l {0}
       run: |
@@ -32,7 +34,7 @@ jobs:
           python render_page.py
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    
+
     - name: deploy
       uses: peaceiris/actions-gh-pages@v3
       with:
