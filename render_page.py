@@ -8,7 +8,12 @@ import jinja2
 
 from github import Github
 
-BAD_LABELS = set(['investigating', 'degraded performance', 'major outage'])
+BAD_LABELS = set([
+    'investigating',
+    'degraded performance',
+    'major outage',
+    'maintenance'
+])
 OLDEST = datetime.datetime.utcnow() - datetime.timedelta(days=90)
 TIME_FMT = '%Y/%m/%d %H:%M:%S'
 
@@ -26,7 +31,7 @@ open_issues = []
 closed_issues = []
 
 for issue in issues:
-    lnames = set(l.name for l in issue.labels)
+    lnames = set(ln.name for ln in issue.labels)
     if lnames & BAD_LABELS:
         if issue.state == 'open':
             current_status |= (lnames & BAD_LABELS)
@@ -65,6 +70,8 @@ else:
         current_status = 'degraded performance'
     elif 'investigating' in current_status:
         current_status = 'investigating'
+    elif 'maintenance' in current_status:
+        current_status = 'maintenance'
     else:
         raise ValueError('we did not find a total status!')
 
