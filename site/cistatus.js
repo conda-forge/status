@@ -48,3 +48,4 @@ loadCIHTML('https://www.traviscistatus.com', 'Travis CI', 'travis', displayStatu
 loadCIHTML('https://status.circleci.com', 'CircleCI', 'circle', displayStatus)
 loadCIHTML('https://status.appveyor.com', 'AppVeyor', 'appveyor', displayStatus)
 loadCIHTML('https://status.quay.io/', 'Quay.io', 'quay', displayStatus)
+loadCIHTML('https://anaconda.statuspage.io/', 'Anaconda', 'anaconda', displayStatus)
