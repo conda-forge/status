@@ -12,8 +12,8 @@ function loadTXT (url, callback) {
 function updateStatus (lastUpdated) {
   var nowDate = new Date()
   var lastUpdatedDate = new Date(lastUpdated.trim())
-  var OK_MIN = 90 * 60 * 1000 /* ms */
-  var DEG_MIN = 120 * 60 * 1000 /* ms */
+  var OK_MIN = 20 * 60 * 1000 /* ms */
+  var DEG_MIN = 40 * 60 * 1000 /* ms */
   var cloningStatus = document.getElementsByClassName('cloning')[0].getElementsByClassName('cdn-status')[0]
   var cdnTimeMin = Math.round((nowDate.getTime() - lastUpdatedDate.getTime()) / 60.0 / 1000.0)
   if ((nowDate.getTime() - lastUpdatedDate.getTime()) < OK_MIN) {
