@@ -226,7 +226,7 @@ function migratorListing (name, data, feedstockStatus, categories, elementId) {
   graph.setAttribute('id', graphId)
   graph.setAttribute(
     'src',
-    'https://raw.githubusercontent.com/regro/cf-graph-countyfair/master/status/migrator_svg' + name + '.svg?sanitize=true'
+    'https://raw.githubusercontent.com/regro/cf-graph-countyfair/master/status/migrator_svg/' + name + '.svg?sanitize=true'
   )
   graph.style.display = 'none'
 
