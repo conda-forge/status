@@ -116,17 +116,18 @@
           </h5>
         </div>
 
-	<div class="libcfgraph">
-	  <h5>
-            <a href="https://github.com/regro/libcfgraph">libcfgraph </a>status:
-            <a href="https://circleci.com/gh/regro/libcfgraph">
-	    <img src="https://circleci.com/gh/regro/libcfgraph.svg?style=svg"
-		 alt=" " align="bottom"
-		 onerror='statusImageNotFound(this)'
-		 >
-	    </a>
-	  </h5>
-	</div>
+        <div class="libcfgraph">
+          <h5>
+                  <a href="https://github.com/regro/libcfgraph">libcfgraph </a>status:
+                  <a href="https://circleci.com/gh/regro/libcfgraph">
+            <img src="https://circleci.com/gh/regro/libcfgraph.svg?style=svg"
+              alt=" "
+              align="bottom"
+              onerror='statusImageNotFound(this)'
+            >
+            </a>
+          </h5>
+        </div>
 
         <div class="cloning">
             <h5><a href=https://conda-static.anaconda.org/conda-forge/rss.xml>CDN cloning</a> status:
@@ -134,14 +135,8 @@
             <script type="text/javascript" src="cdn-clone.js"></script>
         </div>
 
-        <h4 id="current_migrations"><a href="#current_migrations" style="color: inherit;">Current Migrations</a></h4>
-        <h5 id="big_migrations"><a href="#long_migrations">Long-running Migrations</a></h5>
+        <h4 id="big_migrations"><a href="#big_migrations" style="color: inherit;">Long-Running Migrations</a></h4>
         <div id="migratorDivBig" style="text-align:center;"></div>
-        <h5 id="little_migrations"><a href="#other_migrations">Other Migrations</a></h5>
-        <div id="migratorDivLittle" style="text-align:center;"></div>
-        <h5 id="closed_migrations"><a href="#closed_migrations">Recently Closed Migrations</a></h5>
-        <div id="migratorDivClosed" style="text-align:center;">Nothing here! Yay!</div>
-        <script type="text/javascript" src="migrator.js"></script>
 
         <h4 id="version_updates"><a href="#version_updates" style="color: inherit;">Version Updates</a></h4>
         <div id="versionDiv" style="text-align:left;"></div>
@@ -223,6 +218,13 @@
         {% else %}
           <em>No incidents in the past 90 days.</em>
         {% endif %}
+
+        <h4 id="little_migrations"><a href="#other_migrations" style="color: inherit;">Other Migrations</a></h4>
+        <div id="migratorDivLittle" style="text-align:center;"></div>
+        <h4 id="closed_migrations"><a href="#closed_migrations" style="color: inherit;">Recently Closed Migrations</a></h4>
+        <div id="migratorDivClosed" style="text-align:center;">Nothing here! Yay!</div>
+        <script type="text/javascript" src="migrator.js"></script>
+
       </section>
 
       <footer class="footer">
