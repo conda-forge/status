@@ -135,8 +135,12 @@
             <script type="text/javascript" src="cdn-clone.js"></script>
         </div>
 
-        <h4 id="big_migrations"><a href="#big_migrations" style="color: inherit;">Long-Running Migrations</a></h4>
-        <p><a href="#more_migrations">More migrations</a> are listed below.</p>
+        <h4 id="big_migrations"><a href="#big_migrations" style="color: inherit;">Long-Term Migrations</a></h4>
+        <p  style="font-size:125%;">
+          <a href="#little_migrations">Short-term migrations</a>
+          and <a href="#closed_migrations">recently closed migrations</a>
+          are listed below.
+        </p>
         <div id="migratorDivBig" style="text-align:center;"></div>
 
         <h4 id="version_updates"><a href="#version_updates" style="color: inherit;">Version Updates</a></h4>
@@ -204,28 +208,27 @@
         </div>
         <script type="text/javascript" src="azure.js"></script>
 
+        <h4 id="little_migrations"><a href="#other_migrations" style="color: inherit;">Short-Term Migrations</a></h4>
+        <div id="migratorDivLittle" style="text-align:center;"></div>
+        <h4 id="closed_migrations"><a href="#closed_migrations" style="color: inherit;">Recently Closed Migrations</a></h4>
+        <div id="migratorDivClosed" style="text-align:center;">Nothing here! Yay!</div>
+        <script type="text/javascript" src="migrator.js"></script>
+
         <h4 id="incident_history"><a href="#incident_history" style="color: inherit;">Incidents</a></h4>
         {% if closed_issues %}
         {% for issue in closed_issues %}
         <div class="incident">
           <span class="date moment">{{ issue.time }} UTC</span>
           <span class="label operational float-right">resolved</span>
-          <hr/>
+          <hr />
           <span class="title">{{ issue.title|safe }} <a href="{{ issue.url }}">#{{ issue.id }}</a></span>
-          <br/>
+          <br />
           {{ issue.body|safe }}
         </div>
         {% endfor %}
         {% else %}
-          <em>No incidents in the past 90 days.</em>
+        <em>No incidents in the past 90 days.</em>
         {% endif %}
-
-        <h4 id="more_migrations"><a href="#more_migrations" style="color: inherit;">More Migrations</a></h4>
-        <h5 id="little_migrations"><a href="#other_migrations" style="color: inherit;">Short-Running Migrations</a></h5>
-        <div id="migratorDivLittle" style="text-align:center;"></div>
-        <h5 id="closed_migrations"><a href="#closed_migrations" style="color: inherit;">Recently Closed Migrations</a></h5>
-        <div id="migratorDivClosed" style="text-align:center;">Nothing here! Yay!</div>
-        <script type="text/javascript" src="migrator.js"></script>
 
       </section>
 
