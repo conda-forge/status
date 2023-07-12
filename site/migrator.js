@@ -272,7 +272,7 @@ function createMigratorContainer (migratorName, parentId, description) {
 
 function totalMigration (migratorsDictText, parentInfo) {
   var parentDiv = document.getElementById(parentInfo.clickID)
-  parentDiv.onclick = createToggleMigratorVisibilityHandler(parentInfo.id)
+  /* parentDiv.onclick = createToggleMigratorVisibilityHandler(parentInfo.id) */
   document.getElementById(parentInfo.id).innerHTML = ''
   document.getElementById(parentInfo.id).style.display = parentInfo.displayMe
 
