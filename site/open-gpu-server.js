@@ -25,5 +25,5 @@ function displayOpenGPUServerStatus (reportText) {
   }
 }
 
-var url = 'https://api.openstatus.dev/public/status/open-gpu-server'
+var url = 'https://conda-forge.herokuapp.com/status-monitor/open-gpu-server'
 loadOpenStatusJSON(url, displayOpenGPUServerStatus)
