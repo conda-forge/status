@@ -14,7 +14,7 @@ BAD_LABELS = set([
     'major outage',
     'maintenance'
 ])
-OLDEST = datetime.datetime.utcnow() - datetime.timedelta(days=90)
+OLDEST = datetime.datetime.now(tz=datetime.timezone.utc) - datetime.timedelta(days=90)
 TIME_FMT = '%Y/%m/%d %H:%M:%S'
 
 gh = Github(os.environ['GITHUB_TOKEN'])
