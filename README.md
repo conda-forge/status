@@ -13,6 +13,9 @@ To make an incident, open an issue and label it with one of
 The [status page](https://conda-forge.org/status/) will automatically fetch the issues
 and render them as incidents.
 
+When the incident is resolved, close the issue and the status page will
+return to normal.
+
 ## History
 
 This repository used to serve a Github Pages site with all the incident,
